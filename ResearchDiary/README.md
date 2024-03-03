@@ -3,8 +3,13 @@ These notes act as progress report (research diary) throughout the thesis work. 
 
 ## 03.03.2024
 - Setup this repository and setup the diary.
-- Planned a timeline in preparation for the kickoff with markus on tuesday.
 - Setup latex already, I am planning to write stuff on the side already (so I wont forget about it, also I will try to finish the writing about a topic with every milestone as well eG once the room-setup is done I want to write the according chapter(s) for it as well). We'll see how well it works ^^'
+- Planned a timeline in preparation for the kickoff with markus on tuesday.
+   ![](images/masterTimelinePlan.png)
+
+
+
+
 
 
 <!--
