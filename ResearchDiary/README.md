@@ -7,6 +7,26 @@ These notes act as progress report (research diary) throughout the thesis work. 
 - Planned a timeline in preparation for the kickoff with markus on tuesday.
    ![](images/masterTimelinePlan.png)
 
+## 05.03.2024
+- Meeting with Markus
+- Recieved Zed Mini Cameras
+- talked through my current plan and got some intel
+    - should try to use different usb buses for cameras
+    - need the check about creativity rules and what it means for my time plan
+    - should make the VR prototype the main user study
+        - also make sure to have some iterations for that before the big user test as well
+    - make MR user study with room setup smaller, maybe only test the best navigation method decided via VR prototype
+    - about theory for writing:
+        - maybe set a specific day a week for research
+        - mainly look into the lindlbauer stuff and transitional interfaces
+        - check out **embodied interaction and body gestures and emobidment**
+        - create an excel list for sources
+
+## 07.03.2024
+- updated this diary
+- setup a excel list for sources -> will most likely spend first research day transfer my sources into it
+- (wont do much more, weekend is MMArmalade game jam and have yet to find into a master-thesis workflow. plannning to start next week with full force)
+    
 
 
 
