@@ -28,6 +28,11 @@ These notes act as progress report (research diary) throughout the thesis work. 
 - (wont do much more, weekend is MMArmalade game jam and have yet to find into a master-thesis workflow. plannning to start next week with full force)
     
 
+## 12.03.2024
+- updated this diary
+- today is research day:
+    - sorted through my sources and put them into the excel
+    - organised overleaf doc a bit -> listed things for releated works
 
 
 
