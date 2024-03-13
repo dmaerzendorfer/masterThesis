@@ -34,6 +34,23 @@ These notes act as progress report (research diary) throughout the thesis work. 
     - sorted through my sources and put them into the excel
     - organised overleaf doc a bit -> listed things for releated works
 
+## 13.03.2024
+- some first tinkering with zed mini
+    - installed sdk -> v4.0
+    - my current cuda version is 12.3.107 (didnt realise this needs cuda btw...)
+    - my laptop: 16gb ram, 12th Gen Intel(R) Core(TM) i7-12700H   2.70 GHz, NVIDIA GeForce RTX 3070 Ti Laptop GPU
+    - went through: https://support.stereolabs.com/hc/en-us/articles/207616785-Getting-Started-with-your-ZED-camera -> also has a few samples!
+        - sample stuff:
+        - ZED explorer: double camera feed
+        - ZED depth viewer: live demo of created depth map
+        - ZED calibration: for recalibrating a zed
+        - ZED sensor viewer: live reading of sensor data -> gyro, accelerometer, orientation, ...
+        - ZED360 -> for multi camera data fusion -> room setup?!
+    - checkout out demo projects from stereolabs repo: https://github.com/stereolabs
+    - zed has a unity plugin: https://github.com/stereolabs/zed-unity
+
+- i am not yet completely in a workflow: everything seems more interesting than doing this right now^^ I intend to use the whole day tomorrow to checkout the unity plugin! (i hope baby steps work, some day after i will check out the roomSetupCode in detail, then i will add the zed plugin etc.)
+
 
 
 
