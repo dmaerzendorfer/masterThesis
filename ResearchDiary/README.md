@@ -51,6 +51,36 @@ These notes act as progress report (research diary) throughout the thesis work. 
 
 - i am not yet completely in a workflow: everything seems more interesting than doing this right now^^ I intend to use the whole day tomorrow to checkout the unity plugin! (i hope baby steps work, some day after i will check out the roomSetupCode in detail, then i will add the zed plugin etc.)
 
+## 14.03.2024
+- tried out the zed mini plugin in unity -> **v4.0.7**
+    - some basic setup for zed in unity:
+        - https://www.stereolabs.com/docs/unity/basic-concepts
+        - https://www.stereolabs.com/docs/unity/creating-mixed-reality-app
+    - had a compiler error "The type or namespace name 'Management' does not exist in the namespace 'UnityEngine.XR' (are you missing an assembly reference?)"
+        - just need to install the XR plugin management
+        - https://community.stereolabs.com/t/getting-started-with-unity-and-zed-problems/2781
+    - apparently the zed unity plugin only supports up to 4 cameras in multi-cam mode right now! -> at least readme says so, but in editor i see camera ids up to 8
+    - dont think i need it, but: the zeds object detection feature is only available on the zed2 and NOT the zed or zed mini!
+    - basically the plugin has two "cameras" the zed_rig_mono (for third person stuff, when not using a HMD) and the zed_rig_stereo (for when using an HMD with AR pass-through, renders stuff in stereo, therefore needs more performance)
+    - base script to change stuff with is the **ZEDManager**
+    - the plugin can get input via three ways:
+        - USB -> cam directly connected
+        - SVO -> SVO file format, recorded input from a previous live ZED session
+        - Stream -> from a ZED on a remote device that is actively streaming its camera input, needs IP and port to broadcast
+    - they also have some tutorials
+    - maybe I could use multiple cameras and just make point clouds? for a "live 3d model"
+    - tried the multicam -> my laptop only has one usb plug, used a usb hub. no problem so far.
+        - https://github.com/stereolabs/zed-multi-camera
+        - USB bandwidth: The ZED in 1080p30 mode generates around 250MB/s of image data. USB 3.0 maximum bandwidth is around 400MB/s, so the number of cameras, resolutions and framerates you can use on a single machine will be limited by the USB 3.0 controller on the motherboard. When bandwidth limit is exceeded, corrupted frames (green or purple frames, tearing) can appear.
+    - https://community.stereolabs.com/t/fused-point-clouds/2926 gold!
+    - https://github.com/stereolabs/zed-sdk/tree/master/fusion
+
+
+- guess next step will be to try out the multi cam tutorial, let them make a point cloud and interpolate a viewpoint? https://www.stereolabs.com/docs/tutorials/spatial-mapping
+    - will most likely first look into fusing possibilites!
+
+- other sidenote: will be on **vacation from 10.07. - 19.07** -> thats during the "implement in MR" period
+- maybe dont even need the lindlbauer setup? zed sdk might be able to real time map by itself: https://www.youtube.com/watch?v=AFH2yN3rM78
 
 
 
