@@ -82,6 +82,49 @@ These notes act as progress report (research diary) throughout the thesis work. 
 - other sidenote: will be on **vacation from 10.07. - 19.07** -> thats during the "implement in MR" period
 - maybe dont even need the lindlbauer setup? zed sdk might be able to real time map by itself: https://www.youtube.com/watch?v=AFH2yN3rM78
 
+## 20.03.2024
+- Begleitseminar mit Markus:
+    - my previous stuff durchgehen
+    - look into gaussian splattering -> maybe ust needs a point cloud and does the magic
+        - maybe not realtime tho
+    - maybe i wont need meshes if point cloud is enough
+        - vergleich mit lindlbauer und deren meshes!
+        - zed sdk meshes are not that smooth, so maybe dont use them if not needed
+            - lindlbauer makes some meshes? how?
+        - neural depth mode for zed?
+    
+## 28.03.2024
+- actually working on the project again after a small hiatus (motivation is still low, hope it gets better once I can do stuff with the HMD...)
+- looked into the lindlbauer setup
+    - https://github.com/microsoft/RoomAliveToolkit
+    - consists of two part-projects:
+        - ProCamCalibration
+            - https://github.com/microsoft/RoomAliveToolkit/tree/master/ProCamCalibration
+            - seems to need lots of callibration for the projection stuff (which i dont need!)
+                - the callibration setp uses the projector to project gray code patterns and uses the (in this case) kinect cameras to track them. The gray code patterns are used to map the kinects color images pixel to the detph images coordinates. 
+                - with the gained info on the 3d depth points and their coresponding 2d projector coordinates the needed callibration parameters can be calculated
+
+            - all in all this does not seem to usefull to me. lots of stuff on projection mapping and solving parameters to make it possible, I dont need that!
+        - RoomAliveToolkitForUnity
+            - https://github.com/microsoft/RoomAliveToolkit/tree/master/RoomAliveToolkitForUnity
+            - this uses the proCamCalibration (needs the callibration with projector...)
+
+    - the roomalive toolkit focuses a lot on projection mapping (projecting imagery to non-planar object eG 3d boxes/non flat objects) which i do not care about.
+- my current opinion: fuck lindlbauer and its setup. Just use the zed sdk and make a solution myself. it should be able to fuse multiple cam viewpoints and create point clouds. I will disregard colliders right now, they are not needed.
+    - also: gives option to try out gaussian splat!
+        - https://github.com/aras-p/UnityGaussianSplatting there is a unity plugin for it :3
+        - for quick and easy 3d captures: https://poly.cam/ (tho low quality!)
+        - if i want to train gaussian splats myself: https://www.reshot.ai/3d-gaussian-splatting
+
+- compare: https://www.youtube.com/@LeeVermeulen he also got magic portals! uses some kind of room setup to interpolate viewpoints!
+    - look through his blog posts: https://www.3delement.com/?p=850
+    - Lee Vermeulen is a magician!
+    - looks like zed mini can do some fancy stuff! https://twitter.com/Alientrap/status/1671578720249716736
+    - he had a talk in vienna a while ago! https://www.youtube.com/watch?v=v2402mxJpHQ
+
+
+- **future todos aka tomorrow at 17h:** tinker about with the zed sdk and the zed unity plugin to make mutli cam fusing work!
+
 
 
 <!--
