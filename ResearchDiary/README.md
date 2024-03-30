@@ -125,6 +125,49 @@ These notes act as progress report (research diary) throughout the thesis work. 
 
 - **future todos aka tomorrow at 17h:** tinker about with the zed sdk and the zed unity plugin to make mutli cam fusing work!
 
+## 30.03.2024
+- soooo, didnt do the stuff yesterday. But today is the day!
+- tinkering in with the zed plugin to make multi cam fusing work
+    - little side note: even tho the zed mini cables are type-c they have an up and down side. make sure to plug them in correctly! (the arrows >> need to be up...)
+    - one can use the zed360 tool to setup the cameras in a room, then move around in the room -> cameras will track the poses and callibrate that way
+        - this exports a **JSON calibration file**
+            - maybe i could plug this into the lindlbauer setup?
+                - but i dont want to use it!
+        - https://www.stereolabs.com/docs/fusion/zed360
+
+    - as the lindlbauer roomalivetoolkit for unity would need a callibration(can be done with the zed360) and a obj file (can be done with zed as well? https://www.stereolabs.com/docs/tutorials/spatial-mapping)
+
+    - possible ways for point cloud fusion could be Iterative Closest Point (ICP) algorithm
+    https://community.stereolabs.com/t/fuse-point-cloud-from-multiple-cameras/3202
+
+    - https://community.stereolabs.com/t/multi-camera-point-cloud-fusion-using-room-calibration-file/3640
+    another post on point cloud fusion with multi cam
+        - https://github.com/stereolabs/zed-sdk/tree/master/spatial%20mapping/multi%20camera/cpp
+            - this is not fusing of point clouds but the spatial mapping!
+
+- there also exsits Zedfu (https://support.stereolabs.com/hc/en-us/articles/213074149-Spatial-Mapping-Best-Practices) sample thingy for spatial mapping with single cam
+
+- since point cloud fusion is not yet in the sdk (and it seems to be super hard to implement oneself), i can go with the fake approach of just overlapping some point clouds using the config from the zed360 calibration.json for the data to align them
+    - https://www.youtube.com/watch?v=75plbxS9GV0 at least point clouds should be able to be realtime plausible
+    - **trying to get a point cloud into unity!**
+        - tomorrow it is (or later...)
+        - vergleich zed DetphViewer
+        - unity can create meshes and textures from point clouds?
+            - https://docs.unity3d.com/Packages/com.unity.pixyz.plugin4unity@2.0/manual/import-point-clouds.html
+            - pixyz plugin
+        - used to be an example, but was removed now from zed plugin
+            - https://github.com/stereolabs/zed-unity/issues/51
+            - use the ZedPointCloudManager
+
+- two approaches are possible now: 
+    - try to overlap zed point clouds in unity or
+    - try to use the zed360 callibration and obj-file from the zed spatial mapping in the roomToolkit
+        could be troublesome, not sure if it will work, will need to update the toolkit code to use zed sdk
+
+
+
+
+
 
 
 <!--
