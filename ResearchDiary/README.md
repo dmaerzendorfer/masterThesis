@@ -164,7 +164,14 @@ These notes act as progress report (research diary) throughout the thesis work. 
     - try to use the zed360 callibration and obj-file from the zed spatial mapping in the roomToolkit
         could be troublesome, not sure if it will work, will need to update the toolkit code to use zed sdk
 
-
+## 03.04.2024
+- took a bit longer to continue...
+- trying the overlapping zed point clouds in unity
+    - multiple cameras have been calibrated via zed360
+        - exports a calibration file with position, rotation etc of the cameras.
+    - each camera in unity, displaying a pointcloud
+    - cameras aligned as described in the calibration of zedFu
+- the zed sdk seems to have a FusedZedPointCloudManager Script, didnt work for me tho :shrug: (also didnt find any documentation about this...)
 
 
 
