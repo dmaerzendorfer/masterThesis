@@ -172,6 +172,16 @@ These notes act as progress report (research diary) throughout the thesis work. 
     - each camera in unity, displaying a pointcloud
     - cameras aligned as described in the calibration of zedFu
 - the zed sdk seems to have a FusedZedPointCloudManager Script, didnt work for me tho :shrug: (also didnt find any documentation about this...)
+- not done yet, for now i only implemented the spawning of objects according to the calibration json
+
+
+## 04.04.2024
+- continued with the zed pointcloud overlapping
+    - it now instantiates zed mono rigs with point cloud managers attached to them
+        - found some issues where zed prefabs and gameObjects can no longer be dragged and dropped in unity... (current consistent fix is to restart unity, then it works again)
+        - had some trouble with instantiating the cameras during runtime. at first i instantiated them and then set the camera id. but zed doesnt like it(during awake it still thinks its cam 01?). solution was to set the id in the prefab and instantiate the correct prefab.
+        - for now only works for two cameras
+    - need to test it with a better setup soon (camera positions that actually make sense. ), then i can evaluate if its good enough or if in need to use the lindlbauer thingy (we'll see when that will be, hope i will have time/motivation on saturday or sunday...)
 
 
 
