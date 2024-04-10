@@ -183,7 +183,58 @@ These notes act as progress report (research diary) throughout the thesis work. 
         - for now only works for two cameras
     - need to test it with a better setup soon (camera positions that actually make sense. ), then i can evaluate if its good enough or if in need to use the lindlbauer thingy (we'll see when that will be, hope i will have time/motivation on saturday or sunday...)
 
+## 10.04.2024
+- testing the overlapping point clouds with some better positions
+    - did the calib first
+<video controls src="images/zed360_calibration.mp4" title="Title"></video>
+    - then tested in unity with overlapping point clouds
 
+        - my setup btw:
+            - ![setup1](images/setup1.jpg)
+            - ![setup2](images/setup2.jpg)
+            - ![setup3](images/setup3.jpg)
+            - ![setup4](images/setup4.jpg)
+
+
+        - from its normal viewing point its nicely visible
+        - ![in unity with one cam](images/oneCamInUnity.png)
+        - however from the oposite side stuff is inverted
+        - ![from other side](images/fromOtherSide.png)
+
+        - so if we have two cameras facing each other we get a mess (at least so i thought! my setup was incorrect!)
+
+        - seems like my transform and rotation setting was wrong?
+            - some hints about the config file https://community.stereolabs.com/t/multi-camera-point-cloud-fusion-using-room-calibration-file/3640
+            - rotation seems to be fixed with the code from the post
+            - but cameras seem to reset their position when they connect?
+                - changed the instantiating so that the transform is set once the cameras are ready (got a nifty onZedReady event :3 )
+
+            - also calibration seems to be off!
+                - even there is a huge visual gap!
+                - did adjust it by hand for a comparisson:
+                - with adjustment
+                ![adjusted 1](images/adjusted1.png)
+                ![adjusted 2](images/adjusted2.png)
+
+                - without adjustment 
+                ![without adjustment](images/withoutAdjust.png)
+                    - little sidenote, i was using on of the cams upside down (but dont think it should do any harm, there is the calibration anyway. and no videos ever looked upsidedown)
+
+                - **found the problem!**
+                    - the coordinates for the cameras was swapped!
+                        - in the callib file they get the cameras serial id? or smth
+                        - in unity its just an enum with Camera_ID_02 etc
+                    - i fixed it to match its cameras serial id but still is swapped?!
+                    - example if i swap it by hand (not perfectly alligned but i blame that on shitty calibration in a too small area)
+                    ![swappedByHand](images/swappedByHand.png)
+
+    - stoping here for now, need to fix that swapped coordinates at some point 
+        - the point cloud is messy but might have potential (doubt it will be very pleasing in vr/mr tho...)
+        - however: i dont want to work much further on this. I want to focus on the VR prototype!
+        - what does markus say?
+            - one thing i would like to have is for the points of the point cloud to only be visible from their "front" +/- 90° (but that seems complex to do...)
+                - might help with the problem of seeing the back of a point cloud (since they are not perfectly aligned)
+        - i could also try to get the lindlbauer setup running (the calibration should already be done by zed anyway, only need to change the stuff to use zed sdk and maybe get a obj of the environment or rather check if its really needed since zed meshes are messy.)
 
 
 

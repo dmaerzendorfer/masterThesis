@@ -117,6 +117,30 @@ PrefabInstance:
       propertyPath: enableTracking
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114491592745282986, guid: 76db3eb81fd21ae45bab5204e324ae42, type: 3}
+      propertyPath: setFloorAsOrigin
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114491592745282986, guid: 76db3eb81fd21ae45bab5204e324ae42, type: 3}
+      propertyPath: enableSpatialMemory
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114491592745282986, guid: 76db3eb81fd21ae45bab5204e324ae42, type: 3}
+      propertyPath: bodyTrackingTracking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114491592745282986, guid: 76db3eb81fd21ae45bab5204e324ae42, type: 3}
+      propertyPath: bodyTrackingFoldoutOpen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114491592745282986, guid: 76db3eb81fd21ae45bab5204e324ae42, type: 3}
+      propertyPath: objectDetectionTracking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114491592745282986, guid: 76db3eb81fd21ae45bab5204e324ae42, type: 3}
+      propertyPath: objectDetectionFoldoutOpen
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

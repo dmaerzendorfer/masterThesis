@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ecde90deaa6144bbdd47b9a149f5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  calibrationJsonPath: C:\Users\dmaer\Documents\FH\Projects\MasterArbeit\mmt-masterarbeit-david-maerzendorfer\Calibrations\MyRoomChairCallibration.json
+  calibrationJsonPath: C:\Users\dmaer\Documents\FH\Projects\MasterArbeit\mmt-masterarbeit-david-maerzendorfer\Calibrations\betterCalibration100424.json
   pointCloudPrefabs:
   - {fileID: 6127415402951224513, guid: 008d2b1bbc4a3e94e8ef4d1619b3543f, type: 3}
   - {fileID: 6127415402951224513, guid: 4628bd0d96b4f874885e08772aa53cbc, type: 3}
