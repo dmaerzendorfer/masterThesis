@@ -40,7 +40,7 @@ public class OverlapPointCloudManager : MonoBehaviour
             JArray rotation = (JArray)world["rotation"];
             JArray translation = (JArray)world["translation"];
             var zed = Instantiate(pointCloudPrefabs[i]);
-
+            // https://community.stereolabs.com/t/multi-camera-point-cloud-fusion-using-room-calibration-file/3640
             float[] r = rotation.Select(v => (float)v * 180.0f / Mathf.PI).ToArray();
             float[] t = translation.Select(v => (float)v).ToArray();
             _camConfigs.Add(new CameraConfig { serialId = id, rotation = r, translation = t });

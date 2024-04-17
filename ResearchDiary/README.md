@@ -236,7 +236,42 @@ These notes act as progress report (research diary) throughout the thesis work. 
                 - might help with the problem of seeing the back of a point cloud (since they are not perfectly aligned)
         - i could also try to get the lindlbauer setup running (the calibration should already be done by zed anyway, only need to change the stuff to use zed sdk and maybe get a obj of the environment or rather check if its really needed since zed meshes are messy.)
 
+## 11.04.24
+- for point clouds might be able to check normals
+- lindlbauer -> read paper, check voxel stuff
+- can go to vr prototype
+    - get quest 2 (3 sind aus) bei david
+    - get an avatar!
+    - for usability testing with ppl, no need for questionnaire
+- have asked david fasching for a hmd, he will let me know once one would be available (depends a bit on the ordering of quest 3s etc.)
 
+## 13.04.24
+- reading lindlbauer paper again
+- doing some research
+
+- planning to checking in on overleaf 
+    - specifically: related work
+    - tackling this next time
+
+## 15.04.24
+- checking in on overleaf
+    - some really rough structure on chapters plan to cover
+    - compared to a masters thesis from library -> Alexander Auberger Enhancing Player Engagement through Adaptive Difficulty using Implicit Biofeedback in Simulation & Real-Time Strategy Games (mainly just for structure, not content)
+- more research regarding the topics i have identified for the thesis structure
+
+
+## 17.04.24
+- trying to fix the mixed up spawning of point cloud coordinates
+    - from code pov the correct cam id gets the corresponding coordinates of the json file
+    - maybe applying the translation etc is wrong? i am using some code i found for it, this one converts the rotation somehow (radians to deg)
+        - didnt find any documentation if the calibration file rotation is in deg or radians
+            - i just tried it real quick: seems they are radians. when read as deg the cameras face roughly the same direction which does not allign with the setup of the calibration.
+        - https://www.stereolabs.com/docs/fusion/zed360
+        - "fun" fact, cam 0 is always at 0 0 0, except if they detect ankles they assume the floor level then its 0 H 0
+
+    - this might help in the future: https://community.stereolabs.com/
+
+    
 
 <!--
 The notes have the following minimal requirements:
