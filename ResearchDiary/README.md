@@ -270,7 +270,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
         - "fun" fact, cam 0 is always at 0 0 0, except if they detect ankles they assume the floor level then its 0 H 0
 
     - this might help in the future: https://community.stereolabs.com/
-
+- will continue my research for viewpoints (related work stuff) tomorrow? (we'll see about that...)
     
 
 <!--
