@@ -1,6 +1,17 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 29.04.2024
+- trying out the initial setup of the quest 2
+    - created unity project(2022.3.9f1) with VR-template
+        - featuring XR interaction toolkit
+        - https://www.youtube.com/watch?v=tGZgJ5XtOXo
+        - added my default file structure
+        - changed the systems i want to deploy on
+            ![settings info](images/questSettings.png)
+            -> set everything to oculus
+        - 
+
 ## 24.04.2024
 - got a Quest 2 from david today
 - noticed that the order of these diary entries are messed up. most recent should be on top...
