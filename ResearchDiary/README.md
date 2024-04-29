@@ -1,6 +1,11 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 24.04.2024
+- got a Quest 2 from david today
+- noticed that the order of these diary entries are messed up. most recent should be on top...
+
+
 ## 03.03.2024
 - Setup this repository and setup the diary.
 - Setup latex already, I am planning to write stuff on the side already (so I wont forget about it, also I will try to finish the writing about a topic with every milestone as well eG once the room-setup is done I want to write the according chapter(s) for it as well). We'll see how well it works ^^'
