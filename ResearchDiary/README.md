@@ -10,6 +10,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
         - changed the systems i want to deploy on
             ![settings info](images/questSettings.png)
             -> set everything to oculus
+            - dont! setting thigs to open XR fixed it and it just magically works
     - had the oculus pc app already installed (quest link)
         - my quest doesnt have a cable
             - trying the air link
@@ -22,6 +23,12 @@ These notes act as progress report (research diary) throughout the thesis work. 
             - will try the setup in the fh, maybe ist just a wifi problem?
             - will ask david for a cable...
             - and will need to buy some batteries...
+    - got a cable from david. also bought some batteries (AA ones)
+    - https://www.youtube.com/watch?v=zbqHNwDpi6Y
+        - had the use open XR in the project settings for it to work...
+    - last time i did vr stuff we used steam vr (now i always get a popup from steam for steam VR)
+        - dont want to use it right now tho.
+        - ignore it think its just steam trying to do convenient shit
     
 
 ## 24.04.2024
