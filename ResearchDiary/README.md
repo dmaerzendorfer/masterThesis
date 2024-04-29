@@ -10,7 +10,19 @@ These notes act as progress report (research diary) throughout the thesis work. 
         - changed the systems i want to deploy on
             ![settings info](images/questSettings.png)
             -> set everything to oculus
-        - 
+    - had the oculus pc app already installed (quest link)
+        - my quest doesnt have a cable
+            - trying the air link
+                - had trouble with it, doesnt want to connect
+                - had it running for a bit but when i start quest link in the HMD it says cant connect or smth
+                - maybe wifi settings fault? at first my pc was not discoverable in network. also tried with hotspot form the pc and connect quest to that so no funny wifi settings
+                - it does work if i make a hotspot on the pc and connect the quest but then i have the problem of the pc not being connected via ethernet so it just says missing requirements and doesnt connect...
+                - also the right controllers battery is empty...
+                - have tried it with my phones hotspot but then the quest link is really laggy
+            - will try the setup in the fh, maybe ist just a wifi problem?
+            - will ask david for a cable...
+            - and will need to buy some batteries...
+    
 
 ## 24.04.2024
 - got a Quest 2 from david today
