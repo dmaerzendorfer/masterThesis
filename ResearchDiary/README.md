@@ -1,6 +1,56 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 05.05.2024
+- working on the vr prototype
+    - once again quest link doesnt want to work...
+        - fuck that shit, stuff is plugged in but not recognised
+        - plugging in and out a few times and moving the cable arround worked?
+    - looking into avatars with the xr interactive toolkit
+        - found this https://www.youtube.com/watch?v=tfpIXlGor2E
+            - apparently with "ready player me" you can generate avatars online and import them to unity
+                - maybe testers can create their own avatars later?
+        - you can also rig full body characters like this https://www.youtube.com/watch?v=Iya-gKJ0V74
+            - i want to go with full body ones if possible. only upper body and hands might be off-putting
+        - or https://www.youtube.com/watch?v=v47lmqfrQ9s
+            - this looks most promising (combine it with a ready player me model)
+            - IK walking might be weird (anmiations are smoother...) but its good enough :)
+        - other option: meta movement sdk
+            - uses the quests body tracking 
+            - was not able to find out if it works on quest 2 (but didnt search for long)
+            - didnt bother too much with it, seems overkill and too much effort to use
+
+    - looking into interactive windows/views in HUD
+        - read up on what the xr interactive toolkit actually can do
+        - for my HUD stuff **spatial UI** seems to be the most useful
+        - i can make the windows just children of the main cam and they follow (could be smoother but good enough for now)
+            - FOV quite small so they take in lots of space
+            - plan: 
+                - when creating a cam view -> creates a spatial UI near it
+                - user can grab the UI, via button press it can be docked to the HUD -> once in the hud user can grab it and move it about. via the joystick forward/backward can resize it. Usually this would be for moving it further away and closer when in world space
+                - want to visualise via icon or smth if window is in hub or world. also add small animation (tween?) for when it swaps between them.
+                - add these tutorial indicators as well to tell users what buttons do :)
+
+    - script for objcets that tries to stay in view
+        - https://www.youtube.com/watch?v=ler5ffTJnrk
+
+    - not important right now but maybe useful for WIM later down the line
+        - https://www.youtube.com/watch?v=6PSLfRsN89g
+
+    - if i want to use gestures for eg mask taking on/off stuff -> MiVRy could be an option?
+        - https://assetstore.unity.com/packages/add-ons/mivry-3d-gesture-recognition-143176
+
+    - for now: little break then i shall look into more research (not feeling the implementing right now, need to learn first!)
+
+    - todos: tomorrow -> create a system for picking up spatial UIs and putting them in HUD. Implement the resizing controls. add indicators if UI is in world or in hud. add small transition animation to window (tween?). add control indicators (xr seems to have a system for that!)
+        - once this works i can look into spawning the cameras (just make the grabbable for now)
+            - make it sow that windows show where their camera is when selected
+        - then add avatar support
+        - then add the different ways of interacting/manipulating the view (most likely hud to mask transition will need some kind of transition! read about it!) 
+
+
+
+
 ## 29.04.2024
 - trying out the initial setup of the quest 2
     - created unity project(2022.3.9f1) with VR-template
@@ -24,6 +74,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
             - will ask david for a cable...
             - and will need to buy some batteries...
     - got a cable from david. also bought some batteries (AA ones)
+        - not sure if important but cable straight bit is in HMD oculus logo facing up. bent part is in the usb adapter.
     - https://www.youtube.com/watch?v=zbqHNwDpi6Y
         - had the use open XR in the project settings for it to work...
     - last time i did vr stuff we used steam vr (now i always get a popup from steam for steam VR)
