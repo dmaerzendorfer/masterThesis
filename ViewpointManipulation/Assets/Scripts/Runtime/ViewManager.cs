@@ -22,13 +22,22 @@ public class ViewManager : SingletonMonoBehaviour<ViewManager>
 {
     public GameObject viewParent;
 
+    public float hudDistanceFromCamera = 1f;
+
     [BoxGroup("ColorSettings")]
     public Color worldColor = Color.black;
 
     [BoxGroup("ColorSettings")]
     public Color hudColor = Color.gray;
-    
+
     private List<ViewData> _views = new List<ViewData>();
+    private Camera _mainCam;
+
+    public override void Awake()
+    {
+        base.Awake();
+        _mainCam = Camera.main;
+    }
 
     private void OnDestroy()
     {
@@ -53,8 +62,7 @@ public class ViewManager : SingletonMonoBehaviour<ViewManager>
             //change color
             view.backgroundImage = view.interactable.GetComponentInChildren<Image>();
             view.backgroundImage.color = hudColor;
-
-            //todo: figure out how to make sure its somewhat close to the camera (and keeps its scale)
+            
         }
         else
         {
@@ -83,22 +91,52 @@ public class ViewManager : SingletonMonoBehaviour<ViewManager>
                 view.backgroundImage.color = hudColor;
             }
         }
-
     }
 
     public void OnViewWindowSelectionExit(SelectExitEventArgs args)
     {
-        //check if view is in list
+        // //check if view is in list
         var view = _views.Where(x => x.interactable == args.interactableObject).FirstOrDefault();
         if (view == null) return;
         if (view.inHud)
         {
             //if so make sure to set the parent if also in hud (since the grab interactible reverts its parent once its let go)
+            //(since it keeps track of the transform parent, which is fine but sometimes isnt) 
             view.interactable.transform.parent = viewParent.transform;
         }
         else
         {
             view.interactable.transform.parent = null;
         }
+        // MoveViewIntoHudWithScaling(view);
+    }
+
+    /// <summary>
+    /// Moves the given view into the hud and makes sure perceived scale stays the same.
+    /// </summary>
+    /// <param name="v"></param>
+    private void MoveViewIntoHudWithScaling(ViewData v)
+    {
+        //todo: fix this, its not working
+        var newPosition = _mainCam.transform.position +
+                          (v.interactable.gameObject.transform.position - _mainCam.transform.position) *
+                          hudDistanceFromCamera;
+
+        // Calculate the initial distance from the camera to the object
+        float initialDistance =
+            Vector3.Distance(_mainCam.transform.position, v.interactable.gameObject.transform.position);
+
+        // Calculate the new distance from the camera to the new position
+        float newDistance = Vector3.Distance(_mainCam.transform.position, newPosition);
+
+        // Calculate the scale factor
+        // float scaleFactor = initialDistance / newDistance; //wrong?
+        float scaleFactor = newDistance / initialDistance;
+
+        // Move the object to the new position
+        v.interactable.transform.position = newPosition;
+
+        // Apply the scale factor to the object's scale
+        v.interactable.transform.transform.localScale = v.interactable.transform.localScale * scaleFactor;
     }
 }

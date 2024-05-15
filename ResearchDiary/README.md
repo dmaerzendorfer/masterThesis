@@ -1,6 +1,18 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 15.05.2024
+- actually continuing to work on it for once ^^'
+- windows can now be selected and docked to hud
+    - change color to indicate if in hud or in world
+    - have small pop animation
+    - would like to add something so the hud windows are always same distance from mainCamera. need to rescale them however so their size looks ok when the swap from world to hud
+        - tried but failed to do so for now
+    - want to make windows in the hud scalable
+        - cant really find how to do that
+        - no idea how to read the interactors primary2dAxis while held
+- todos: next time, look into the scaling real quick. if it doenst work ignore and focus on avatar 
+
 ## 05.05.2024
 - working on the vr prototype
     - once again quest link doesnt want to work...

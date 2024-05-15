@@ -1504,7 +1504,7 @@ MonoBehaviour:
   m_SmoothRotation: 1
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.077
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -2787,7 +2787,7 @@ MonoBehaviour:
           x: 1
           y: 1
           z: 1
-    m_Variable: {fileID: 11400000, guid: 56147d1cbef7186409525d7b47454699, type: 2}
+    m_Variable: {fileID: 0}
   m_ValueUpdated:
     m_PersistentCalls:
       m_Calls:
