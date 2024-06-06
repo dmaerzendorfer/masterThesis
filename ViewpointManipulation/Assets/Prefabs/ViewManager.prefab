@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d6e2416f5e3814fb34d1bbaba8660d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  viewParent: {fileID: 0}
+  hudDistanceFromCamera: 0.5
+  worldColor: {r: 0, g: 0, b: 0, a: 1}
+  hudColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
