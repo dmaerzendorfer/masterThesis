@@ -1,6 +1,80 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 06.06.2024
+- sadly couldnt work on stuff the last two days...
+- finished up the avatar
+    - fixed the hands and removed the controller models
+    - tested on HMD
+    - the hand tracking is not perfect at all
+        - i decided do just wing it so its roughly correct (also had trouble disabling the controllers of the xr interaction toolkit. i actually like them and dont know how to combine them with the hands)
+            - https://www.youtube.com/watch?v=f_jHGNxwN2g
+            - this looks more accurate but meh, not worth it
+        - i will just disable the avatar from the main-camera view. it should only be visible via mirrors or from external viewpoints. for that the accuracy should be enough :)
+            - just adjusted the culling mask of the main cam to not include the avatar layer :)
+- made simple demo museum scene with synty poly asset pack i have
+
+- a friend told be there are studies in psychology focusing on museeum exhibits and how ppl view it and how to best display them -> maybe interesting to look into as well :)
+
+## 03.06.2024
+- lets get stuff done!
+- planning stuff again:
+    - deadline erstabgabe **4.9.24**
+    - i am scrapping the MR stuff and updating the research questions a bit
+    - new focus: **viewpoint manipulation in VR in a Museum setting**
+    - will look at ways of placing viewpoints, transitioning into them and manipulating if the viewpoints are located somewhere where user is not physically able to move
+        - note that the idea is still to also have this in MR but will only focus on a VR setting
+        - first ideas for new research questions are:
+            - what are effective systems for remote viewpoint manipulation in a museeum setting with limited physical moveability.
+            - what effect do multiple viewpoints have on the user? do they lead to greater simulator sickness do they enhance the spatial awareness and orientation?
+            - does the VR perspective continuum still exist here as well? do users feel like spectators even if they only manipulate views. And what system minimizes this feeling?
+
+    - for this i will create a little playground with interaction possibilites and in a museeum environment.
+        - this playground i will give to ppl, gather some feedback and then create a userstudy once i have more understanding on how ppl use the toys i give them
+        - things to implement: 
+            - a system to enable/disable the different ways of interaction
+            - a virtual avatar
+            - virtual viewpoints/cameras connected to a window that can be docked to the hud
+            - ways of spawning the viewpoint:
+                - mask gesture
+                - spawn a virtual drone and controlling it remotely
+                - spawn virtual drone and take flight yourself (first person and third person)
+                - maybe some way of instantly spawning with a world in minature
+            - ways of transitioning to viewpoints: (maybe??)
+                - instant teleport
+                - blink animation
+                - etc. need to research and decide if i want to do stuff like that
+            - ways of manipulating the viewpoints:
+                - moving while taking on the view (physical or joystick+head movement) (3rd person and first person?)
+                - world in miniature
+                - selecting and moving it from actual position (like steering a drone from the ground, but you have its pov in the hud as well)
+
+    - goal: end of month have all this done, so i can test with ppl!
+
+- stuff i did today: 
+    - wrote down my plan. 
+    - implemented a virtual avatar
+        - https://www.youtube.com/watch?v=v47lmqfrQ9s
+        - the avatar uses a humanoid model with inverse kinematics for its hands/arms, legs and head
+            - using the unity animation rigging package
+            - using this for the ik feets walking
+                - https://www.youtube.com/watch?v=acMK93A-FSY
+
+            - did not finish with the tutorial completely, need to fine tune and adjust the head position and hand positions
+                - couldnt do that right now since my HMD is out of power ^^'
+                - will finish tomorrow morning and also build a quick placeholder test scene of a museum
+            
+    - did some asset search for a museum
+        - didnt find a free one (at least not in the unity asset store)
+        - there are some random free 3d models of museums etc. but didnt spend time on checking them in detail
+        - for now will most likely just use a synty polygon asset to build a placeholder for now.
+            - might update later.
+            - i have this: https://assetstore.unity.com/packages/3d/environments/polygon-sampler-pack-207048
+            
+                
+
+
+
 ## 15.05.2024
 - actually continuing to work on it for once ^^'
 - windows can now be selected and docked to hud
