@@ -12,9 +12,27 @@ These notes act as progress report (research diary) throughout the thesis work. 
             - this looks more accurate but meh, not worth it
         - i will just disable the avatar from the main-camera view. it should only be visible via mirrors or from external viewpoints. for that the accuracy should be enough :)
             - just adjusted the culling mask of the main cam to not include the avatar layer :)
-- made simple demo museum scene with synty poly asset pack i have
+- i also saw there is a newer version of the xr interaction toolkit with some hand tracking samples
+    - but updating my project broke stuff, not spending time on it to fix it. imma just stay on 2.5.0 and not go to 2.5.4
 
+- made simple demo museum scene with synty poly asset pack i have
+    - ![demo museum](images/demoMuseum.png)
+    - just first draft. planning to add some random interactables in there as well to make it interesting
+        - those i still need to setup
+    - for now made a small, medium and large exhibit placeholder
+        - also hid a little extra detail to each exhibit because i wanted to and to give ppl something to find when they look at stuff from different angles
+    - also made little table for future use
+        - want to put the config of the test env there, eg where users can configure how they can place cams etc.
 - a friend told be there are studies in psychology focusing on museeum exhibits and how ppl view it and how to best display them -> maybe interesting to look into as well :)
+
+
+- next up (hopefully tomorrow)
+    - make sure the walking and stuff works here. want to restrict teleporting somewhat
+    - give stuff interactables that need it
+    - i found a camera model i want to use for my viewpoint indicators -> hook it up to actually work in combination with the hud window
+        - the window should just display the camera stream
+        - the window should point to the camera with a line renderer (aka that strange xr interaction toolkit line stuff)
+
 
 ## 03.06.2024
 - lets get stuff done!
