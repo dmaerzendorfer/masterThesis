@@ -1,6 +1,14 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 07.06.2024
+- gave the objects in the demo museum scene interactables
+- updated the restriction of walking/teleporting etc
+- next up: either on weekend or monday:
+    - make camera actually show its viewpoint
+    - then work on spawning and destroying viewpoints
+    - then on manipulation of viewpoints :)
+
 ## 06.06.2024
 - sadly couldnt work on stuff the last two days...
 - finished up the avatar
@@ -18,7 +26,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
 - made simple demo museum scene with synty poly asset pack i have
     - ![demo museum](images/demoMuseum.png)
     - just first draft. planning to add some random interactables in there as well to make it interesting
-        - those i still need to setup
+        - those i still need to setup the interactables
     - for now made a small, medium and large exhibit placeholder
         - also hid a little extra detail to each exhibit because i wanted to and to give ppl something to find when they look at stuff from different angles
     - also made little table for future use
