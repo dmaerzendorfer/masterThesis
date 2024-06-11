@@ -1,6 +1,17 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 11.06.2024
+- lets continue!
+- making the viewpoint camera + window work!
+![viewCamAndViewPanel](images/ViewCam.png)
+    - the camera renders its view into a renderTexture that is displayed on its linked viewPanel
+    - the view panel can be docked to the hud
+    - they are connected via a line-renderer (is only shown if not docked or hovered over the panel when docked)
+    - i also allowed the cam to be moved by grabbing it. this is only a quick and dirty test tho. didnt put much effort in.
+- quick note: noticed my IK avatar is even more missaligned as i thought. but ignoring for now :)
+- todos for tomorrow: reviewing what to do next (most likely will look at ways to spawn the cam first) aka look at the list further down below 
+
 ## 07.06.2024
 - gave the objects in the demo museum scene interactables
 - updated the restriction of walking/teleporting etc
