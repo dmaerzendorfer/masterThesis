@@ -1,6 +1,35 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 12.06.2024
+- meeting with markus! :)
+    - gave update on what i have done so far and what i plan to do
+    - avatar -> rocket lib
+        - https://www.microsoft.com/en-us/research/blog/microsoft-rocketbox-avatar-library-now-available-for-research-and-academic-use/
+        - fix the avatar, ppl should be able to see themselves if looking down!
+            - maybe male/female version
+            - look into embodiment papers!
+    - possiblites für simulation un transition -> in relation to the museum usecase
+        - for spawning vl focus on the exhibit -> ray-cast then circle on it
+    -  bevor is selection etc mach genauer definieren was ich mir in museums ansehen will
+        - mal nen ramen finden
+            - dann genau definieren was möglichkeiten für spawning, selection, manipulation and transition
+        - erst mal ansehen wasses für exhibits im museum gibt
+        - einfach einen exhibit typ wählen -> dann eG 3 types of spawning/manipulation/transition -> give ppl to test -> then design main study -> clarify questions -> design task etc.
+        - also think about how to delete views
+    - or not focus on exhibits -> allow free movement!
+        - could be more interesting
+            - think about it
+            - see what ppl like in pilot study
+- other exhibit focus thingy -> voodoo doll version
+    - WIM of exhibit in hand
+
+- todos: check papers sent by markus
+    - review stuff written here, eg research on museum exhibits
+    - and what type of exhibit to focus on
+    - dont focus on transitions -> focus on spawning and manipulation
+
+
 ## 11.06.2024
 - lets continue!
 - making the viewpoint camera + window work!
@@ -81,6 +110,8 @@ These notes act as progress report (research diary) throughout the thesis work. 
                 - instant teleport
                 - blink animation
                 - etc. need to research and decide if i want to do stuff like that
+            - also look into selection of the viewpoints?
+                - research!
             - ways of manipulating the viewpoints:
                 - moving while taking on the view (physical or joystick+head movement) (3rd person and first person?)
                 - world in miniature
