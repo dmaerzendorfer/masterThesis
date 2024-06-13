@@ -1,6 +1,61 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 12.06.2024 / 13.06.2024
+- did some research and planning after meeting with markus
+- the **microsoft rocket lib for rigged avatars**
+    - looks like its really just for rigged avatars
+    - will test out later but will create a generic male and female avatar
+        - will take the models from there :)
+        - they also have a paper i can cite!
+        - will clean up the avatars IK a bit and make it so one sees oneself (will just get rid of the controllers, just leave in the ray?) -> maybe some more research on how to best achieve this.
+- i need to **narrow** down what it want to look at (in relation to museums), so here we go:
+    - I will look at a VR prototype of a how viewpoint **manipulation and spawning of viewpoints in MR** could work **in a museum setting with restricted physical movement**
+        - the user is physically at a museum but wants greater freedom on looking at a exhibit from any angle
+        - see as reference: the lindlbauer remixed reality for a setup that would allow viewpoints in a MR setting
+        - so camera views are not restricted to specific locations and can be freely placed.
+            - will look at **HOW to place and manipulate these views** however
+    - I **will not look into detail on transitions between views**
+    - focus on museum exhibits
+        - see https://www.icom-italia.org/wp-content/uploads/2018/02/ICOMItalia.KeyconceptsofMuseology.Pubblicazioni.2010.pdf for exhibit and museum object definition
+            - "... These two levels – presentation and
+exhibition – explain the difference
+between exhibition design and exhibit display. In the fi rst case the designer starts with the space and uses
+the exhibits to furnish the space,
+while in the second he starts with
+the exhibits and strives to fi nd the
+best way to express them, the best
+language to make the exhibits speak. ... "
+        - often museums are either designen around a space and filled with objects or otherwise an object is in the center and it is tried to show it of the best way possible
+        - this thesis tries to focus on the second here. a single object in the center (or a room with multiple objects) with the caviate of given the visitor the possibility to look at the object from any object he/she wants.
+    - tomorrow morning will define in detail on context eg hard focus on exhibits or more free viewpoint choice and then define three ways of spawning views, and manipulating them (not focus on transitions between them and not focus on selection of view, just use normal ray cast for that or via hud panel)
+    - tomorrow now:
+        - i think i will look at two ways of doing it and pitting it against each other:
+            - 1. exhibit focused
+                - the views are focused on the exhibit (orbit cam)
+                    -  object-centric exploration (OCE)
+                    - spawning -> first select the exhibit with raycast. via button press then show ghostly image of view that focuses on the exhibit. via joystick control the camera can be circled around the object and moved whilst placing
+                    - for manipulation -> kind of a voodoo doll and world in miniature -> have wim of exhibit in palm and use other hand to move view-camera
+            - 2. free placement, drone approach
+                - uses a "drone" metapher to seed the correct way of thinking on how the system works to the user
+                    - not related to real drones!
+                    - see don normann on mental models!
+                - users can place view-cams wherever they want
+                - for spawning: spawn a view-point in left hand
+                    - the viewpoint can be selected and then moved either in first-person, third-person or from normal ground view (as if controlling a real drone from the ground)
+        - users can place as many views as they want
+        - in addition ppl can just use raycast to select a cam and transit to its view.
+            - once done they can move and rotate all right, but their change wont effect the view-cams position/rotation after they leave
+        - for deletion same goes, just raycast and stuff
+        
+        - the research questions also change a bit:
+            - in a museum setting: what method is more effective in placing and manipulating viewpoints. an OCE based approach or a more free approach?
+            - in general and not related to the two examined methods: what effect do multiple viewpoints have on the user? do they lead to greater simulator sickness do they enhance the spatial awareness and orientation?
+
+            - i would scrapt the vr perspective continuum questions for now. maybe just talk about it in the paper as a minor detail somewhere. will think about it again once its time for the user study.
+                - does the VR perspective continuum still exist here as well? do users feel like spectators even if they only manipulate views. And what system minimizes this feeling?
+        - todo: for sunday -> write this down more concise and send to markus for review.
+
 ## 12.06.2024
 - meeting with markus! :)
     - gave update on what i have done so far and what i plan to do
@@ -11,7 +66,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
             - look into embodiment papers!
     - possiblites für simulation un transition -> in relation to the museum usecase
         - for spawning vl focus on the exhibit -> ray-cast then circle on it
-    -  bevor is selection etc mach genauer definieren was ich mir in museums ansehen will
+    -  bevor is selection etc mal genauer definieren was ich mir in museums ansehen will
         - mal nen ramen finden
             - dann genau definieren was möglichkeiten für spawning, selection, manipulation and transition
         - erst mal ansehen wasses für exhibits im museum gibt
