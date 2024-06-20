@@ -1,6 +1,24 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 20.06.2024
+- looked into the spawning of viewpoints in a OCE way.
+- want to use cinemachine for its orbital camera script
+- seems like each virtual cam needs to be on its own layer if i want them to not merge togehter
+    - will limit the amount of virtual cams to 5
+- made logic from the orbit cameras and made 5 prefabs for them (with the different layers)
+    - might have worked with one prefab that just changes the layers etc but i was lazy
+    - also might save on some logic for spawning them since i wont have to check for layers up etc. just will have a list of 5 prefabs and a bool if they have been spawned already
+- work left to do: make objects selectable with controller and spawn such a new prefab. set its target. allow control of it. work out how/where to put its view panel
+    - for the view panel: possibly just make a raycast 45° down from the HMD. where ever it hits move the view panel to.
+    - also figure out some way to display the orbit cricle whilst placing it and make the camera ghostly :)
+
+
+## 19.06.2024
+- originally planned to tinker around a bit in unity
+    - but only have 4ish hours right now
+    - so will do some research and write stuff in overleaf
+
 ## 17.06.2024
 - wrote down my plan a bit more consise already as intro in overleaf
 - sent to markus to update him on my plan and also get some feedback :)

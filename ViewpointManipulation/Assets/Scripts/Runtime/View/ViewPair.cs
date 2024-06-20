@@ -1,3 +1,4 @@
+using Runtime.CameraControl;
 using UnityEngine;
 
 namespace Runtime.View
@@ -6,7 +7,8 @@ namespace Runtime.View
     {
         public ViewCamera viewCam;
         public ViewPanel viewPanel;
-
+        public OrbitCamController orbitCamController;
+        
         private void Awake()
         {
             //setup render texture of cam and set in panel
