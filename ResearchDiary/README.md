@@ -11,6 +11,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
         - also need to adjust the view panels position as well.
         - more stuff for next time, i am mush already...
 - for the deletion of a view i decided to just put a button into the viewpanel :)
+    - added one, needs testing tho
 - added a circle to visualise the orbit :)
 
 

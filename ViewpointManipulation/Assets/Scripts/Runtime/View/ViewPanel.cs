@@ -12,7 +12,11 @@ namespace Runtime.View
         public RawImage renderImage;
         public BezierCurve curve;
 
+        [HideInInspector]
+        public ViewPair myViewPair;
+
         private LineRenderer _curveRenderer;
+
 
         public bool IsInHud
         {
@@ -57,6 +61,12 @@ namespace Runtime.View
                     _curveRenderer.enabled = false;
                 }
             });
+        }
+
+        public void DeleteViewPair()
+        {
+            if (myViewPair)
+                myViewPair.DeleteViewPair();
         }
 
         public void SetRenderTexture(RenderTexture texture)
