@@ -30,7 +30,7 @@ namespace Runtime.View
 
         private ViewManager _viewManager;
 
-        private void Awake()
+        private void Start()
         {
             _viewManager = ViewManager.Instance;
             _grabInteractable = GetComponent<XRGrabInteractable>();

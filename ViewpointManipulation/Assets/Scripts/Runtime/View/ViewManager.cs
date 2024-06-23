@@ -1,7 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using _Generics.Scripts.Runtime;
-using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,30 +9,52 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Runtime.View
 {
-    public class ViewData
+    public class ViewPanelData
     {
         public XRGrabInteractable interactable;
         public ViewPanel viewPanel;
         public bool inHud = false;
         public Vector3 originalScale; //so we can scale it back to its original once it leaves the hud
         public Image backgroundImage;
-
-        public Sequence popSequence = DOTween.Sequence();
     }
+
+    public enum ViewMode
+    {
+        OCE = 0,
+        Drone = 1 << 0
+    }
+
+    [Serializable]
+    public class OceViewConfig
+    {
+        public ViewPair prefab;
+
+        [HideInInspector]
+        public ViewPair instance = null;
+    }
+
 
     public class ViewManager : SingletonMonoBehaviour<ViewManager>
     {
+        [Foldout("ViewSpawning")]
+        public ViewMode viewMode = ViewMode.OCE;
+
+        [Foldout("ViewSpawning")]
+        public List<OceViewConfig> oceViewConfigs;
+
+        [Foldout("ViewPanels")]
         public GameObject viewParent;
 
+        [Foldout("ViewPanels")]
         public float hudDistanceFromCamera = 1f;
 
-        [BoxGroup("ColorSettings")]
+        [Foldout("ViewPanels")]
         public Color worldColor = Color.black;
 
-        [BoxGroup("ColorSettings")]
+        [Foldout("ViewPanels")]
         public Color hudColor = Color.gray;
 
-        private List<ViewData> _views = new List<ViewData>();
+        private List<ViewPanelData> _viewPanels = new List<ViewPanelData>();
         private Camera _mainCam;
 
         public override void Awake()
@@ -41,19 +63,27 @@ namespace Runtime.View
             _mainCam = Camera.main;
         }
 
-        private void OnDestroy()
+        /// <summary>
+        /// Spawns a oce viewpair if possible. otherwise returns null.
+        /// </summary>
+        /// <returns></returns>
+        public ViewPair SpawnOce()
         {
-            _views.ForEach(x => x.popSequence.Kill());
+            var config = oceViewConfigs.FirstOrDefault(x => x.instance == null);
+            if (config == null) return null;
+            config.instance = Instantiate(config.prefab);
+            return config.instance;
         }
+
 
         public void OnViewWindowActivate(ActivateEventArgs args)
         {
-            var view = _views.Where(x => x.interactable == args.interactableObject).FirstOrDefault();
+            var view = _viewPanels.Where(x => x.interactable == args.interactableObject).FirstOrDefault();
             if (view == null)
             {
                 //its a new view -> add it to the list
-                view = new ViewData();
-                _views.Add(view);
+                view = new ViewPanelData();
+                _viewPanels.Add(view);
                 view.viewPanel = args.interactableObject.transform.GetComponent<ViewPanel>();
 
                 view.interactable = (XRGrabInteractable)args.interactableObject;
@@ -103,7 +133,7 @@ namespace Runtime.View
         public void OnViewWindowSelectionExit(SelectExitEventArgs args)
         {
             // //check if view is in list
-            var view = _views.Where(x => x.interactable == args.interactableObject).FirstOrDefault();
+            var view = _viewPanels.Where(x => x.interactable == args.interactableObject).FirstOrDefault();
             if (view == null) return;
             if (view.inHud)
             {
@@ -122,7 +152,7 @@ namespace Runtime.View
         /// Moves the given view into the hud and makes sure perceived scale stays the same.
         /// </summary>
         /// <param name="v"></param>
-        private void MoveViewIntoHudWithScaling(ViewData v)
+        private void MoveViewIntoHudWithScaling(ViewPanelData v)
         {
             //todo: fix this, its not working
             var newPosition = _mainCam.transform.position +

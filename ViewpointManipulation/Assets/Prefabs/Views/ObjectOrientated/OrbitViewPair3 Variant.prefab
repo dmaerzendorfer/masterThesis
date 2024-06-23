@@ -32,6 +32,30 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 9154864303898654339}
+    - target: {fileID: 3562730633092556221, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562730633092556221, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562730633092556221, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562730633092556221, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562730633092556221, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562730633092556221, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4589409119791687137, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
       propertyPath: m_Name
       value: OrbitViewPair3 Variant
@@ -74,6 +98,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5108741059538859857, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294522058408371414, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294522058408371414, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237117455915359384, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237117455915359384, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9075496076962161162, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}

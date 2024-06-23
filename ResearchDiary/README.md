@@ -1,6 +1,19 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 23.06.2024
+- back to work :)
+- started making OCE viewpoint spawning possible
+    - certain objects are selectable
+    - can spawn an oce cam already
+        - wanted to make a fancy oce Handle that is used to set the height and radius of the cam.
+            - doesnt work yet, got some weird stuff with plane projection going on...
+        - also need to adjust the view panels position as well.
+        - more stuff for next time, i am mush already...
+- for the deletion of a view i decided to just put a button into the viewpanel :)
+- added a circle to visualise the orbit :)
+
+
 ## 20.06.2024
 - looked into the spawning of viewpoints in a OCE way.
 - want to use cinemachine for its orbital camera script
