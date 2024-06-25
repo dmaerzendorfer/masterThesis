@@ -19,8 +19,8 @@ namespace Runtime.View
 
         public void DeleteViewPair()
         {
+            Destroy(viewPanel.gameObject);
             Destroy(viewCam.gameObject);
-            Destroy(viewPanel);
             Destroy(this.gameObject);
         }
     }

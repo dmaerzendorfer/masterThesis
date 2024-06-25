@@ -1,6 +1,15 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 25.06.2024
+- added some logic on repositioning the viewpanel of a spawned view-pair
+    - currently just casts a ray forward from the mainCamera for a certain distance and puts the view-panel wherever it hits or at the end of the ray
+    - needs tweaking and leads to a real weird error where my view is off the map when i spawn a second view-pair
+        - fixed it, problem was orbit viewpair 2-5 had an extra orbitCam1 in their prefab... 
+- tested and fixed a small error with destroying view-pairs
+    - still got a problem when deleting a view-pair that is currently in the hud and not in worldspace
+        - fixed it
+
 ## 23.06.2024
 - back to work :)
 - started making OCE viewpoint spawning possible

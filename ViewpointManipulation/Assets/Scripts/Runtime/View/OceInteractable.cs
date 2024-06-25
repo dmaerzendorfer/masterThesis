@@ -22,6 +22,9 @@ namespace Runtime.View
         [HorizontalLine(color: EColor.Red)]
         public float moveDeadzone = 0.1f;
 
+        [HorizontalLine(color: EColor.Red)]
+        public float viewPanelDistance = 3f;
+
         private OceHandle _currentHandle;
         private ViewManager _viewManager;
         private ViewPair _mostRecentViewPair = null;
@@ -53,6 +56,19 @@ namespace Runtime.View
             var actionReference = GetCorrectScrollAction(args.interactorObject);
             actionReference.action.Enable();
             actionReference.action.performed += OnMove;
+
+            //move the view panel to an opportune position
+            var mainCam = Camera.main;
+            RaycastHit hit;
+            if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, viewPanelDistance))
+            {
+                _mostRecentViewPair.viewPanel.transform.position = hit.point;
+            }
+            else
+            {
+                _mostRecentViewPair.viewPanel.transform.position =
+                    mainCam.transform.position + mainCam.transform.forward * viewPanelDistance;
+            }
         }
 
         protected override void OnSelectExited(SelectExitEventArgs args)
