@@ -1,6 +1,14 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 26.06.2024
+- besprechung mit markus
+- vl mal mrtk ansehen -> für window management
+- wenns mit mr wäre -> müsste man mit gesten machen -> wäre drone vermutlich schwierig (bräuchte WIM?) in arbeit reinschreiben.
+- einzel obj vs exhibit + drone vs obj orientated
+- aufbereiten warum mehrere views sinn machen -> zb bei museum exhibits -> weil tour mehrere pois am obj zeigen will für seine gäste
+- vl in task was einbauen damit leute über die pois reflektieren müssen.  
+
 ## 25.06.2024
 - added some logic on repositioning the viewpanel of a spawned view-pair
     - currently just casts a ray forward from the mainCamera for a certain distance and puts the view-panel wherever it hits or at the end of the ray
