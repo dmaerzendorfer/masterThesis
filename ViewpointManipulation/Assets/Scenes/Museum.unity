@@ -29823,6 +29823,14 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 0
+  controlsLeft:
+    uiScroll: {fileID: 2464016903823916871, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    inAction: {fileID: 1632080896819216698, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    outAction: {fileID: -2649991628088206010, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  controlsRight:
+    uiScroll: {fileID: -6756787485274679044, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    inAction: {fileID: -4329556067505214338, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    outAction: {fileID: -2719103732117898221, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   uiScrollRight: {fileID: -6756787485274679044, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   uiScrollLeft: {fileID: 2464016903823916871, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   lookAtTarget: {fileID: 1023020818}

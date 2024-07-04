@@ -9,6 +9,7 @@ namespace Runtime.CameraControl
         public CinemachineVirtualCamera virtualCamera;
         public float moveSpeed = 50f;
         public float heightSpeed = 25f;
+        public float radiusSpeed = 50f;
 
         [BoxGroup("Circle Settings")]
         public LineRenderer circleRenderer;

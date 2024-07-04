@@ -1,13 +1,33 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 04.07.2024
+- levelup is over and i have time for this again!
+- todos:
+    - fix oce cam handle
+    - make variations on where the view-panel is (eG in worldspace or in left hand)
+    - create free-cams (drones) version
+        - and a way to swap the control views (first person, third person, ground)
+    - create wim for changing oce cams
+- did some fixing on the oce-handle
+    - the plane seems correct now but projecting onto it and reducint to 2d coordinates spells trouble
+    - spent to much time on it, not worth it. scraping it.
+    - now just using controller buttons
+        - joystick left/right to spin it
+        - joystick up/down to move up/down
+        - A button to get closer
+        - B button to get further away
+
 ## 26.06.2024
 - besprechung mit markus
 - vl mal mrtk ansehen -> für window management
 - wenns mit mr wäre -> müsste man mit gesten machen -> wäre drone vermutlich schwierig (bräuchte WIM?) in arbeit reinschreiben.
 - einzel obj vs exhibit + drone vs obj orientated
 - aufbereiten warum mehrere views sinn machen -> zb bei museum exhibits -> weil tour mehrere pois am obj zeigen will für seine gäste
-- vl in task was einbauen damit leute über die pois reflektieren müssen.  
+- vl in task was einbauen damit leute über die pois reflektieren müssen.
+    - bzw leute dazu bringen damits nochmal in die viewpoints reinmüssen und damit fenster interaction sinn macht
+- pilot study schonmal user study aufsetzen -> leuten geben und testen lassen -> dann anpassen.
+
 
 ## 25.06.2024
 - added some logic on repositioning the viewpanel of a spawned view-pair
