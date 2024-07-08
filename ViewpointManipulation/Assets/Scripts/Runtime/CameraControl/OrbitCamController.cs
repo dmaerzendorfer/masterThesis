@@ -64,8 +64,11 @@ namespace Runtime.CameraControl
             }
             set
             {
-                _orbitalTransposer.m_FollowOffset.y = value;
-                circleRenderer.transform.position = virtualCamera.Follow.position;
+                if (_orbitalTransposer != null)
+                {
+                    _orbitalTransposer.m_FollowOffset.y = value;
+                    DrawCircle();
+                }
             }
         }
 
@@ -76,7 +79,10 @@ namespace Runtime.CameraControl
                 if (_orbitalTransposer != null) return _orbitalTransposer.m_XAxis.Value;
                 return 0;
             }
-            set => _orbitalTransposer.m_XAxis.Value = value;
+            set
+            {
+                if (_orbitalTransposer != null) _orbitalTransposer.m_XAxis.Value = value;
+            }
         }
 
         // Start is called before the first frame update
@@ -126,7 +132,7 @@ namespace Runtime.CameraControl
                 float xPosition = Radius * Mathf.Cos(angleStep * i);
                 float zPosition = Radius * Mathf.Sin(angleStep * i);
 
-                Vector3 pointInCircle = new Vector3(xPosition, 0f, zPosition);
+                Vector3 pointInCircle = new Vector3(xPosition, HeightOffset, zPosition);
 
                 circleRenderer.SetPosition(i, pointInCircle);
             }

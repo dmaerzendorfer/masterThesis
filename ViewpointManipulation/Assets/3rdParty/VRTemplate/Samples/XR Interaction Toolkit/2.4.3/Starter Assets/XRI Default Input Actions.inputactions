@@ -2212,6 +2212,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "LeftJoystickScroll",
+                    "type": "PassThrough",
+                    "id": "8b9187cb-ff1f-4316-a081-1fe01d9e4f73",
+                    "expectedControlType": "Vector2",
+                    "processors": "InvertVector2(invertY=false)",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "LeftSecondaryButton",
                     "type": "Button",
                     "id": "c74b1fb1-5748-4606-85e2-c80f3d6b55d5",
@@ -2237,6 +2246,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "RightJoystickScroll",
+                    "type": "PassThrough",
+                    "id": "03a7285d-01b1-40fb-b119-ea584b2062f5",
+                    "expectedControlType": "Vector2",
+                    "processors": "InvertVector2(invertY=false)",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -2281,6 +2299,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "RightPrimaryButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ead10bbe-a7d0-447f-a6a2-4be8a297d819",
+                    "path": "<XRController>{LeftHand}/Primary2DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "LeftJoystickScroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "00e44796-0138-4763-b6c4-3eb155d82b76",
+                    "path": "<XRController>{RightHand}/{Primary2DAxis}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "RightJoystickScroll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

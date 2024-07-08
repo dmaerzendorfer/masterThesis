@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Runtime.View
 {
@@ -10,32 +9,12 @@ namespace Runtime.View
 
         public int textureWidth = 256;
         public int textureHeight = 256;
-
-        [SerializeField]
-        private bool allowGrabbing = false;
-
-        public bool AllowGrabbing
-        {
-            get => allowGrabbing;
-            set
-            {
-                allowGrabbing = value;
-                grabInteractable.enabled = allowGrabbing;
-                grabInteractable.colliders[0].enabled = allowGrabbing;
-            }
-        }
-
-        public XRGrabInteractable grabInteractable;
-
+        
+        
 
         [HideInInspector]
         public RenderTexture renderTexture;
-
-
-        private void Awake()
-        {
-            grabInteractable.enabled = allowGrabbing;
-        }
+        
 
         public void CreateRenderTexture()
         {

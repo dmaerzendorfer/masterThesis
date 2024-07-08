@@ -1,6 +1,19 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 08.07.2024
+- time to work again!
+- fyi: bin von 10.-19. auf urlaub
+- tested the oce cam spawning
+    - now using controller buttons instead of handles
+    - also showing the orbits path now
+- fixed the anoying problem of my project always using steam VR in playmode
+    - just hat do change stuff in the openXR runtime settings to use the correct runtime...
+- spawning of oce cam works now wiht controller
+- decided to give WIM and viewpoint transition to 1st-person lower prio. not that important right now, better have it work at least at all.
+- made the spawned cameras selectable so they can also be moved via the controller buttons
+- first version of oce spawning is done then.
+
 ## 04.07.2024
 - levelup is over and i have time for this again!
 - todos:
@@ -9,6 +22,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
     - create free-cams (drones) version
         - and a way to swap the control views (first person, third person, ground)
     - create wim for changing oce cams
+    - cleanup my messy code
 - did some fixing on the oce-handle
     - the plane seems correct now but projecting onto it and reducint to 2d coordinates spells trouble
     - spent to much time on it, not worth it. scraping it.
@@ -17,6 +31,9 @@ These notes act as progress report (research diary) throughout the thesis work. 
         - joystick up/down to move up/down
         - A button to get closer
         - B button to get further away
+    - have yet to test, my quest ran out of power since the cable to the pc doesnt seem to charge very well...
+- since i pretty much used all the buttons on the controllers already will put the transition into the viewpoint into the view panel as a button.
+
 
 ## 26.06.2024
 - besprechung mit markus

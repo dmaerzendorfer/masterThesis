@@ -277,6 +277,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d8bc570d482ea42a2559e7a30afb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2255953256334118872 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2346009038153097538, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+  m_PrefabInstance: {fileID: 4593798351104175770}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf530342266694c4a811af45f221cd84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4451280778649770532 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 145895340915520702, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
@@ -298,6 +309,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrbitCamera2
       objectReference: {fileID: 0}
+    - target: {fileID: 4824517183582804799, guid: 8b202693ca73a184bbf39820df5dadcc, type: 3}
+      propertyPath: viewPair
+      value: 
+      objectReference: {fileID: 2255953256334118872}
     - target: {fileID: 8566495268321122217, guid: 8b202693ca73a184bbf39820df5dadcc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

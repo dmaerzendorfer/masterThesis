@@ -207,6 +207,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 145895340915520702, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
   m_PrefabInstance: {fileID: 103809257201919817}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2449535102025352715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2346009038153097538, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+  m_PrefabInstance: {fileID: 103809257201919817}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf530342266694c4a811af45f221cd84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3698573528868136584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -255,6 +266,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3570936677917305277, guid: bc0f132e7b6eae841bb7ea9b8e5dcba5, type: 3}
+      propertyPath: viewPair
+      value: 
+      objectReference: {fileID: 2449535102025352715}
     - target: {fileID: 5190285222818061286, guid: bc0f132e7b6eae841bb7ea9b8e5dcba5, type: 3}
       propertyPath: m_Name
       value: OrbitCamera3
