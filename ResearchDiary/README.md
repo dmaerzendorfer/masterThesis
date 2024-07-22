@@ -1,6 +1,40 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 22.07.2024
+- I am back from vacation
+- need to organize myself again on where to continue
+    - work on the free drone cam view
+    - todos: 
+        - spawning of a drone-cam
+        - make drone controllable + selectable
+            - define what the controls are
+        - make view changeable for drone flight
+            - screw that for now, i dont have much time. just use the ground view.
+    - then need to look into wim for the orbit cams
+    - then need to review everything again
+        - and eg fix up the avatar a bit
+    - then need to design study
+    - then need to make system for documenting study 
+    - then need to show ppl for pilot test
+    - then need to run study with ppl
+    - then need to analyse result of study
+    - then need to write everything down!
+- work done:
+    - organized myself
+    - made a "drone" model -> just the normal cam model with two makeshift thrusters smacked onto it
+    - added outline package for showing when a drone is selected
+- plan for tomorrow:
+    - start at 9h!
+    - implement the drone with controls and spawning and selectable to move them again
+        - 'X' button to spawn (just at location of left controller)
+        - left joystick for moving (from player orientation so no matter where drone faces)
+        - right joystick to yaw (x-axis) and pitch (y-axis) of drone
+        - 'B' button for up
+        - 'A' button for down
+
+        - for selection -> just raycast and grab -> make own interactable just like with oce one -> make it somehow visible when selected -> eG green border around it
+
 ## 08.07.2024
 - time to work again!
 - fyi: bin von 10.-19. auf urlaub
