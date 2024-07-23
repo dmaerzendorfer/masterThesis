@@ -1,6 +1,20 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 23.07.2024
+- did not start at 9h but 11h instead...
+- finished up the drone part
+- i did set the limit of 5 views for the orbit cams due to the virtual cam restriction of needing their own layers.
+    - does not apply for drone views since they dont need virtual cams
+    - but still left in the 5 max for consistency!
+- drones could work in theory now, will test in detail and fix any bugs tomorrow (lest see if i manage 9h this time...)
+- todos tomorrow:
+    - test drones and fix any issues
+    - look into WIM real quick to see how much work it would be
+    - cleanup code
+    - think about how the study could look like and prep a scene for the study and pilot test with ppl
+    - if there is time -> cleanup the avatar a bit
+
 ## 22.07.2024
 - I am back from vacation
 - need to organize myself again on where to continue

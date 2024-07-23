@@ -4,6 +4,7 @@ using System.Linq;
 using _Generics.Scripts.Runtime;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -27,20 +28,73 @@ namespace Runtime.View
     [Serializable]
     public class OceViewConfig
     {
-        public ViewPair prefab;
+        public OceViewPair prefab;
 
         [HideInInspector]
-        public ViewPair instance = null;
+        public OceViewPair instance = null;
+    }
+
+    [Serializable]
+    public class DroneViewConfig
+    {
+        public DroneViewPair prefab;
+
+        [HideInInspector]
+        public DroneViewPair instance = null;
     }
 
 
     public class ViewManager : SingletonMonoBehaviour<ViewManager>
     {
         [Foldout("ViewSpawning")]
-        public ViewMode viewMode = ViewMode.OCE;
+        [SerializeField]
+        private ViewMode _viewMode = ViewMode.OCE;
+
+        public ViewMode ViewMode
+        {
+            get { return _viewMode; }
+            set
+            {
+                _viewMode = value;
+                //make sure to delete any views of the incorrect mode on changing
+                switch (_viewMode)
+                {
+                    case ViewMode.OCE:
+                        droneViewConfigs.ForEach(x =>
+                        {
+                            Destroy(x.instance.gameObject);
+                            x.instance = null;
+                        });
+                        droneSpawnAction.Disable();
+                        break;
+                    case ViewMode.Drone:
+                        oceViewConfigs.ForEach(x =>
+                        {
+                            Destroy(x.instance.gameObject);
+                            x.instance = null;
+                        });
+                        droneSpawnAction.Enable();
+                        break;
+                    default:
+                        return;
+                }
+            }
+        }
 
         [Foldout("ViewSpawning")]
         public List<OceViewConfig> oceViewConfigs;
+
+        [Foldout("ViewSpawning")]
+        public List<DroneViewConfig> droneViewConfigs;
+
+        [Foldout("ViewSpawning")]
+        public InputAction droneSpawnAction;
+
+        [Foldout("ViewSpawning")]
+        public Transform droneSpawnLocation;
+
+        [Foldout("ViewSpawning")]
+        public float viewPanelDistance = 3.5f;
 
         [Foldout("ViewPanels")]
         public GameObject viewParent;
@@ -61,15 +115,47 @@ namespace Runtime.View
         {
             base.Awake();
             _mainCam = Camera.main;
+            //to apply the viewmode which is selected in the inspector
+            ViewMode = _viewMode;
+            droneSpawnAction.performed += OnDroneSpawn;
+        }
+
+        private void OnDestroy()
+        {
+            droneSpawnAction.performed -= OnDroneSpawn;
+        }
+
+        public BaseViewPair SpawnViewPair()
+        {
+            if (ViewMode == ViewMode.Drone)
+            {
+                return SpawnDrone();
+            }
+            else
+            {
+                return SpawnOce();
+            }
         }
 
         /// <summary>
         /// Spawns a oce viewpair if possible. otherwise returns null.
         /// </summary>
         /// <returns></returns>
-        public ViewPair SpawnOce()
+        public OceViewPair SpawnOce()
         {
             var config = oceViewConfigs.FirstOrDefault(x => x.instance == null);
+            if (config == null) return null;
+            config.instance = Instantiate(config.prefab);
+            return config.instance;
+        }
+
+        /// <summary>
+        /// Spawns a drone viewpair if possible. otherwise returns null.
+        /// </summary>
+        /// <returns></returns>
+        public DroneViewPair SpawnDrone()
+        {
+            var config = droneViewConfigs.FirstOrDefault(x => x.instance == null);
             if (config == null) return null;
             config.instance = Instantiate(config.prefab);
             return config.instance;
@@ -146,6 +232,33 @@ namespace Runtime.View
                 view.interactable.transform.parent = null;
             }
             // MoveViewIntoHudWithScaling(view);
+        }
+
+        public void AdjustNewViewPanelPosition(BaseViewPair viewPair)
+        {
+            //set panel pos
+            RaycastHit hit;
+            if (Physics.Raycast(_mainCam.transform.position, _mainCam.transform.forward, out hit, viewPanelDistance))
+            {
+                viewPair.viewPanel.transform.position = hit.point;
+            }
+            else
+            {
+                viewPair.viewPanel.transform.position =
+                    _mainCam.transform.position + _mainCam.transform.forward * viewPanelDistance;
+            }
+        }
+
+        private void OnDroneSpawn(InputAction.CallbackContext callbackContext)
+        {
+            var dronePair = SpawnDrone();
+            if (dronePair == null) return;
+            //set drone pos
+            var transf = dronePair.droneCamController.transform;
+            transf.position = droneSpawnLocation.position;
+            transf.forward = _mainCam.transform.forward;
+
+            AdjustNewViewPanelPosition(dronePair);
         }
 
         /// <summary>

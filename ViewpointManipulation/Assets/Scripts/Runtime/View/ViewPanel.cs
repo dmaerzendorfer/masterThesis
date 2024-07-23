@@ -14,7 +14,7 @@ namespace Runtime.View
         public BezierCurve curve;
 
         [HideInInspector]
-        public ViewPair myViewPair;
+        public BaseViewPair myViewPair;
 
         private LineRenderer _curveRenderer;
 

@@ -5,6 +5,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Runtime.View
 {
+    /// <summary>
+    /// The object in center
+    /// </summary>
     public class OceInteractable : XRGrabInteractable
     {
         [HorizontalLine(color: EColor.Red)]
@@ -21,12 +24,12 @@ namespace Runtime.View
         // [HorizontalLine(color: EColor.Red)]
         // public float moveDeadzone = 0.1f;
 
-        [HorizontalLine(color: EColor.Red)]
-        public float viewPanelDistance = 3f;
+        // [HorizontalLine(color: EColor.Red)]
+        // public float viewPanelDistance = 3f;
 
         // private OceHandle _currentHandle;
         private ViewManager _viewManager;
-        private ViewPair _mostRecentViewPair = null;
+        private OceViewPair _mostRecentOceViewPair = null;
 
         private Vector2 _move;
         private bool _inPressed = false;
@@ -39,24 +42,24 @@ namespace Runtime.View
 
         private void Update()
         {
-            if (_mostRecentViewPair)
+            if (_mostRecentOceViewPair)
             {
-                _mostRecentViewPair.orbitCamController.XValue +=
-                    _mostRecentViewPair.orbitCamController.moveSpeed * _move.x * Time.deltaTime;
-                _mostRecentViewPair.orbitCamController.HeightOffset +=
-                    _mostRecentViewPair.orbitCamController.heightSpeed * _move.y * Time.deltaTime;
+                _mostRecentOceViewPair.orbitCamController.XValue +=
+                    _mostRecentOceViewPair.orbitCamController.moveSpeed * _move.x * Time.deltaTime;
+                _mostRecentOceViewPair.orbitCamController.HeightOffset +=
+                    _mostRecentOceViewPair.orbitCamController.heightSpeed * _move.y * Time.deltaTime;
             }
 
             if (_outPressed)
             {
-                _mostRecentViewPair.orbitCamController.Radius +=
-                    _mostRecentViewPair.orbitCamController.radiusSpeed * Time.deltaTime;
+                _mostRecentOceViewPair.orbitCamController.Radius +=
+                    _mostRecentOceViewPair.orbitCamController.radiusSpeed * Time.deltaTime;
             }
 
             if (_inPressed)
             {
-                _mostRecentViewPair.orbitCamController.Radius -=
-                    _mostRecentViewPair.orbitCamController.radiusSpeed * Time.deltaTime;
+                _mostRecentOceViewPair.orbitCamController.Radius -=
+                    _mostRecentOceViewPair.orbitCamController.radiusSpeed * Time.deltaTime;
             }
         }
 
@@ -65,11 +68,11 @@ namespace Runtime.View
             base.OnSelectEntered(args);
 
             //spawn orbit cam and set lookat target
-            _mostRecentViewPair = _viewManager.SpawnOce();
-            if (_mostRecentViewPair == null)
+            _mostRecentOceViewPair = _viewManager.SpawnOce();
+            if (_mostRecentOceViewPair == null)
                 return;
-            _mostRecentViewPair.orbitCamController.SetTarget(lookAtTarget);
-            var camInteractable = _mostRecentViewPair.orbitCamController.GetComponent<OceCamInteractable>();
+            _mostRecentOceViewPair.orbitCamController.SetTarget(lookAtTarget);
+            var camInteractable = _mostRecentOceViewPair.orbitCamController.GetComponent<OceCamInteractable>();
             args.interactableObject = camInteractable;
             camInteractable.CallOnSelectEntered(args);
             // camInteractable.selectEntered.Invoke(args);
@@ -99,24 +102,25 @@ namespace Runtime.View
             // actions.outAction.action.canceled += OnOutReleased;
 
             //move the view panel to an opportune position
-            var mainCam = Camera.main;
-            RaycastHit hit;
-            if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, viewPanelDistance))
-            {
-                _mostRecentViewPair.viewPanel.transform.position = hit.point;
-            }
-            else
-            {
-                _mostRecentViewPair.viewPanel.transform.position =
-                    mainCam.transform.position + mainCam.transform.forward * viewPanelDistance;
-            }
+            _viewManager.AdjustNewViewPanelPosition(_mostRecentOceViewPair);
+            // var mainCam = Camera.main;
+            // RaycastHit hit;
+            // if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, viewPanelDistance))
+            // {
+            //     _mostRecentOceViewPair.viewPanel.transform.position = hit.point;
+            // }
+            // else
+            // {
+            //     _mostRecentOceViewPair.viewPanel.transform.position =
+            //         mainCam.transform.position + mainCam.transform.forward * viewPanelDistance;
+            // }
         }
 
 
         protected override void OnSelectExited(SelectExitEventArgs args)
         {
             base.OnSelectExited(args);
-            var camInteractable = _mostRecentViewPair.orbitCamController.GetComponent<OceCamInteractable>();
+            var camInteractable = _mostRecentOceViewPair.orbitCamController.GetComponent<OceCamInteractable>();
             args.interactableObject = camInteractable;
             camInteractable.CallOnSelectExited(args);
 
@@ -157,15 +161,15 @@ namespace Runtime.View
         private void OnInPressed(InputAction.CallbackContext obj)
         {
             _inPressed = true;
-            _mostRecentViewPair.orbitCamController.Radius -=
-                _mostRecentViewPair.orbitCamController.radiusSpeed * Time.deltaTime;
+            _mostRecentOceViewPair.orbitCamController.Radius -=
+                _mostRecentOceViewPair.orbitCamController.radiusSpeed * Time.deltaTime;
         }
 
         private void OnInReleased(InputAction.CallbackContext obj)
         {
             _inPressed = false;
-            _mostRecentViewPair.orbitCamController.Radius -=
-                _mostRecentViewPair.orbitCamController.radiusSpeed * Time.deltaTime;
+            _mostRecentOceViewPair.orbitCamController.Radius -=
+                _mostRecentOceViewPair.orbitCamController.radiusSpeed * Time.deltaTime;
         }
 
         private void OnOutPressed(InputAction.CallbackContext obj)

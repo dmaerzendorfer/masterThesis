@@ -1,15 +1,14 @@
-using Runtime.CameraControl;
+﻿using System;
 using UnityEngine;
 
 namespace Runtime.View
 {
-    public class ViewPair : MonoBehaviour
+    public class BaseViewPair : MonoBehaviour
     {
         public ViewCamera viewCam;
         public ViewPanel viewPanel;
-        public OrbitCamController orbitCamController;
 
-        private void Awake()
+        public virtual void Awake()
         {
             //setup render texture of cam and set in panel
             viewCam.CreateRenderTexture();

@@ -23,9 +23,8 @@ namespace Runtime.View
 
         public OceActions actionsRight;
 
-        public ViewPair viewPair;
-
-
+        public OceViewPair oceViewPair;
+        
         private Vector2 _move;
         private bool _inPressed = false;
         private bool _outPressed = false;
@@ -33,31 +32,31 @@ namespace Runtime.View
 
         private void Update()
         {
-            if (viewPair)
+            if (oceViewPair)
             {
-                viewPair.orbitCamController.XValue +=
-                    viewPair.orbitCamController.moveSpeed * _move.x * Time.deltaTime;
-                viewPair.orbitCamController.HeightOffset +=
-                    viewPair.orbitCamController.heightSpeed * _move.y * Time.deltaTime;
+                oceViewPair.orbitCamController.XValue +=
+                    oceViewPair.orbitCamController.moveSpeed * _move.x * Time.deltaTime;
+                oceViewPair.orbitCamController.HeightOffset +=
+                    oceViewPair.orbitCamController.heightSpeed * _move.y * Time.deltaTime;
             }
 
             if (_outPressed)
             {
-                viewPair.orbitCamController.Radius +=
-                    viewPair.orbitCamController.radiusSpeed * Time.deltaTime;
+                oceViewPair.orbitCamController.Radius +=
+                    oceViewPair.orbitCamController.radiusSpeed * Time.deltaTime;
             }
 
             if (_inPressed)
             {
-                viewPair.orbitCamController.Radius -=
-                    viewPair.orbitCamController.radiusSpeed * Time.deltaTime;
+                oceViewPair.orbitCamController.Radius -=
+                    oceViewPair.orbitCamController.radiusSpeed * Time.deltaTime;
             }
         }
 
         protected override void OnSelectEntered(SelectEnterEventArgs args)
         {
             base.OnSelectEntered(args);
-            viewPair.orbitCamController.ShowCircle = true;
+            oceViewPair.orbitCamController.ShowCircle = true;
 
 
             //hook up controls
@@ -90,7 +89,7 @@ namespace Runtime.View
             actions.outAction.action.started -= OnOutPressed;
             actions.outAction.action.canceled -= OnOutReleased;
 
-            viewPair.orbitCamController.ShowCircle = false;
+            oceViewPair.orbitCamController.ShowCircle = false;
         }
 
         public void CallOnSelectEntered(SelectEnterEventArgs args)
@@ -124,15 +123,15 @@ namespace Runtime.View
         private void OnInPressed(InputAction.CallbackContext obj)
         {
             _inPressed = true;
-            viewPair.orbitCamController.Radius -=
-                viewPair.orbitCamController.radiusSpeed * Time.deltaTime;
+            oceViewPair.orbitCamController.Radius -=
+                oceViewPair.orbitCamController.radiusSpeed * Time.deltaTime;
         }
 
         private void OnInReleased(InputAction.CallbackContext obj)
         {
             _inPressed = false;
-            viewPair.orbitCamController.Radius -=
-                viewPair.orbitCamController.radiusSpeed * Time.deltaTime;
+            oceViewPair.orbitCamController.Radius -=
+                oceViewPair.orbitCamController.radiusSpeed * Time.deltaTime;
         }
 
         private void OnOutPressed(InputAction.CallbackContext obj)
