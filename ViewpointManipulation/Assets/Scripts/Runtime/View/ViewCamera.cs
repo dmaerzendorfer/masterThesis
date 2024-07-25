@@ -9,8 +9,6 @@ namespace Runtime.View
 
         public int textureWidth = 256;
         public int textureHeight = 256;
-        
-        
 
         [HideInInspector]
         public RenderTexture renderTexture;

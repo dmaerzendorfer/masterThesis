@@ -1,5 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace Runtime.View
 {
@@ -8,6 +8,8 @@ namespace Runtime.View
         public ViewCamera viewCam;
         public ViewPanel viewPanel;
 
+        public UnityEvent onViewPairDeleted = new UnityEvent();
+        
         public virtual void Awake()
         {
             //setup render texture of cam and set in panel
@@ -16,8 +18,14 @@ namespace Runtime.View
             viewPanel.myViewPair = this;
         }
 
+        public virtual void ReceiveSelect()
+        {
+            //to be overriden by any specific ViewPairs -> could be moved into an interface
+        }
+
         public void DeleteViewPair()
         {
+            onViewPairDeleted.Invoke();
             Destroy(viewPanel.gameObject);
             Destroy(viewCam.gameObject);
             Destroy(this.gameObject);

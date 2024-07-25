@@ -1,4 +1,4 @@
-using System;
+using TMPro;
 using Unity.VRTemplate;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +12,8 @@ namespace Runtime.View
         public ViewCamera viewCamera;
         public RawImage renderImage;
         public BezierCurve curve;
+
+        public TextMeshProUGUI panelText;
 
         [HideInInspector]
         public BaseViewPair myViewPair;
@@ -68,6 +70,12 @@ namespace Runtime.View
         {
             if (myViewPair)
                 myViewPair.DeleteViewPair();
+        }
+
+        public void SelectViewCam()
+        {
+            if (myViewPair)
+                myViewPair.ReceiveSelect();
         }
 
         public void SetRenderTexture(RenderTexture texture)

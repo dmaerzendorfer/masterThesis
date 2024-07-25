@@ -37459,7 +37459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
       propertyPath: _viewMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
       propertyPath: viewParent
@@ -37654,10 +37654,6 @@ PrefabInstance:
     - target: {fileID: 2600965794696176766, guid: bfdbd2bdb98c97346a05d96760980027, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3254455791976449327, guid: bfdbd2bdb98c97346a05d96760980027, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3441219441362588312, guid: bfdbd2bdb98c97346a05d96760980027, type: 3}
       propertyPath: m_AnchorMax.y

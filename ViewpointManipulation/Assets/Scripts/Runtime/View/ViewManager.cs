@@ -4,6 +4,7 @@ using System.Linq;
 using _Generics.Scripts.Runtime;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -28,6 +29,7 @@ namespace Runtime.View
     [Serializable]
     public class OceViewConfig
     {
+        public String panelTitle;
         public OceViewPair prefab;
 
         [HideInInspector]
@@ -37,6 +39,8 @@ namespace Runtime.View
     [Serializable]
     public class DroneViewConfig
     {
+        public String panelTitle;
+
         public DroneViewPair prefab;
 
         [HideInInspector]
@@ -55,8 +59,10 @@ namespace Runtime.View
             get { return _viewMode; }
             set
             {
+                if (_viewMode == value) return;
                 _viewMode = value;
                 //make sure to delete any views of the incorrect mode on changing
+                var hasViewCountChanged = false;
                 switch (_viewMode)
                 {
                     case ViewMode.OCE:
@@ -66,17 +72,20 @@ namespace Runtime.View
                             {
                                 Destroy(x.instance.gameObject);
                                 x.instance = null;
+                                hasViewCountChanged = true;
                             }
                         });
                         droneSpawnAction.action.Disable();
                         break;
                     case ViewMode.Drone:
+
                         oceViewConfigs.ForEach(x =>
                         {
                             if (x.instance != null)
                             {
                                 Destroy(x.instance.gameObject);
                                 x.instance = null;
+                                hasViewCountChanged = true;
                             }
                         });
                         droneSpawnAction.action.Enable();
@@ -84,6 +93,9 @@ namespace Runtime.View
                     default:
                         return;
                 }
+
+                if (hasViewCountChanged)
+                    onAnyCamDestroyed.Invoke();
             }
         }
 
@@ -121,6 +133,24 @@ namespace Runtime.View
 
         [Foldout("ViewPanels")]
         public Color hudColor = Color.gray;
+
+        public UnityEvent onAnyCamDestroyed = new UnityEvent();
+
+        public int CurrentActiveViewCount
+        {
+            get
+            {
+                switch (_viewMode)
+                {
+                    case ViewMode.OCE:
+                        return oceViewConfigs.Count(x => x.instance != null);
+                    case ViewMode.Drone:
+                        return droneViewConfigs.Count(x => x.instance != null);
+                    default:
+                        return 0;
+                }
+            }
+        }
 
         private List<ViewPanelData> _viewPanels = new List<ViewPanelData>();
         private Camera _mainCam;
@@ -164,6 +194,8 @@ namespace Runtime.View
             var config = oceViewConfigs.FirstOrDefault(x => x.instance == null);
             if (config == null) return null;
             config.instance = Instantiate(config.prefab);
+            config.instance.viewPanel.panelText.text = config.panelTitle;
+            config.instance.onViewPairDeleted.AddListener(() => onAnyCamDestroyed.Invoke());
             return config.instance;
         }
 
@@ -178,6 +210,8 @@ namespace Runtime.View
             var config = droneViewConfigs.FirstOrDefault(x => x.instance == null);
             if (config == null) return null;
             config.instance = Instantiate(config.prefab);
+            config.instance.viewPanel.panelText.text = config.panelTitle;
+            config.instance.onViewPairDeleted.AddListener(() => onAnyCamDestroyed.Invoke());
             return config.instance;
         }
 
@@ -313,35 +347,6 @@ namespace Runtime.View
 
             //activateDrone
             dronePair.droneCamController.IsSelected = true;
-        }
-
-        /// <summary>
-        /// Moves the given view into the hud and makes sure perceived scale stays the same.
-        /// </summary>
-        /// <param name="v"></param>
-        private void MoveViewIntoHudWithScaling(ViewPanelData v)
-        {
-            //todo: fix this, its not working
-            var newPosition = _mainCam.transform.position +
-                              (v.interactable.gameObject.transform.position - _mainCam.transform.position) *
-                              hudDistanceFromCamera;
-
-            // Calculate the initial distance from the camera to the object
-            float initialDistance =
-                Vector3.Distance(_mainCam.transform.position, v.interactable.gameObject.transform.position);
-
-            // Calculate the new distance from the camera to the new position
-            float newDistance = Vector3.Distance(_mainCam.transform.position, newPosition);
-
-            // Calculate the scale factor
-            // float scaleFactor = initialDistance / newDistance; //wrong?
-            float scaleFactor = newDistance / initialDistance;
-
-            // Move the object to the new position
-            v.interactable.transform.position = newPosition;
-
-            // Apply the scale factor to the object's scale
-            v.interactable.transform.transform.localScale = v.interactable.transform.localScale * scaleFactor;
         }
     }
 }

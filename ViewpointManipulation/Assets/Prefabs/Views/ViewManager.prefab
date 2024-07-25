@@ -46,31 +46,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _viewMode: 0
   oceViewConfigs:
-  - prefab: {fileID: 2346009038153097538, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+  - panelTitle: OrbitCam 1
+    prefab: {fileID: 2346009038153097538, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
     instance: {fileID: 0}
-  - prefab: {fileID: 2255953256334118872, guid: 810d9a4583a35ee4e8c5aa22e08708b2, type: 3}
+  - panelTitle: OrbitCam 2
+    prefab: {fileID: 2255953256334118872, guid: 810d9a4583a35ee4e8c5aa22e08708b2, type: 3}
     instance: {fileID: 0}
-  - prefab: {fileID: 2449535102025352715, guid: 846b8359b5624464080fc00dc80648c7, type: 3}
+  - panelTitle: OrbitCam 3
+    prefab: {fileID: 2449535102025352715, guid: 846b8359b5624464080fc00dc80648c7, type: 3}
     instance: {fileID: 0}
-  - prefab: {fileID: 3444931980566126912, guid: 2674feaaad6b5bb4aa4a6d9575c88c34, type: 3}
+  - panelTitle: OrbitCam 4
+    prefab: {fileID: 3444931980566126912, guid: 2674feaaad6b5bb4aa4a6d9575c88c34, type: 3}
     instance: {fileID: 0}
-  - prefab: {fileID: 8495756093353309191, guid: 5f590562bd90b3f4087a829cb42c371f, type: 3}
+  - panelTitle: OrbitCam 5
+    prefab: {fileID: 8495756093353309191, guid: 5f590562bd90b3f4087a829cb42c371f, type: 3}
     instance: {fileID: 0}
   droneViewConfigs:
-  - prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
+  - panelTitle: DroneCam 1
+    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
     instance: {fileID: 0}
-  - prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
+  - panelTitle: DroneCam 2
+    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
     instance: {fileID: 0}
-  - prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
+  - panelTitle: DroneCam 3
+    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
     instance: {fileID: 0}
-  - prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
+  - panelTitle: DroneCam 4
+    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
     instance: {fileID: 0}
-  - prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
+  - panelTitle: DroneCam 5
+    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
     instance: {fileID: 0}
   droneSpawnAction: {fileID: -6465576503248765194, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  droneUnselectAction: {fileID: 0}
   droneSpawnLocation: {fileID: 0}
   viewPanelDistance: 10
+  droneSpawningDistance: 1
   viewParent: {fileID: 0}
   hudDistanceFromCamera: 0.5
   worldColor: {r: 0, g: 0, b: 0, a: 1}
   hudColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  onAnyCamDestroyed:
+    m_PersistentCalls:
+      m_Calls: []

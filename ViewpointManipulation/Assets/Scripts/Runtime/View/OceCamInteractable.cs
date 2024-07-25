@@ -76,14 +76,10 @@ namespace Runtime.View
         {
             base.OnSelectExited(args);
             var actions = GetCorrectActions(args.interactorObject);
-            // Destroy(_currentHandle.gameObject);
             //un-hook the controller events for rotation of cam etc.
-            //actions.uiScroll.action.Disable();
             actions.uiScroll.action.performed -= OnMove;
-            //actions.inAction.action.Disable();
             actions.inAction.action.started -= OnInPressed;
             actions.inAction.action.canceled -= OnInReleased;
-            //actions.outAction.action.Disable();
             actions.outAction.action.started -= OnOutPressed;
             actions.outAction.action.canceled -= OnOutReleased;
 

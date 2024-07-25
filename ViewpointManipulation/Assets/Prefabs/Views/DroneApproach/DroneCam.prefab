@@ -310,8 +310,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  pitchSpeed: 50
-  yawSpeed: 50
+  pitchSpeed: 75
+  yawSpeed: 75
   heightSpeed: 10
   inputActions:
     moveAction: {fileID: 298688722076725967, guid: c348712bda248c246b8c49b3db54643f, type: 3}

@@ -12,10 +12,20 @@ These notes act as progress report (research diary) throughout the thesis work. 
         - solution: disable/enable locomotion action map while a drone is active -> nvm cant really get a reference to an action map just single actions -> so i just disable the walk and teleport actions
     - also found the problem how would one unselect the drone if not visible?
         - solution: add an extra controller button to it. (left secondary)
+    - they work now!!! \o/
+- made some additions
+    - all viewpanels now have proper names
+    - viewpanels now have a button to select their cam (at least the drone one, oce does not support that)
 - quick cleanup of code
-- trying to make avatar a bit better
-- (quick look into wim)
-- defining study 
+
+- todos next time: 
+    - trying to make avatar a bit better (fix hand positions, and make it so you can see yourself)
+    - check if i can refactor code structure (viewManager is quite big...)
+    - quick look into wim
+    - define study tasks
+    - setup a control table where users can set drone mode, see how many drones etc. -> also needs the controls somewhere
+    - setup scene for task
+    - setup documenting task measurements and save it to a file
 
 
 - need to check if building works at some point as well!
