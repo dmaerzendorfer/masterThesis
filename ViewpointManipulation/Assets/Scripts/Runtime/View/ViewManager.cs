@@ -62,18 +62,24 @@ namespace Runtime.View
                     case ViewMode.OCE:
                         droneViewConfigs.ForEach(x =>
                         {
-                            Destroy(x.instance.gameObject);
-                            x.instance = null;
+                            if (x.instance != null)
+                            {
+                                Destroy(x.instance.gameObject);
+                                x.instance = null;
+                            }
                         });
-                        droneSpawnAction.Disable();
+                        droneSpawnAction.action.Disable();
                         break;
                     case ViewMode.Drone:
                         oceViewConfigs.ForEach(x =>
                         {
-                            Destroy(x.instance.gameObject);
-                            x.instance = null;
+                            if (x.instance != null)
+                            {
+                                Destroy(x.instance.gameObject);
+                                x.instance = null;
+                            }
                         });
-                        droneSpawnAction.Enable();
+                        droneSpawnAction.action.Enable();
                         break;
                     default:
                         return;
@@ -88,13 +94,21 @@ namespace Runtime.View
         public List<DroneViewConfig> droneViewConfigs;
 
         [Foldout("ViewSpawning")]
-        public InputAction droneSpawnAction;
+        public InputActionReference droneSpawnAction;
+
+        [Foldout("ViewSpawning")]
+        public InputActionReference droneUnselectAction;
+
 
         [Foldout("ViewSpawning")]
         public Transform droneSpawnLocation;
 
         [Foldout("ViewSpawning")]
         public float viewPanelDistance = 3.5f;
+
+        [Foldout("ViewSpawning")]
+        public float droneSpawningDistance = 1f;
+
 
         [Foldout("ViewPanels")]
         public GameObject viewParent;
@@ -117,12 +131,14 @@ namespace Runtime.View
             _mainCam = Camera.main;
             //to apply the viewmode which is selected in the inspector
             ViewMode = _viewMode;
-            droneSpawnAction.performed += OnDroneSpawn;
+            droneSpawnAction.action.performed += OnDroneSpawn;
+            droneUnselectAction.action.performed += OnDroneUnselect;
         }
 
         private void OnDestroy()
         {
-            droneSpawnAction.performed -= OnDroneSpawn;
+            droneSpawnAction.action.performed -= OnDroneSpawn;
+            droneUnselectAction.action.performed -= OnDroneUnselect;
         }
 
         public BaseViewPair SpawnViewPair()
@@ -143,6 +159,8 @@ namespace Runtime.View
         /// <returns></returns>
         public OceViewPair SpawnOce()
         {
+            if (_viewMode != ViewMode.OCE) return null;
+
             var config = oceViewConfigs.FirstOrDefault(x => x.instance == null);
             if (config == null) return null;
             config.instance = Instantiate(config.prefab);
@@ -155,6 +173,8 @@ namespace Runtime.View
         /// <returns></returns>
         public DroneViewPair SpawnDrone()
         {
+            if (_viewMode != ViewMode.Drone) return null;
+
             var config = droneViewConfigs.FirstOrDefault(x => x.instance == null);
             if (config == null) return null;
             config.instance = Instantiate(config.prefab);
@@ -249,16 +269,50 @@ namespace Runtime.View
             }
         }
 
+        public void AdjustNewDronePosition(DroneViewPair viewPair)
+        {
+            //set panel pos
+            RaycastHit hit;
+            var transf = viewPair.droneCamController.transform;
+
+            if (Physics.Raycast(transf.position, _mainCam.transform.forward, out hit, droneSpawningDistance))
+            {
+                transf.position = hit.point;
+            }
+            else
+            {
+                transf.position += _mainCam.transform.forward * droneSpawningDistance;
+            }
+        }
+
+        private void OnDroneUnselect(InputAction.CallbackContext callbackContext)
+        {
+            foreach (var droneViewConfig in droneViewConfigs)
+            {
+                if (droneViewConfig.instance != null)
+                {
+                    droneViewConfig.instance.droneCamController.IsSelected = false;
+                }
+            }
+        }
+
         private void OnDroneSpawn(InputAction.CallbackContext callbackContext)
         {
+            OnDroneUnselect(callbackContext);
+
             var dronePair = SpawnDrone();
             if (dronePair == null) return;
             //set drone pos
             var transf = dronePair.droneCamController.transform;
             transf.position = droneSpawnLocation.position;
             transf.forward = _mainCam.transform.forward;
-
+            //then adjust pos
+            AdjustNewDronePosition(dronePair);
+            //then adjust view panel pos
             AdjustNewViewPanelPosition(dronePair);
+
+            //activateDrone
+            dronePair.droneCamController.IsSelected = true;
         }
 
         /// <summary>

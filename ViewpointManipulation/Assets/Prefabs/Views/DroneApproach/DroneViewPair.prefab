@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewCam: {fileID: 4851462601411501312}
   viewPanel: {fileID: 7683018834343168305}
-  droneCamController: {fileID: 8091221679830655111}
+  droneCamController: {fileID: 8570498138840334322}
 --- !u!1001 &4261654378076316489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -107,33 +107,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8360224844609699324}
     m_Modifications:
-    - target: {fileID: 3903293290405322891, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4766753456482208856, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
       propertyPath: m_Name
       value: DroneCam
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995433125639619744, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5634180261203350754, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6754326717084596106, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6754326717084596106, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 6754326717084596106, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.44
       objectReference: {fileID: 0}
     - target: {fileID: 8012073241710796652, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -175,20 +151,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2183274479037896518, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
-    - {fileID: 6686966946982039607, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
-    - {fileID: 5955936241038153985, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
-    m_RemovedGameObjects:
-    - {fileID: 7949924407117624667, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4766753456482208856, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8091221679830655111}
-    - targetCorrespondingSourceObject: {fileID: 4766753456482208856, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6498183326923626590}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
 --- !u!4 &6058724934592478245 stripped
 Transform:
@@ -200,198 +166,17 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 6043906521777187622, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
   m_PrefabInstance: {fileID: 4261654378076316489}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8436597848441698219 stripped
+--- !u!114 &8570498138840334322 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5634180261203350754, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5608378697410370747, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
   m_PrefabInstance: {fileID: 4261654378076316489}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &8719700124852743953 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4766753456482208856, guid: 872d3190f0b88d74bb2eebf262668ee0, type: 3}
-  m_PrefabInstance: {fileID: 4261654378076316489}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8091221679830655111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8719700124852743953}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b382e7d194cb4ac2b5b03e6c34f47fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
-  pitchSpeed: 50
-  yawSpeed: 50
-  heightSpeed: 25
-  inputActions:
-    moveAction: {fileID: 298688722076725967, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    yawPitchAction: {fileID: -6428105322773342981, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    upAction: {fileID: -5282061501281653390, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    downAction: {fileID: -7326252254546553951, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  modelOutline: {fileID: 8436597848441698219}
-  _isSelected: 0
---- !u!114 &6498183326923626590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8719700124852743953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627e85ba7e1c4ca797c8f2dfb4b6e91f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_AttachTransform: {fileID: 0}
-  m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
-  m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
-  m_SnapToColliderVolume: 1
-  m_ReinitializeDynamicAttachEverySingleGrab: 1
-  m_AttachEaseInTime: 0.15
-  m_MovementType: 2
-  m_VelocityDamping: 1
-  m_VelocityScale: 1
-  m_AngularVelocityDamping: 1
-  m_AngularVelocityScale: 1
-  m_TrackPosition: 0
-  m_SmoothPosition: 0
-  m_SmoothPositionAmount: 8
-  m_TightenPosition: 0.1
-  m_TrackRotation: 0
-  m_SmoothRotation: 0
-  m_SmoothRotationAmount: 8
-  m_TightenRotation: 0.1
-  m_TrackScale: 0
-  m_SmoothScale: 0
-  m_SmoothScaleAmount: 8
-  m_TightenScale: 0.1
-  m_ThrowOnDetach: 0
-  m_ThrowSmoothingDuration: 0.25
-  m_ThrowSmoothingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
-  m_AttachPointCompatibilityMode: 0
-  m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers: []
-  m_AddDefaultGrabTransformers: 1
-  droneCamController: {fileID: 8091221679830655111}
 --- !u!1001 &8936412048283428687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -736,6 +521,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7362854923493753864, guid: 43d8cde9a658d0740b1b7103081ff558, type: 3}
+      propertyPath: m_EndPoint
+      value: 
+      objectReference: {fileID: 6058724934592478245}
     - target: {fileID: 7362854923493753864, guid: 43d8cde9a658d0740b1b7103081ff558, type: 3}
       propertyPath: m_UpdateTrackingType
       value: 0

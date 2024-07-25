@@ -270,6 +270,10 @@ PrefabInstance:
       propertyPath: viewPair
       value: 
       objectReference: {fileID: 2449535102025352715}
+    - target: {fileID: 3570936677917305277, guid: bc0f132e7b6eae841bb7ea9b8e5dcba5, type: 3}
+      propertyPath: oceViewPair
+      value: 
+      objectReference: {fileID: 2449535102025352715}
     - target: {fileID: 5190285222818061286, guid: bc0f132e7b6eae841bb7ea9b8e5dcba5, type: 3}
       propertyPath: m_Name
       value: OrbitCamera3

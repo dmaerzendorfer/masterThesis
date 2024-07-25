@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6258976747596282598
 Transform:
   m_ObjectHideFlags: 0
@@ -67,15 +67,7 @@ MonoBehaviour:
     instance: {fileID: 0}
   - prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
     instance: {fileID: 0}
-  droneSpawnAction:
-    m_Name: Drone Spawn
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: b14d9b2a-0bbd-48c8-9ff8-5a82bd251eb3
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
+  droneSpawnAction: {fileID: -6465576503248765194, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   droneSpawnLocation: {fileID: 0}
   viewPanelDistance: 10
   viewParent: {fileID: 0}

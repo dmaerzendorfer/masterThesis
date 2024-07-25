@@ -313,6 +313,10 @@ PrefabInstance:
       propertyPath: viewPair
       value: 
       objectReference: {fileID: 2255953256334118872}
+    - target: {fileID: 4824517183582804799, guid: 8b202693ca73a184bbf39820df5dadcc, type: 3}
+      propertyPath: oceViewPair
+      value: 
+      objectReference: {fileID: 2255953256334118872}
     - target: {fileID: 8566495268321122217, guid: 8b202693ca73a184bbf39820df5dadcc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

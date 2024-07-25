@@ -2358,6 +2358,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "LeftSecondaryButton",
+                    "type": "Button",
+                    "id": "6c2bd670-e81e-4434-a17e-0da2ef3eb1f6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "RightPrimaryButton",
                     "type": "Button",
                     "id": "49c757a6-1574-4057-afeb-4497d59c5906",
@@ -2429,6 +2438,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "RightSecondaryButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "abc7d421-16c1-4bd9-95e8-1902e04865b2",
+                    "path": "<XRController>{LeftHand}/{SecondaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftSecondaryButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

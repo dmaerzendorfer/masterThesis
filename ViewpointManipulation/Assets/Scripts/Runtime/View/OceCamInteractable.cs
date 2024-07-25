@@ -69,8 +69,6 @@ namespace Runtime.View
             actions.outAction.action.Enable();
             actions.outAction.action.started += OnOutPressed;
             actions.outAction.action.canceled += OnOutReleased;
-            
-            
         }
 
 

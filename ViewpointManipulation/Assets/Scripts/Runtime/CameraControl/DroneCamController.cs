@@ -1,9 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 namespace Runtime.CameraControl
 {
+    public enum DroneMovementMode
+    {
+        UserRelative = 0,
+        DroneRelative = 1 << 0
+    }
+
     [Serializable]
     public class DroneActions
     {
@@ -38,12 +48,15 @@ namespace Runtime.CameraControl
 
     public class DroneCamController : MonoBehaviour
     {
-        public float moveSpeed = 50f;
+        public float moveSpeed = 25f;
         public float pitchSpeed = 50f;
         public float yawSpeed = 50f;
-        public float heightSpeed = 25f;
+        public float heightSpeed = 10f;
 
         public DroneActions inputActions;
+
+        public DroneMovementMode movementMode = DroneMovementMode.UserRelative;
+
 
         public Outline modelOutline;
 
@@ -59,12 +72,34 @@ namespace Runtime.CameraControl
                 if (_isSelected)
                 {
                     modelOutline.enabled = true;
+                    //enable drone actions
                     inputActions.EnableAllActions();
+                    //disable default vr locomotion actions
+
+                    if (TryToFindLocomotion())
+                    {
+                        _locomotionSystem.gameObject.SetActive(false);
+                        foreach (var c in _locomotionControllerManagers)
+                        {
+                            c.enabled = false;
+                        }
+                    }
                 }
                 else
                 {
                     modelOutline.enabled = false;
+                    //disable drone actions
                     inputActions.DisableAllActions();
+                    //enable default vr locomotion actions
+                    if (TryToFindLocomotion())
+                    {
+                        _locomotionSystem.gameObject.SetActive(true);
+                        foreach (var c in _locomotionControllerManagers)
+                        {
+                            c.enabled = true;
+                        }
+                    }
+
                     ResetAnyInput();
                 }
             }
@@ -76,6 +111,12 @@ namespace Runtime.CameraControl
         private Vector2 _yawPitchInput;
         private bool _upInput = false;
         private bool _downInput = false;
+
+        private LocomotionSystem _locomotionSystem;
+
+        private List<ActionBasedControllerManager> _locomotionControllerManagers =
+            new List<ActionBasedControllerManager>();
+
 
         private void Awake()
         {
@@ -123,9 +164,37 @@ namespace Runtime.CameraControl
             transform.eulerAngles = currentEulerAngles;
 
             //handle movement (from the mainCams perspective)
-            Vector3 translation = _mainCamTransform.forward * _moveInput.y +
-                                  _mainCamTransform.right * _moveInput.x;
-            transform.position += translation * (moveSpeed * Time.deltaTime);
+            if (movementMode == DroneMovementMode.UserRelative)
+            {
+                var forward = _mainCamTransform.forward;
+                forward.y = 0;
+                forward.Normalize();
+                var right = _mainCamTransform.right;
+                right.y = 0;
+                right.Normalize();
+                Vector3 translation = forward * _moveInput.y +
+                                      right * _moveInput.x;
+                transform.position += translation * (moveSpeed * Time.deltaTime);
+            }
+            //or from drone perspective
+            else if (movementMode == DroneMovementMode.DroneRelative)
+            {
+                Vector3 translation = transform.forward * _moveInput.y +
+                                      transform.right * _moveInput.x;
+                transform.position += translation * (moveSpeed * Time.deltaTime);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>whether locomotion system was found</returns>
+        private bool TryToFindLocomotion()
+        {
+            if (_locomotionSystem != null) return true;
+            _locomotionSystem = FindObjectOfType<LocomotionSystem>();
+            _locomotionControllerManagers = FindObjectsOfType<ActionBasedControllerManager>().ToList();
+            return _locomotionSystem != null;
         }
 
         private void ResetAnyInput()

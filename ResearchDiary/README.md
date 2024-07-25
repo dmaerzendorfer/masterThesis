@@ -1,6 +1,31 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 25.07.2024
+- started at 11.30h ...
+- testing the drone cams and fixing any bugs
+    - forgot to make the meshes read/write (the outline needs that)
+    - ![cam in face](images/camInFace.png)
+        - spawning the cam at the left controller leads to the cam being stuck in your face -> instead do the same as with the viewpanel  -> spawn it a few feet in front (but of left hand) -> didnt work as well (maybe i overlooked something) -> instead every drone cam just finds the locomotion system in the scene and enables/disables the gameObject if need be
+
+    - found the problem of walking and teleporting input still being enabled while controlling cam.
+        - solution: disable/enable locomotion action map while a drone is active -> nvm cant really get a reference to an action map just single actions -> so i just disable the walk and teleport actions
+    - also found the problem how would one unselect the drone if not visible?
+        - solution: add an extra controller button to it. (left secondary)
+- quick cleanup of code
+- trying to make avatar a bit better
+- (quick look into wim)
+- defining study 
+
+
+- need to check if building works at some point as well!
+
+## 24.07.2024
+- break today. had housework todo in the morning and then a quick meeting at 13h
+- and got stuff planned in the evening, so not worth it to spend 2h where i cant concentrate^^'
+- but tomorrow, will start with full force!
+
+
 ## 23.07.2024
 - did not start at 9h but 11h instead...
 - finished up the drone part

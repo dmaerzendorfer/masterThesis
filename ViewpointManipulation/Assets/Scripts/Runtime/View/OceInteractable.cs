@@ -120,6 +120,7 @@ namespace Runtime.View
         protected override void OnSelectExited(SelectExitEventArgs args)
         {
             base.OnSelectExited(args);
+            if (_mostRecentOceViewPair == null) return;
             var camInteractable = _mostRecentOceViewPair.orbitCamController.GetComponent<OceCamInteractable>();
             args.interactableObject = camInteractable;
             camInteractable.CallOnSelectExited(args);

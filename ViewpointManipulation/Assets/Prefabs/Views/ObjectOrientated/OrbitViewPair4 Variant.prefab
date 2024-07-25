@@ -278,6 +278,10 @@ PrefabInstance:
       propertyPath: viewPair
       value: 
       objectReference: {fileID: 3444931980566126912}
+    - target: {fileID: 7472194171000077253, guid: 88298b8a565b44144bcc7c5a8ac5c5ee, type: 3}
+      propertyPath: oceViewPair
+      value: 
+      objectReference: {fileID: 3444931980566126912}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

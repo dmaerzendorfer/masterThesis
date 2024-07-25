@@ -29832,7 +29832,6 @@ MonoBehaviour:
     inAction: {fileID: -4329556067505214338, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     outAction: {fileID: -2719103732117898221, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   lookAtTarget: {fileID: 1023020818}
-  viewPanelDistance: 3.5
 --- !u!1 &1777737073
 GameObject:
   m_ObjectHideFlags: 0
@@ -37459,9 +37458,25 @@ PrefabInstance:
       value: ViewManager
       objectReference: {fileID: 0}
     - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
+      propertyPath: _viewMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
       propertyPath: viewParent
       value: 
       objectReference: {fileID: 658105228}
+    - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
+      propertyPath: droneSpawnLocation
+      value: 
+      objectReference: {fileID: 7568352114175411133}
+    - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
+      propertyPath: droneUnselectAction
+      value: 
+      objectReference: {fileID: 3427017767692873761, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
+      propertyPath: droneSpawningDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6258976747596282598, guid: af22989bf212d974daeb879da28efab0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -37639,6 +37654,10 @@ PrefabInstance:
     - target: {fileID: 2600965794696176766, guid: bfdbd2bdb98c97346a05d96760980027, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254455791976449327, guid: bfdbd2bdb98c97346a05d96760980027, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3441219441362588312, guid: bfdbd2bdb98c97346a05d96760980027, type: 3}
       propertyPath: m_AnchorMax.y
@@ -37821,6 +37840,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfdbd2bdb98c97346a05d96760980027, type: 3}
+--- !u!4 &7568352114175411133 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4521006882404475971, guid: bfdbd2bdb98c97346a05d96760980027, type: 3}
+  m_PrefabInstance: {fileID: 7568352114175411132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &7718390322663337749
 MeshRenderer:
   m_ObjectHideFlags: 0

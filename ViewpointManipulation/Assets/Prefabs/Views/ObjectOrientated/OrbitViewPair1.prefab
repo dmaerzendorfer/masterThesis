@@ -107,25 +107,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 145895340915520702}
     m_Modifications:
-    - target: {fileID: 555252780675538021, guid: 468c949fbbf931d4394a582eaca06b26, type: 3}
-      propertyPath: m_UseWorldSpace
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1986740017209558067, guid: 468c949fbbf931d4394a582eaca06b26, type: 3}
       propertyPath: m_Name
       value: OrbitCamera1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2562623537317299838, guid: 468c949fbbf931d4394a582eaca06b26, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.4669408
-      objectReference: {fileID: 0}
-    - target: {fileID: 2562623537317299838, guid: 468c949fbbf931d4394a582eaca06b26, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.6869236
-      objectReference: {fileID: 0}
-    - target: {fileID: 2562623537317299838, guid: 468c949fbbf931d4394a582eaca06b26, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10.047071
       objectReference: {fileID: 0}
     - target: {fileID: 6200652183665359614, guid: 468c949fbbf931d4394a582eaca06b26, type: 3}
       propertyPath: m_LocalPosition.x
@@ -168,7 +152,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7069326026676860520, guid: 468c949fbbf931d4394a582eaca06b26, type: 3}
-      propertyPath: viewPair
+      propertyPath: oceViewPair
       value: 
       objectReference: {fileID: 2346009038153097538}
     m_RemovedComponents: []
