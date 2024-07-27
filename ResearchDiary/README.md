@@ -10,6 +10,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
     - checked out the meta avatars sdk (tho this does not have support for tracked and animated legs but screw that)
         - this is fucking magic! it just works out of the box with xr interaction toolkit?! (or does it? my tutorial uses a oculus VR rig but i am using the XR toolkits rig!)
         - nvm now my controllers dont work anymore...
+        - seems like combining openXR and oculus xr spells trouble. did not find a working solution to use it together
         - removed everything for now, seems like i would need to use oculus xr intstead of the open xr interaction toolkit for stuff to work, but am already using xr interaction toolkit...
             - https://immersive-insiders.com/blog/how-to-animate-your-avatar-for-vr-in-unity
             - this seems rather easy (missing my feet ik tho)
@@ -17,7 +18,13 @@ These notes act as progress report (research diary) throughout the thesis work. 
     - player still cant see their own arms
     - mirrors and other cams see the avatar but not the controllers (so i can hide the disparency of hand location and controller location a bit ^^')
 - created a mirror prefab 
-
+- had quick look into WIM
+    - didnt find a good source other than this video
+    - https://www.youtube.com/watch?v=Urxgc2Fvl_Q
+    - disregarding WIM for now.
+- did some refactoring
+    - just minor cleanup of viewManager and some new namespaces
+- added the option to change the drones movement mode (either cam relative or user relative) to its view panel
 ## 25.07.2024
 - started at 11.30h ...
 - testing the drone cams and fixing any bugs

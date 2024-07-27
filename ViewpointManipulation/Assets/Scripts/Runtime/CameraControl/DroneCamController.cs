@@ -49,14 +49,13 @@ namespace Runtime.CameraControl
     public class DroneCamController : MonoBehaviour
     {
         public float moveSpeed = 25f;
-        public float pitchSpeed = 50f;
-        public float yawSpeed = 50f;
+        public float pitchSpeed = 75f;
+        public float yawSpeed = 75f;
         public float heightSpeed = 10f;
 
         public DroneActions inputActions;
 
         public DroneMovementMode movementMode = DroneMovementMode.UserRelative;
-
 
         public Outline modelOutline;
 
@@ -101,7 +100,6 @@ namespace Runtime.CameraControl
 
         private List<ActionBasedControllerManager> _locomotionControllerManagers =
             new List<ActionBasedControllerManager>();
-
 
         private void Awake()
         {
@@ -185,6 +183,20 @@ namespace Runtime.CameraControl
                 {
                     c.enabled = enabled;
                 }
+            }
+        }
+
+        public string ToggleMovementMode()
+        {
+            if (movementMode == DroneMovementMode.DroneRelative)
+            {
+                movementMode = DroneMovementMode.UserRelative;
+                return "User Relative";
+            }
+            else
+            {
+                movementMode = DroneMovementMode.DroneRelative;
+                return "Drone Relative";
             }
         }
 

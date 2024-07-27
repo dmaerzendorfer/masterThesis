@@ -1,6 +1,6 @@
 ﻿using Runtime.CameraControl;
 
-namespace Runtime.View
+namespace Runtime.View.ViewPair
 {
     public class DroneViewPair : BaseViewPair
     {

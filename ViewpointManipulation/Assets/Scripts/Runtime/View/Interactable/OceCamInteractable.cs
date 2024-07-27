@@ -1,10 +1,11 @@
 ﻿using System;
 using NaughtyAttributes;
+using Runtime.View.ViewPair;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace Runtime.View
+namespace Runtime.View.Interactable
 {
     [Serializable]
     public class OceActions
@@ -16,6 +17,9 @@ namespace Runtime.View
         public InputActionReference outAction;
     }
 
+    /// <summary>
+    /// The Oce camera that can be selected.
+    /// </summary>
     public class OceCamInteractable : XRGrabInteractable
     {
         [HorizontalLine(color: EColor.Red)]

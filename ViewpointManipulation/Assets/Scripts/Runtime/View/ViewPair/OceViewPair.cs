@@ -1,7 +1,7 @@
 using Runtime.CameraControl;
 using UnityEngine;
 
-namespace Runtime.View
+namespace Runtime.View.ViewPair
 {
     public class OceViewPair : BaseViewPair
     {

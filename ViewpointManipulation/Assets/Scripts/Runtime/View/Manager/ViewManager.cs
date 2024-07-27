@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using _Generics.Scripts.Runtime;
 using NaughtyAttributes;
+using Runtime.View.Panel;
+using Runtime.View.ViewPair;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace Runtime.View
+namespace Runtime.View.Manager
 {
     public class ViewPanelData
     {
         public XRGrabInteractable interactable;
-        public ViewPanel viewPanel;
-        public bool inHud = false;
+        public BaseViewPanel BasePanel;
         public Vector3 originalScale; //so we can scale it back to its original once it leaves the hud
         public Image backgroundImage;
     }
@@ -48,8 +49,13 @@ namespace Runtime.View
     }
 
 
+    /// <summary>
+    /// Manages the spawning of OCE ViewPairs and Drone ViewPairs. In addition manages the moving of view panels in and out of the 'HUD'.
+    /// </summary>
     public class ViewManager : SingletonMonoBehaviour<ViewManager>
     {
+        #region ViewSpawningSettings
+
         [Foldout("ViewSpawning")]
         [SerializeField]
         private ViewMode _viewMode = ViewMode.OCE;
@@ -111,7 +117,6 @@ namespace Runtime.View
         [Foldout("ViewSpawning")]
         public InputActionReference droneUnselectAction;
 
-
         [Foldout("ViewSpawning")]
         public Transform droneSpawnLocation;
 
@@ -121,19 +126,22 @@ namespace Runtime.View
         [Foldout("ViewSpawning")]
         public float droneSpawningDistance = 1f;
 
+        #endregion
+
+        #region ViewPanel Settings
 
         [Foldout("ViewPanels")]
         public GameObject viewParent;
-
-        [Foldout("ViewPanels")]
-        public float hudDistanceFromCamera = 1f;
-
+        
         [Foldout("ViewPanels")]
         public Color worldColor = Color.black;
 
         [Foldout("ViewPanels")]
         public Color hudColor = Color.gray;
 
+        #endregion
+
+        [Foldout("Events")]
         public UnityEvent onAnyCamDestroyed = new UnityEvent();
 
         public int CurrentActiveViewCount
@@ -194,7 +202,7 @@ namespace Runtime.View
             var config = oceViewConfigs.FirstOrDefault(x => x.instance == null);
             if (config == null) return null;
             config.instance = Instantiate(config.prefab);
-            config.instance.viewPanel.panelText.text = config.panelTitle;
+            config.instance.basePanel.panelText.text = config.panelTitle;
             config.instance.onViewPairDeleted.AddListener(() => onAnyCamDestroyed.Invoke());
             return config.instance;
         }
@@ -210,13 +218,16 @@ namespace Runtime.View
             var config = droneViewConfigs.FirstOrDefault(x => x.instance == null);
             if (config == null) return null;
             config.instance = Instantiate(config.prefab);
-            config.instance.viewPanel.panelText.text = config.panelTitle;
+            config.instance.basePanel.panelText.text = config.panelTitle;
             config.instance.onViewPairDeleted.AddListener(() => onAnyCamDestroyed.Invoke());
             return config.instance;
         }
 
-
-        public void OnViewWindowActivate(ActivateEventArgs args)
+        /// <summary>
+        /// For when a viewPanel is activated. Handles pinning the panel into the "hud" (just makes it a child of the main so it moves with the FoV)
+        /// </summary>
+        /// <param name="args"></param>
+        public void OnViewPanelActivate(ActivateEventArgs args)
         {
             var view = _viewPanels.Where(x => x.interactable == args.interactableObject).FirstOrDefault();
             if (view == null)
@@ -224,11 +235,10 @@ namespace Runtime.View
                 //its a new view -> add it to the list
                 view = new ViewPanelData();
                 _viewPanels.Add(view);
-                view.viewPanel = args.interactableObject.transform.GetComponent<ViewPanel>();
+                view.BasePanel = args.interactableObject.transform.GetComponent<BaseViewPanel>();
 
                 view.interactable = (XRGrabInteractable)args.interactableObject;
-                view.inHud = true; //will move it into the hud now
-                view.viewPanel.IsInHud = true;
+                view.BasePanel.IsInHud = true;
                 view.originalScale = args.interactableObject.transform.localScale;
                 //move into the hud
                 args.interactableObject.transform.parent = viewParent.transform;
@@ -240,14 +250,12 @@ namespace Runtime.View
             else
             {
                 //view already in list
-
                 //move out of hud
-                if (view.inHud)
+                if (view.BasePanel.IsInHud)
                 {
                     //move it out of hud
                     view.interactable.transform.parent = null;
-                    view.inHud = false;
-                    view.viewPanel.IsInHud = false;
+                    view.BasePanel.IsInHud = false;
 
                     //set to original scale again
                     view.interactable.transform.localScale = view.originalScale;
@@ -258,8 +266,8 @@ namespace Runtime.View
                 //move into the hud
                 else
                 {
-                    view.inHud = true; //will move it into the hud now
-                    view.viewPanel.IsInHud = true;
+                    //will move it into the hud now
+                    view.BasePanel.IsInHud = true;
 
                     view.originalScale = args.interactableObject.transform.localScale;
                     //move into the hud
@@ -275,7 +283,7 @@ namespace Runtime.View
             // //check if view is in list
             var view = _viewPanels.Where(x => x.interactable == args.interactableObject).FirstOrDefault();
             if (view == null) return;
-            if (view.inHud)
+            if (view.BasePanel.IsInHud)
             {
                 //if so make sure to set the parent if also in hud (since the grab interactible reverts its parent once its let go)
                 //(since it keeps track of the transform parent, which is fine but sometimes isnt) 
@@ -294,11 +302,11 @@ namespace Runtime.View
             RaycastHit hit;
             if (Physics.Raycast(_mainCam.transform.position, _mainCam.transform.forward, out hit, viewPanelDistance))
             {
-                viewPair.viewPanel.transform.position = hit.point;
+                viewPair.basePanel.transform.position = hit.point;
             }
             else
             {
-                viewPair.viewPanel.transform.position =
+                viewPair.basePanel.transform.position =
                     _mainCam.transform.position + _mainCam.transform.forward * viewPanelDistance;
             }
         }

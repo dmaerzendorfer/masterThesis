@@ -1,11 +1,12 @@
 ﻿using NaughtyAttributes;
 using Runtime.CameraControl;
+using Runtime.View.Manager;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace Runtime.View
+namespace Runtime.View.Interactable
 {
     /// <summary>
-    /// The object in center
+    /// The drone camera that can be selected
     /// </summary>
     public class DroneInteractable : XRGrabInteractable
     {

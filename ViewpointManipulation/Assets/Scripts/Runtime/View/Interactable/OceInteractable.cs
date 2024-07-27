@@ -1,19 +1,16 @@
 ﻿using NaughtyAttributes;
+using Runtime.View.Manager;
+using Runtime.View.ViewPair;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace Runtime.View
+namespace Runtime.View.Interactable
 {
     /// <summary>
-    /// The object in center
+    /// An interactable object that can be selected to spawn an OCE-Cam focusing on it.
     /// </summary>
     public class OceInteractable : XRGrabInteractable
     {
-        [HorizontalLine(color: EColor.Red)]
-        public OceActions actionsLeft;
-
-        public OceActions actionsRight;
-
         [HorizontalLine(color: EColor.Red)]
         public Transform lookAtTarget;
 

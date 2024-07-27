@@ -4,7 +4,6 @@ namespace Runtime.View
 {
     public class ViewCamera : MonoBehaviour
     {
-        public ViewPanel viewPanel;
         public Camera cam;
 
         public int textureWidth = 256;

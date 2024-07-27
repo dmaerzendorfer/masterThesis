@@ -1,15 +1,16 @@
+using Runtime.View.Manager;
+using Runtime.View.ViewPair;
 using TMPro;
 using Unity.VRTemplate;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace Runtime.View
+namespace Runtime.View.Panel
 {
     [RequireComponent(typeof(XRGrabInteractable))]
-    public class ViewPanel : MonoBehaviour
+    public class BaseViewPanel : MonoBehaviour
     {
-        public ViewCamera viewCamera;
         public RawImage renderImage;
         public BezierCurve curve;
 
@@ -37,7 +38,7 @@ namespace Runtime.View
 
         private ViewManager _viewManager;
 
-        private void Start()
+        public virtual void Start()
         {
             _viewManager = ViewManager.Instance;
             _grabInteractable = GetComponent<XRGrabInteractable>();
@@ -46,7 +47,7 @@ namespace Runtime.View
 
             //hook up the xrgrabinteractable events with the viewManager
             _grabInteractable.selectExited.AddListener(_viewManager.OnViewWindowSelectionExit);
-            _grabInteractable.activated.AddListener(_viewManager.OnViewWindowActivate);
+            _grabInteractable.activated.AddListener(_viewManager.OnViewPanelActivate);
 
             _grabInteractable.hoverEntered.AddListener((x) =>
             {
@@ -77,6 +78,7 @@ namespace Runtime.View
             if (myViewPair)
                 myViewPair.ReceiveSelect();
         }
+
 
         public void SetRenderTexture(RenderTexture texture)
         {
