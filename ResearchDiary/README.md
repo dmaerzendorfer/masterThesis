@@ -1,6 +1,23 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 27.07.2024
+- plan: 
+    - today: fix avatar as best as possible, look into wim, check refactoring
+    - tomorrow: think tiny bit about study task and other project (fötality)
+    - monday/tuesday: study task + setup of that as good as possible 
+- looked into making the avatar a bit nicer
+    - checked out the meta avatars sdk (tho this does not have support for tracked and animated legs but screw that)
+        - this is fucking magic! it just works out of the box with xr interaction toolkit?! (or does it? my tutorial uses a oculus VR rig but i am using the XR toolkits rig!)
+        - nvm now my controllers dont work anymore...
+        - removed everything for now, seems like i would need to use oculus xr intstead of the open xr interaction toolkit for stuff to work, but am already using xr interaction toolkit...
+            - https://immersive-insiders.com/blog/how-to-animate-your-avatar-for-vr-in-unity
+            - this seems rather easy (missing my feet ik tho)
+    - made hand locations of my shitty home-made avatar a bit better
+    - player still cant see their own arms
+    - mirrors and other cams see the avatar but not the controllers (so i can hide the disparency of hand location and controller location a bit ^^')
+- created a mirror prefab 
+
 ## 25.07.2024
 - started at 11.30h ...
 - testing the drone cams and fixing any bugs

@@ -75,15 +75,7 @@ namespace Runtime.CameraControl
                     //enable drone actions
                     inputActions.EnableAllActions();
                     //disable default vr locomotion actions
-
-                    if (TryToFindLocomotion())
-                    {
-                        _locomotionSystem.gameObject.SetActive(false);
-                        foreach (var c in _locomotionControllerManagers)
-                        {
-                            c.enabled = false;
-                        }
-                    }
+                    SetLocomotionEnabled(false);
                 }
                 else
                 {
@@ -91,14 +83,7 @@ namespace Runtime.CameraControl
                     //disable drone actions
                     inputActions.DisableAllActions();
                     //enable default vr locomotion actions
-                    if (TryToFindLocomotion())
-                    {
-                        _locomotionSystem.gameObject.SetActive(true);
-                        foreach (var c in _locomotionControllerManagers)
-                        {
-                            c.enabled = true;
-                        }
-                    }
+                    SetLocomotionEnabled(true);
 
                     ResetAnyInput();
                 }
@@ -135,6 +120,12 @@ namespace Runtime.CameraControl
 
         private void OnDestroy()
         {
+            //make sure to enable locomotion again if its disabled
+            if (IsSelected)
+            {
+                SetLocomotionEnabled(true);
+            }
+
             //un-hook up the actions
             inputActions.moveAction.action.performed -= OnMove;
             inputActions.yawPitchAction.action.performed -= OnYawPitch;
@@ -182,6 +173,18 @@ namespace Runtime.CameraControl
                 Vector3 translation = transform.forward * _moveInput.y +
                                       transform.right * _moveInput.x;
                 transform.position += translation * (moveSpeed * Time.deltaTime);
+            }
+        }
+
+        public void SetLocomotionEnabled(bool enabled)
+        {
+            if (TryToFindLocomotion())
+            {
+                _locomotionSystem.gameObject.SetActive(enabled);
+                foreach (var c in _locomotionControllerManagers)
+                {
+                    c.enabled = enabled;
+                }
             }
         }
 

@@ -797,16 +797,28 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed1a4c422bc8bec4cbe9dd75ade270e0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ed1a4c422bc8bec4cbe9dd75ade270e0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ed1a4c422bc8bec4cbe9dd75ade270e0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ed1a4c422bc8bec4cbe9dd75ade270e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.2277513
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed1a4c422bc8bec4cbe9dd75ade270e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.5600002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed1a4c422bc8bec4cbe9dd75ade270e0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.8475604
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed1a4c422bc8bec4cbe9dd75ade270e0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1356,20 +1368,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSmoothness: 0.1
   head:
-    vrTarget: {fileID: 6086819955709150753}
+    vrTarget: {fileID: 0}
     ikTarget: {fileID: 0}
     trackingPositionOffset: {x: -0.04, y: -0.1, z: -0.18}
     trackingRotationOffset: {x: 0, y: 0, z: 0}
   leftHand:
     vrTarget: {fileID: 0}
-    ikTarget: {fileID: 4503286311122572674}
-    trackingPositionOffset: {x: 0, y: 0, z: 0}
+    ikTarget: {fileID: 0}
+    trackingPositionOffset: {x: -0.5, y: -0.51, z: 1.69}
     trackingRotationOffset: {x: 0, y: 0, z: 0}
   rightHand:
     vrTarget: {fileID: 0}
-    ikTarget: {fileID: 6696928777144258567}
-    trackingPositionOffset: {x: 0, y: 0, z: 0}
-    trackingRotationOffset: {x: 0, y: 0, z: 0}
+    ikTarget: {fileID: 0}
+    trackingPositionOffset: {x: -0.67, y: -0.07, z: -0.36}
+    trackingRotationOffset: {x: 0, y: 0, z: -90}
   headBodyPositionOffset: {x: 0, y: -0.54, z: 0}
   headBodyYawOffset: 0
 --- !u!114 &383969187234892362

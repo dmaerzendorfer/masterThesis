@@ -48,6 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewCam: {fileID: 3572923622037722056}
   viewPanel: {fileID: 3015562690971496296}
+  onViewPairDeleted:
+    m_PersistentCalls:
+      m_Calls: []
   orbitCamController: {fileID: 0}
 --- !u!1001 &4558344101377573142
 PrefabInstance:
@@ -272,6 +275,30 @@ PrefabInstance:
     - target: {fileID: 3266023690402167021, guid: 43d8cde9a658d0740b1b7103081ff558, type: 3}
       propertyPath: m_ChildForceExpandHeight
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108404993178127583, guid: 43d8cde9a658d0740b1b7103081ff558, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108404993178127583, guid: 43d8cde9a658d0740b1b7103081ff558, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108404993178127583, guid: 43d8cde9a658d0740b1b7103081ff558, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108404993178127583, guid: 43d8cde9a658d0740b1b7103081ff558, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108404993178127583, guid: 43d8cde9a658d0740b1b7103081ff558, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108404993178127583, guid: 43d8cde9a658d0740b1b7103081ff558, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5164801597136876459, guid: 43d8cde9a658d0740b1b7103081ff558, type: 3}
       propertyPath: m_Size

@@ -86,7 +86,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4500577750904153123}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tooltip Target Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 1514998671014263580}
   - component: {fileID: 4329775492117446697}
   - component: {fileID: 1378604730854434385}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Curve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3622902874653895524}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tooltip Target Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1437539335788499625}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Link Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 815305464824644931}
   - component: {fileID: 8940680908157074785}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Affordance Callout Grab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 2609461960975837452}
   - component: {fileID: 2776979631385657868}
   - component: {fileID: 7801789589491777862}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Bumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 6642294211868651381}
   - component: {fileID: 3921941708302881971}
   - component: {fileID: 8968603069334832069}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ThumbStick_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -769,7 +769,7 @@ GameObject:
   - component: {fileID: 7829253414859670446}
   - component: {fileID: 7442801991606832205}
   - component: {fileID: 2268408740962817289}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ThumbStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1032,7 +1032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2997681852713750547}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1066,7 +1066,7 @@ GameObject:
   - component: {fileID: 5335156734102734809}
   - component: {fileID: 693570428903644920}
   - component: {fileID: 8777539900789608996}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Button_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1147,7 +1147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1248439869675354535}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tooltip Target Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1180,7 +1180,7 @@ GameObject:
   - component: {fileID: 6461299946408158818}
   - component: {fileID: 5636606953665972778}
   - component: {fileID: 818246576493859410}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Lazy Tooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1368,7 +1368,7 @@ GameObject:
   - component: {fileID: 3258100443544345801}
   - component: {fileID: 5880004670848581340}
   - component: {fileID: 2808951050093396122}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Curve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1540,7 +1540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1597078685154530380}
   - component: {fileID: 2504688085039576244}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Joystick Rotation Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1595,7 +1595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8882397979576228128}
   - component: {fileID: 5888183265216323815}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Affordance Callout Grab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1647,7 +1647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2886781277162887279}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Link Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1680,7 +1680,7 @@ GameObject:
   - component: {fileID: 5601866261846359169}
   - component: {fileID: 7461694988814781235}
   - component: {fileID: 6709694825526860850}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Curve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1858,7 +1858,7 @@ GameObject:
   - component: {fileID: 8418844970345404723}
   - component: {fileID: 1999736341903087345}
   - component: {fileID: 5073640813092500623}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Tooltip Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2038,7 +2038,7 @@ GameObject:
   - component: {fileID: 682615519261829942}
   - component: {fileID: 2772770448959552077}
   - component: {fileID: 1535696072617096821}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Tooltip Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2213,7 +2213,7 @@ GameObject:
   - component: {fileID: 2054631507214868983}
   - component: {fileID: 7008451636779385564}
   - component: {fileID: 1989875904485408394}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Lazy Tooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2299,7 +2299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6523031557519179814}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2334,7 +2334,7 @@ GameObject:
   - component: {fileID: 6566386396489534654}
   - component: {fileID: 5452778503419038071}
   - component: {fileID: 9167135680323409073}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Tooltip Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2482,7 +2482,7 @@ GameObject:
   - component: {fileID: 9020764534998600302}
   - component: {fileID: 3435754348808275168}
   - component: {fileID: 358148572606678833}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Down Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2557,7 +2557,7 @@ GameObject:
   - component: {fileID: 785051882138888212}
   - component: {fileID: 6759587313290141545}
   - component: {fileID: 6784120171979024834}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Curve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2730,7 +2730,7 @@ GameObject:
   - component: {fileID: 8170030484817561532}
   - component: {fileID: 1006870645508980634}
   - component: {fileID: 572429563550240450}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Click
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2806,7 +2806,7 @@ GameObject:
   - component: {fileID: 1549282554165957600}
   - component: {fileID: 2222059790194161092}
   - component: {fileID: 2622618479992943715}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2957,7 +2957,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 31863
+    m_Bits: 64631
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3216,7 +3216,7 @@ GameObject:
   - component: {fileID: 664164445785807829}
   - component: {fileID: 3731989288009946659}
   - component: {fileID: 4384006616641517046}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Lazy Tooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3304,7 +3304,7 @@ GameObject:
   - component: {fileID: 7807232695099001639}
   - component: {fileID: 4799896252156906845}
   - component: {fileID: 8547512123875428666}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Radial Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3379,7 +3379,7 @@ GameObject:
   - component: {fileID: 134690767685940111}
   - component: {fileID: 3083272323879841209}
   - component: {fileID: 5704253901212609362}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ThumbStick_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3462,7 +3462,7 @@ GameObject:
   - component: {fileID: 6085889345837853280}
   - component: {fileID: 57762386544626261}
   - component: {fileID: 6644374775831384747}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Curve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3635,7 +3635,7 @@ GameObject:
   - component: {fileID: 9097278433543169980}
   - component: {fileID: 3100788223545707674}
   - component: {fileID: 1342683847532575351}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Lazy Tooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3761,7 +3761,7 @@ GameObject:
   - component: {fileID: 8034954157401531292}
   - component: {fileID: 6273217324326676914}
   - component: {fileID: 545429650339473805}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4022,7 +4022,7 @@ GameObject:
   - component: {fileID: 8510807302743276562}
   - component: {fileID: 40726021969324436}
   - component: {fileID: 9052340699766115565}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Button_Home
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4765,7 +4765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5418309145488643295}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: XRController_Thumbstick_Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5233,7 +5233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5515748291995851962}
   - component: {fileID: 272939444245330171}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Link End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5291,7 +5291,7 @@ GameObject:
   - component: {fileID: 3812961862790701856}
   - component: {fileID: 7417624170719473526}
   - component: {fileID: 7745449140764208088}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5372,7 +5372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 48331329177599016}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Right Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5416,7 +5416,7 @@ GameObject:
   - component: {fileID: 6439732806482191636}
   - component: {fileID: 5191254904099650823}
   - component: {fileID: 2024426876538292054}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Tooltip Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5589,7 +5589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5494945310758526655}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Link Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5620,7 +5620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4988710952911728218}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Link Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5654,7 +5654,7 @@ GameObject:
   - component: {fileID: 92705509746558518}
   - component: {fileID: 2530921461612065857}
   - component: {fileID: 4185877396200604626}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Tooltip Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5800,7 +5800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1572156769605980425}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: XRController_Thumbstick_Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5838,7 +5838,7 @@ GameObject:
   - component: {fileID: 1033011262086944722}
   - component: {fileID: 7745817925348194975}
   - component: {fileID: 1062021491219570153}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Tooltip Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5986,7 +5986,7 @@ GameObject:
   - component: {fileID: 7210916410240713614}
   - component: {fileID: 5357332811461039703}
   - component: {fileID: 3808062029449474971}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Controller_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6068,7 +6068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2316973544592973228}
   - component: {fileID: 1846839647962529351}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Link End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7228,7 +7228,7 @@ GameObject:
   - component: {fileID: 4224549489032501089}
   - component: {fileID: 558508146268897215}
   - component: {fileID: 1184777184783912418}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Link Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7396,7 +7396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 249601830092433840}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Universal Controller Materials Variant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7435,7 +7435,7 @@ GameObject:
   - component: {fileID: 7116269292653212969}
   - component: {fileID: 5312761689560317108}
   - component: {fileID: 3472845388161943913}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Link Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8066,7 +8066,7 @@ GameObject:
   - component: {fileID: 5560209484423913563}
   - component: {fileID: 5488638608933019051}
   - component: {fileID: 1941195309039416164}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Lazy Tooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8153,7 +8153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5819347635998999996}
   - component: {fileID: 301102850460466600}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Link End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8256,7 +8256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6038378414041065705}
   - component: {fileID: 6871733655032610012}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Link End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8312,7 +8312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1811787619210976132}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Link Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8344,7 +8344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3941366749833760662}
   - component: {fileID: 6962750672208240465}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Link End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8483,7 +8483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3151647826732115196}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tooltip Target Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8516,7 +8516,7 @@ GameObject:
   - component: {fileID: 2716912699013296707}
   - component: {fileID: 658982662071605318}
   - component: {fileID: 6599008784778325981}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Left Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8591,7 +8591,7 @@ GameObject:
   - component: {fileID: 9157167494277285477}
   - component: {fileID: 1186360601593258083}
   - component: {fileID: 2372027416592109000}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Button_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9229,7 +9229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1137285919741697693}
   - component: {fileID: 2823205885684633572}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Affordance Callout Click
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9281,7 +9281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2992482537386453900}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tooltip Target Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9315,7 +9315,7 @@ GameObject:
   - component: {fileID: 2746503927943033992}
   - component: {fileID: 4014901989103749124}
   - component: {fileID: 2164027943002237583}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Tooltip Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9463,7 +9463,7 @@ GameObject:
   - component: {fileID: 7820068148718092103}
   - component: {fileID: 8743009011001812358}
   - component: {fileID: 6890596512415352753}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9536,7 +9536,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 682441607759105549}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Link Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9569,7 +9569,7 @@ GameObject:
   - component: {fileID: 2470192694211734029}
   - component: {fileID: 2679863259940623765}
   - component: {fileID: 3072139807666305211}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9694,7 +9694,7 @@ GameObject:
   - component: {fileID: 7944065720731452367}
   - component: {fileID: 1799769291488889645}
   - component: {fileID: 653100101607030211}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Lazy Tooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9781,7 +9781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3973603584969490425}
   - component: {fileID: 4971626997767123498}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Affordance Callout Click
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9835,7 +9835,7 @@ GameObject:
   - component: {fileID: 3645102080095024888}
   - component: {fileID: 4449179482240416781}
   - component: {fileID: 1619547295133877166}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Button_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9923,7 +9923,7 @@ GameObject:
   - component: {fileID: 6542425274811379640}
   - component: {fileID: 809824360532663899}
   - component: {fileID: 2063312051692188130}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Tooltip Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10098,7 +10098,7 @@ GameObject:
   - component: {fileID: 337700297517579231}
   - component: {fileID: 4349887158313959409}
   - component: {fileID: 2199517016221506526}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Curve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10271,7 +10271,7 @@ GameObject:
   - component: {fileID: 6593625790219318209}
   - component: {fileID: 1301601034653694}
   - component: {fileID: 5332899318913322838}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10346,7 +10346,7 @@ GameObject:
   - component: {fileID: 7712690653347881857}
   - component: {fileID: 4601877723798985621}
   - component: {fileID: 6821884941905485514}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Up Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10426,7 +10426,7 @@ GameObject:
   - component: {fileID: 7212694953558976889}
   - component: {fileID: 4584185019782274004}
   - component: {fileID: 7632870701981332051}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Tooltip Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10600,7 +10600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8755131071733335875}
   - component: {fileID: 1728735548026359143}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Joystick Affordances Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10650,7 +10650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634688257249569415}
   - component: {fileID: 7641503105759101076}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Link End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10754,7 +10754,7 @@ GameObject:
   - component: {fileID: 1384020751168030394}
   - component: {fileID: 7869689842140249723}
   - component: {fileID: 8536196022314837868}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Radial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10861,7 +10861,7 @@ GameObject:
   - component: {fileID: 8038284513355709567}
   - component: {fileID: 3456345139002114777}
   - component: {fileID: 7320631766988568518}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Controller_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10944,7 +10944,7 @@ GameObject:
   - component: {fileID: 1572547785405509660}
   - component: {fileID: 1184386947957032991}
   - component: {fileID: 7942361323193032320}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Lazy Tooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11032,7 +11032,7 @@ GameObject:
   - component: {fileID: 6929938779365075038}
   - component: {fileID: 936535907669929976}
   - component: {fileID: 3497106298248407409}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: TouchPad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11114,7 +11114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6889245111806748797}
   - component: {fileID: 3317312086937975128}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Joystick Rotation Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11170,7 +11170,7 @@ GameObject:
   - component: {fileID: 330989909907900146}
   - component: {fileID: 2127984274154141395}
   - component: {fileID: 572955170588653227}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11250,7 +11250,7 @@ GameObject:
   - component: {fileID: 5950230599302710261}
   - component: {fileID: 7200060489605308168}
   - component: {fileID: 7916244492292822665}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Tooltip Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11425,7 +11425,7 @@ GameObject:
   - component: {fileID: 4969563955989751280}
   - component: {fileID: 7564076234675887026}
   - component: {fileID: 2511926528664761168}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Button_Home
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11624,7 +11624,7 @@ GameObject:
   - component: {fileID: 8564044911942386487}
   - component: {fileID: 2477961457566952672}
   - component: {fileID: 2867504764733180753}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Link Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11706,7 +11706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2309112516420965671}
   - component: {fileID: 1672444055844943597}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Affordance Callout Smooth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11760,7 +11760,7 @@ GameObject:
   - component: {fileID: 7810560684569201127}
   - component: {fileID: 5526135282528466248}
   - component: {fileID: 8542604926471597292}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Curve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11933,7 +11933,7 @@ GameObject:
   - component: {fileID: 8566683833727669883}
   - component: {fileID: 7102422589366033546}
   - component: {fileID: 1914281587867820369}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Bumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12016,7 +12016,7 @@ GameObject:
   - component: {fileID: 4864073117285767754}
   - component: {fileID: 7859269288309306855}
   - component: {fileID: 5607977004842750117}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Link Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12230,7 +12230,7 @@ GameObject:
   - component: {fileID: 227243478989223020}
   - component: {fileID: 7766899519342531784}
   - component: {fileID: 8190750143355955158}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Down Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12305,7 +12305,7 @@ GameObject:
   - component: {fileID: 5325961302444164352}
   - component: {fileID: 3530087001012849155}
   - component: {fileID: 2060521674713638493}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Radial Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12380,7 +12380,7 @@ GameObject:
   - component: {fileID: 2345329521905358503}
   - component: {fileID: 1090117889743705101}
   - component: {fileID: 3418367478365307579}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: TouchPad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12544,7 +12544,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1492060368200456186}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tooltip Target Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12577,7 +12577,7 @@ GameObject:
   - component: {fileID: 8208505718555801019}
   - component: {fileID: 3266828520662167661}
   - component: {fileID: 1055263213925685775}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Button_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12659,7 +12659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2730224623376675618}
   - component: {fileID: 4644585408695659902}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Joystick Affordances Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12723,8 +12723,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7196857633685444471}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21315314, y: 0.73689467, z: 0.531341, w: 0.359484}
-  m_LocalPosition: {x: -1.6313618, y: -0.6283225, z: 0.49898124}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12741,7 +12741,7 @@ GameObject:
   - component: {fileID: 1856818687336809051}
   - component: {fileID: 2406326992203069954}
   - component: {fileID: 6033745534359006702}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Click
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12816,7 +12816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5898583086062359673}
   - component: {fileID: 7149824502383703218}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: DirectionsGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12910,7 +12910,7 @@ GameObject:
   - component: {fileID: 3301057330452206665}
   - component: {fileID: 613080532860388382}
   - component: {fileID: 4861423340000679230}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12998,8 +12998,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7579841620359641397}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0067467317, y: -0.461468, z: -0.1880766, w: 0.8669653}
-  m_LocalPosition: {x: 0.045064837, y: -0.13279736, z: 0.63263357}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13016,7 +13016,7 @@ GameObject:
   - component: {fileID: 2551376499747869534}
   - component: {fileID: 741880814859994053}
   - component: {fileID: 4799231709161831009}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Link Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13099,7 +13099,7 @@ GameObject:
   - component: {fileID: 5029674539914443616}
   - component: {fileID: 5529727926557840646}
   - component: {fileID: 9049313307104971880}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Link Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13181,7 +13181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2570330598744653169}
   - component: {fileID: 7571618977991782943}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Link End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13240,7 +13240,7 @@ GameObject:
   - component: {fileID: 8972712998937379320}
   - component: {fileID: 2838600324813606829}
   - component: {fileID: 7230389783669650112}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Tooltip Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13537,7 +13537,7 @@ GameObject:
   - component: {fileID: 2529606092093436581}
   - component: {fileID: 5335609534472993332}
   - component: {fileID: 5055250361501034640}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Tooltip Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13711,7 +13711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5731662576344348800}
   - component: {fileID: 6070390614327141148}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: DirectionsGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13767,7 +13767,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 546577772119389376}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Left Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13889,7 +13889,7 @@ GameObject:
   - component: {fileID: 6473685122113381600}
   - component: {fileID: 7942805842027886527}
   - component: {fileID: 9042506769241784084}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Tooltip Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14036,7 +14036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6266600096198774192}
   - component: {fileID: 7722372825476037851}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Affordance Callout Blink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14090,7 +14090,7 @@ GameObject:
   - component: {fileID: 3377659047007830149}
   - component: {fileID: 1144751197907127186}
   - component: {fileID: 7719970406917009575}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14163,7 +14163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7743019985205819134}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Link Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14196,7 +14196,7 @@ GameObject:
   - component: {fileID: 2762105284675047206}
   - component: {fileID: 6551648410771272356}
   - component: {fileID: 8706488955441162640}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14271,7 +14271,7 @@ GameObject:
   - component: {fileID: 616934192435004397}
   - component: {fileID: 4094145901446284837}
   - component: {fileID: 358553817368150869}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ThumbStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14354,7 +14354,7 @@ GameObject:
   - component: {fileID: 140226458319532748}
   - component: {fileID: 4394847437249121378}
   - component: {fileID: 278795320677273912}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Radial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14430,7 +14430,7 @@ GameObject:
   - component: {fileID: 7069843469086088412}
   - component: {fileID: 582738529360154336}
   - component: {fileID: 6083598292999533831}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Right Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14505,7 +14505,7 @@ GameObject:
   - component: {fileID: 311115345330698684}
   - component: {fileID: 5905915212389808142}
   - component: {fileID: 5377458565637457122}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Link Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14588,7 +14588,7 @@ GameObject:
   - component: {fileID: 672668622649140184}
   - component: {fileID: 6032879043364745944}
   - component: {fileID: 7472025853697661857}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Left Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14663,7 +14663,7 @@ GameObject:
   - component: {fileID: 8181901587440784910}
   - component: {fileID: 1490781610416564159}
   - component: {fileID: 5229951979940484647}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14816,7 +14816,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3397932225735948939}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Universal Controller Materials Variant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15290,7 +15290,7 @@ GameObject:
   - component: {fileID: 672979147042978311}
   - component: {fileID: 5613665250593807076}
   - component: {fileID: 3694698810438360403}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Right Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15450,7 +15450,7 @@ GameObject:
   - component: {fileID: 4695701979926808073}
   - component: {fileID: 4542545591313855671}
   - component: {fileID: 5196952764642450565}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15525,7 +15525,7 @@ GameObject:
   - component: {fileID: 4916740175084056225}
   - component: {fileID: 2990207023855315534}
   - component: {fileID: 2292021085265114038}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Up Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15598,7 +15598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 75805151946511755}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tooltip Target Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15632,7 +15632,7 @@ GameObject:
   - component: {fileID: 2124875004547375563}
   - component: {fileID: 501952193556971324}
   - component: {fileID: 4227891825324731089}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Tooltip Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15932,7 +15932,7 @@ GameObject:
   - component: {fileID: 8399123395585395568}
   - component: {fileID: 6679149639930274016}
   - component: {fileID: 3481132513187756833}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16016,7 +16016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4680528038135937235}
   - component: {fileID: 5289064185023338970}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Affordance Callout Turn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16070,7 +16070,7 @@ GameObject:
   - component: {fileID: 2917196057881334664}
   - component: {fileID: 7787000062267689393}
   - component: {fileID: 6257746087948894248}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16195,9 +16195,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4074217964905968107}
     - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+      propertyPath: leftHand.ikTarget
+      value: 
+      objectReference: {fileID: 4122010224797823037}
+    - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
       propertyPath: leftHand.vrTarget
       value: 
       objectReference: {fileID: 5636847791760164982}
+    - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+      propertyPath: rightHand.ikTarget
+      value: 
+      objectReference: {fileID: 6609863967526057400}
     - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
       propertyPath: rightHand.vrTarget
       value: 
@@ -16205,6 +16213,54 @@ PrefabInstance:
     - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
       propertyPath: headBodyPositionOffset.y
       value: -0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+      propertyPath: leftHand.trackingPositionOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+      propertyPath: leftHand.trackingPositionOffset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+      propertyPath: leftHand.trackingPositionOffset.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+      propertyPath: leftHand.trackingRotationOffset.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+      propertyPath: leftHand.trackingRotationOffset.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+      propertyPath: leftHand.trackingRotationOffset.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+      propertyPath: rightHand.trackingPositionOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+      propertyPath: rightHand.trackingPositionOffset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+      propertyPath: rightHand.trackingPositionOffset.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+      propertyPath: rightHand.trackingRotationOffset.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+      propertyPath: rightHand.trackingRotationOffset.y
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649884138736437626, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+      propertyPath: rightHand.trackingRotationOffset.z
+      value: -100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16216,8 +16272,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3400855109389159094, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
   m_PrefabInstance: {fileID: 525427468409841087}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &4122010224797823037 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4503286311122572674, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+  m_PrefabInstance: {fileID: 525427468409841087}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5994867247015830430 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6086819955709150753, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
+  m_PrefabInstance: {fileID: 525427468409841087}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6609863967526057400 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6696928777144258567, guid: 14657c8e440ba4b46900ff25a1b5f0d7, type: 3}
   m_PrefabInstance: {fileID: 525427468409841087}
   m_PrefabAsset: {fileID: 0}
