@@ -1,6 +1,35 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 30.07.2024
+- still at home and will be in graz from tomorrow till saturday
+- created a little control table for the user study to adjust the settings
+    - still need to test tho but hmd is out of power
+
+## 29.07.2024
+- visiting family at home right now, so less work gets done
+- slowly get the feeling i wont cut the first deadline of 8.9. ^^'
+- made a (shitty) diagram of the controls for drone and OCE
+    -![panel tutorial](images/panel.jpeg) ![oce tutorial](images/oce.jpeg) ![drone tutorial](images/Drone.jpeg)
+- wrote down what i need for the controls table that is given ppl for study and pilot test
+    - shows the controls
+    - has buttons to change view-mode
+    - shows count of active cams
+    - has reset button to delete all cams
+    - has button to start user study
+- first draft for user study task:
+    - make a diarama of medival scene -> users have to find 5 hidden pois in the scene and look at all of the at the same time
+        - the pois locations are hand picked to make sure random ones are not super hidden and its easier for me
+        - will let one person only test either drone or OCE -> otherwise they already know where the pois are (and cant really use other poi locations for another test since it wouldnt be fair)
+- need to research in more detail what to document in the study task
+    - and also think about if there should be a part after finding the pois eG another small questionnaire!
+
+- todo: look into the deadline stuff!
+- todo: research how to document study task
+- todo: research if second part of study will be questionnaire
+- todo: make scene for the study/pilot test
+- todo: make control table for study/pilot test
+
 ## 27.07.2024
 - plan: 
     - today: fix avatar as best as possible, look into wim, check refactoring

@@ -68,40 +68,15 @@ namespace Runtime.View.Manager
                 if (_viewMode == value) return;
                 _viewMode = value;
                 //make sure to delete any views of the incorrect mode on changing
-                var hasViewCountChanged = false;
-                switch (_viewMode)
+                DeleteAllActiveViews();
+                if (_viewMode == ViewMode.Drone)
                 {
-                    case ViewMode.OCE:
-                        droneViewConfigs.ForEach(x =>
-                        {
-                            if (x.instance != null)
-                            {
-                                Destroy(x.instance.gameObject);
-                                x.instance = null;
-                                hasViewCountChanged = true;
-                            }
-                        });
-                        droneSpawnAction.action.Disable();
-                        break;
-                    case ViewMode.Drone:
-
-                        oceViewConfigs.ForEach(x =>
-                        {
-                            if (x.instance != null)
-                            {
-                                Destroy(x.instance.gameObject);
-                                x.instance = null;
-                                hasViewCountChanged = true;
-                            }
-                        });
-                        droneSpawnAction.action.Enable();
-                        break;
-                    default:
-                        return;
+                    droneSpawnAction.action.Enable();
                 }
-
-                if (hasViewCountChanged)
-                    onAnyCamDestroyed.Invoke();
+                else
+                {
+                    droneSpawnAction.action.Disable();
+                }
             }
         }
 
@@ -132,7 +107,7 @@ namespace Runtime.View.Manager
 
         [Foldout("ViewPanels")]
         public GameObject viewParent;
-        
+
         [Foldout("ViewPanels")]
         public Color worldColor = Color.black;
 
@@ -325,6 +300,42 @@ namespace Runtime.View.Manager
             {
                 transf.position += _mainCam.transform.forward * droneSpawningDistance;
             }
+        }
+
+        public void DeleteAllActiveViews()
+        {
+            var hasViewCountChanged = false;
+            switch (_viewMode)
+            {
+                case ViewMode.OCE:
+                    droneViewConfigs.ForEach(x =>
+                    {
+                        if (x.instance != null)
+                        {
+                            Destroy(x.instance.gameObject);
+                            x.instance = null;
+                            hasViewCountChanged = true;
+                        }
+                    });
+                    break;
+                case ViewMode.Drone:
+
+                    oceViewConfigs.ForEach(x =>
+                    {
+                        if (x.instance != null)
+                        {
+                            Destroy(x.instance.gameObject);
+                            x.instance = null;
+                            hasViewCountChanged = true;
+                        }
+                    });
+                    break;
+                default:
+                    return;
+            }
+
+            if (hasViewCountChanged)
+                onAnyCamDestroyed.Invoke();
         }
 
         private void OnDroneUnselect(InputAction.CallbackContext callbackContext)
