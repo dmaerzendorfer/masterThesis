@@ -66,9 +66,9 @@ namespace Runtime.View.Manager
             set
             {
                 if (_viewMode == value) return;
-                _viewMode = value;
                 //make sure to delete any views of the incorrect mode on changing
                 DeleteAllActiveViews();
+                _viewMode = value;
                 if (_viewMode == ViewMode.Drone)
                 {
                     droneSpawnAction.action.Enable();
@@ -118,6 +118,7 @@ namespace Runtime.View.Manager
 
         [Foldout("Events")]
         public UnityEvent onAnyCamDestroyed = new UnityEvent();
+        public UnityEvent onAnyCamSpawned = new UnityEvent();
 
         public int CurrentActiveViewCount
         {
@@ -179,6 +180,7 @@ namespace Runtime.View.Manager
             config.instance = Instantiate(config.prefab);
             config.instance.basePanel.panelText.text = config.panelTitle;
             config.instance.onViewPairDeleted.AddListener(() => onAnyCamDestroyed.Invoke());
+            onAnyCamSpawned.Invoke();
             return config.instance;
         }
 
@@ -189,12 +191,13 @@ namespace Runtime.View.Manager
         public DroneViewPair SpawnDrone()
         {
             if (_viewMode != ViewMode.Drone) return null;
-
+            
             var config = droneViewConfigs.FirstOrDefault(x => x.instance == null);
             if (config == null) return null;
             config.instance = Instantiate(config.prefab);
             config.instance.basePanel.panelText.text = config.panelTitle;
             config.instance.onViewPairDeleted.AddListener(() => onAnyCamDestroyed.Invoke());
+            onAnyCamSpawned.Invoke();
             return config.instance;
         }
 
@@ -308,11 +311,11 @@ namespace Runtime.View.Manager
             switch (_viewMode)
             {
                 case ViewMode.OCE:
-                    droneViewConfigs.ForEach(x =>
+                    oceViewConfigs.ForEach(x =>
                     {
                         if (x.instance != null)
                         {
-                            Destroy(x.instance.gameObject);
+                            x.instance.DeleteViewPair();
                             x.instance = null;
                             hasViewCountChanged = true;
                         }
@@ -320,11 +323,11 @@ namespace Runtime.View.Manager
                     break;
                 case ViewMode.Drone:
 
-                    oceViewConfigs.ForEach(x =>
+                    droneViewConfigs.ForEach(x =>
                     {
                         if (x.instance != null)
                         {
-                            Destroy(x.instance.gameObject);
+                            x.instance.DeleteViewPair();
                             x.instance = null;
                             hasViewCountChanged = true;
                         }

@@ -1,6 +1,77 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 05.08.2024
+- looked into deadline and how to make it a later one^^'
+- designed study in detail:
+    - my aim -> find 20 ppl -> 10 for each method? ask markus if that is realistic/enough
+    - **overall task**
+        - users are sent into a scene with a medival diarama -> aka an open exhibit
+        - the users either use OCE or Drone
+        - the users have to find 6 'hidden' hand-placed POIs (things that are out of place) in the diarama
+            -  decided on 6 so the users have to use all cams (5) + their own viewpoint
+            - two are rather easy to find, two are medium, two are a bit harder
+        - data is only polled for one use-method per users (dont wont to screw the data since they would already know the poi locations after the first run-through)
+            - will however let users test the other method as well just for generic feedback
+            - maybe ask them to just explore the scene with the second method and note things they found in the questionnaire afterwards
+            - use this part for evaluating spatial awareness and orientation
+    - **questionnaire:**
+        - 1. legal stuff ->  für daten erhebung etc. -> ask markus if there is a template somewhere...
+        - 2. generic stuff -> eg age, experience in VR, gender etc. -> same here if there is a template somewhere
+        - 3. simulator sickness part -> simulator sickness questionnaire (SSQ)
+            - https://conservancy.umn.edu/server/api/core/bitstreams/70c8fe0f-c84a-4d0e-80ba-b97822a5cf95/content
+            - or better VRSQ!
+                - https://www.sciencedirect.com/science/article/pii/S000368701730282X
+        - 4. embodiment part 
+            - https://www.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2020.575943/full
+            - with some alterations if need be
+        - 5. exploration part ->
+            - custom questions on the part after the user explores after the main study (all questions use a 1-5 range with strongly aggree/disagree etc.)
+                - what method did you use for the exploration part -> oce or drone
+                - this method works well for exploration
+                - how many views did you usually use concurrently?
+        - 5. usability part -> system usability scale (SUS)
+            - https://www.researchgate.net/publication/228593520_SUS_A_quick_and_dirty_usability_scale
+        - 6. any thing the user wants to remark
+    - **incentive to get ppl to help me out:**
+        - 1. send out mail
+            - allow them to draw scribbls on my body with an edding if they help?
+        - 2. run through fh and ask ppl
+        - 3. ask family and friends
+    - **data to capture:**
+        - 1. what method was used
+        - 2. when (time after start) what POI was found
+            - interesting: how much time needed for first POI found
+        - 3. how much time needed for all POIs found
+        - 4. how often spawned a cam
+        - 5. how often deleted a cam
+        - 6. how often docked cam to hud
+        - 7. how often un-docked cam from hud
+        - 8. time at start of task
+        - 9. time at end of task
+        - 10. how often used the 'delete all cams' feature at the control panel during the study
+        - 11. if using the drone mode -> track time spent while in active mode in either user related or cam related movement
+
+    - **how to anonymise:**
+        - 1. mark legal doc myself with just a number of user
+        - 2. let the ppl sign the time and date on the legal doc so i can find the corresponding record in the dataset
+- **todo** implement logic for study with documentation and the pois and scene
+    -> then make meeting with markus -> let him test it. and ask about amount of ppl to test on and possible questionnaires and all other open questions!
+- stuff done now:
+    - added a script for pois that know if they are in cam view or not
+        - using unities onBecameVisible and onBecameInvisible
+            - does have the problem however that the scene camera in the editor also triggers it, need to be careful during study then (if i dont use a build that is)
+            - onbecamevisible apparently ignores occlusion due to having to render shadows or smth like that
+                - disabling the shadow did not solve it. 
+                - could add a raycast check but doesnt really work well since if obj is in frustrum and stays there the event is only triggered once -> unless i check in update all the time! -> but that is still better performance than running the raycast+frustum check for each cam every time even if its not even near being rendered!
+                    - using the renderers.isVisible property instead!
+                    - important note: for lineCast and raycast to work make sure it does not consider triggers as hits! -> my oce objects have snap volumes that are bigger than the object themselves!
+                        - can be set in: Edit > Project Settings > Physics > Uncheck “Queries Hit Triggers”
+                    - another problem was the pois own mesh was blocking the raycast -> had to put it on the "ignore Raycast" layer
+            - turns out **onbecamevisible is not accurate enough** -> have to use frustrum calculation anyway
+    - fixed some bugs with the control table
+    - **todos next time**: make the level and study-manager that checks for all the conditions and tracks all the data, and saves it!
+
 ## 30.07.2024
 - still at home and will be in graz from tomorrow till saturday
 - created a little control table for the user study to adjust the settings

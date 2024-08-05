@@ -16,6 +16,7 @@ namespace Runtime
         {
             UpdateActiveCamCountDisplay();
             viewManager.onAnyCamDestroyed.AddListener(UpdateActiveCamCountDisplay);
+            viewManager.onAnyCamSpawned.AddListener(UpdateActiveCamCountDisplay);
         }
 
         public void ToggleMode()
