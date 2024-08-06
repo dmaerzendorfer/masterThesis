@@ -1,6 +1,11 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 06.08.2024
+- created a diorama scene for the study
+    - was pondering if i should setup the unity tile system for building it but didnt since it would be so much setup work for just a single diorama
+- still need to place the pois and make the study manager next time :) 
+- assets for the diorama are from a synthy package i had, animations/poses are from mixamo.com
 ## 05.08.2024
 - looked into deadline and how to make it a later one^^'
 - designed study in detail:
