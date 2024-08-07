@@ -80,11 +80,14 @@ MonoBehaviour:
   droneSpawnAction: {fileID: -6465576503248765194, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   droneUnselectAction: {fileID: 0}
   droneSpawnLocation: {fileID: 0}
-  viewPanelDistance: 10
-  droneSpawningDistance: 1
+  viewPanelDistance: 2
+  droneSpawningDistance: 0.5
   viewParent: {fileID: 0}
   worldColor: {r: 0, g: 0, b: 0, a: 1}
   hudColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   onAnyCamDestroyed:
+    m_PersistentCalls:
+      m_Calls: []
+  onAnyCamSpawned:
     m_PersistentCalls:
       m_Calls: []

@@ -1,6 +1,19 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 07.08.2024
+- cleaned up study scene
+- added POIs to diorama
+    - added two extra palceholder POIs that are for specific use during the pilot study
+- made oce objects highlight slightly on hover -> so user knows what is oce
+    - do have the fear that oce will be inherently harder since there are only so many oce obj in the scene
+- added a sample oce object to the study scene so users can try out the controls before starting the scene
+- had quick test -> need to give the cam views a better resolution ^^'
+- added min distance needed for poi to cam that is needed
+- fixed an issue with the poi in-view detection. turns out its not as accurate as i would like it. my observation suggests pois are considered still in view when they are just a little bit out of the FoV of the cam. is the FoV bigger than it should be? otherwise it works. leaving it as is for now.
+- leaving the study manager for tomorrow :) -> also need to add a ui canvas to the main cam to display instructions and found items counter
+
+
 ## 06.08.2024
 - created a diorama scene for the study
     - was pondering if i should setup the unity tile system for building it but didnt since it would be so much setup work for just a single diorama

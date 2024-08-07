@@ -8,6 +8,7 @@ namespace Runtime
     public class PointOfInterest : MonoBehaviour
     {
         public bool useOutline = false;
+        public float minDistance = 1f;
 
         [ShowIf("useOutline")]
         public Outline outline;
@@ -19,6 +20,7 @@ namespace Runtime
 
         [Foldout("Events")]
         public UnityEvent OnIsNowInView = new UnityEvent();
+
         [Foldout("Events")]
         public UnityEvent OnIsNoLongerInView = new UnityEvent();
 
@@ -38,6 +40,7 @@ namespace Runtime
                 //only do the linecast and frustum check if the renderer is visible
                 foreach (var cam in Camera.allCameras)
                 {
+                    if (cam == null) continue;
                     CheckIfVisible(cam);
                     //dont check further once its seen
                     if (_isInView) return;
@@ -47,27 +50,39 @@ namespace Runtime
 
         private void CheckIfVisible(Camera cam)
         {
-            //check if in frustum
-            var planes = GeometryUtility.CalculateFrustumPlanes(cam);
-            if (!GeometryUtility.TestPlanesAABB(planes, _renderer.bounds)) return;
+            //check if even close enough to cam
+            // var dir = (_renderer.bounds.center - cam.transform.position).normalized;
+            // Debug.DrawRay(transform.position, -dir * minDistance, Color.yellow);
+            if (Vector3.Distance(_renderer.bounds.center, cam.transform.position) <= minDistance)
+            {
+                //check if in frustum
+                var planes = GeometryUtility.CalculateFrustumPlanes(cam);
+                if (GeometryUtility.TestPlanesAABB(planes, _renderer.bounds))
+                {
+                    //check if not occluded
+                    if (!Physics.Linecast(cam.transform.position, cam.transform.position, out var hit))
+                    {
+                        if (!_isInView)
+                        {
+                            OnIsNowInView.Invoke();
+                        }
 
-            //check if not occluded
-            if (Physics.Linecast(cam.transform.position, transform.position, out var hit))
-            {
-                if (_isInView)
-                    OnIsNoLongerInView.Invoke();
-                _isInView = false;
-                if (useOutline)
-                    outline.enabled = false;
+                        _isInView = true;
+                        if (useOutline)
+                            outline.enabled = true;
+                        return;
+                    }
+                }
             }
-            else
+
+            if (_isInView)
             {
-                if (!_isInView)
-                    OnIsNowInView.Invoke();
-                _isInView = true;
-                if (useOutline)
-                    outline.enabled = true;
+                OnIsNoLongerInView.Invoke();
             }
+
+            _isInView = false;
+            if (useOutline)
+                outline.enabled = false;
         }
     }
 }

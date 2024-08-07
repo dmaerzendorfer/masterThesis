@@ -280,8 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d8bc570d482ea42a2559e7a30afb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewPanel: {fileID: 0}
   cam: {fileID: 6064718060305120873}
-  textureWidth: 256
-  textureHeight: 256
+  textureWidth: 1024
+  textureHeight: 1024
   renderTexture: {fileID: 0}

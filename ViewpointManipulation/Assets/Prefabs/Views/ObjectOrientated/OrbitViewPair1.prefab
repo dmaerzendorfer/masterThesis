@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 4628961603657115561}
-  textureWidth: 256
-  textureHeight: 256
+  textureWidth: 1024
+  textureHeight: 1024
   renderTexture: {fileID: 0}
 --- !u!1 &4589409119791687137
 GameObject:
