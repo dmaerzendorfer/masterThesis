@@ -1,6 +1,14 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 08.08.2024
+- worked on the study manager
+    - added a package for easy saving to a txt file ("fast log to file")
+    - made study Manager and a studyDataRecord with all the stuff i want to track
+    - then i went bouldering and motivation is gone now ^^'
+    - will continue tomorrow :D
+
+
 ## 07.08.2024
 - cleaned up study scene
 - added POIs to diorama
@@ -24,7 +32,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
 - designed study in detail:
     - my aim -> find 20 ppl -> 10 for each method? ask markus if that is realistic/enough
     - **overall task**
-        - users are sent into a scene with a medival diarama -> aka an open exhibit
+        - users are sent into a scene with a medival diorama -> aka an open exhibit
         - the users either use OCE or Drone
         - the users have to find 6 'hidden' hand-placed POIs (things that are out of place) in the diarama
             -  decided on 6 so the users have to use all cams (5) + their own viewpoint

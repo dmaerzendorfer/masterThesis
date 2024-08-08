@@ -33,12 +33,6 @@ namespace Runtime
         {
             viewManager.DeleteAllActiveViews();
         }
-
-        public void StartStudy()
-        {
-            //not yet implemented
-        }
-
         private void UpdateActiveCamCountDisplay()
         {
             camCountText.text = $"Active Cams: {viewManager.CurrentActiveViewCount}/5";
