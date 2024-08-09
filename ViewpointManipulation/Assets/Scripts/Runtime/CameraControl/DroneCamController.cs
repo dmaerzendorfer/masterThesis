@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Runtime.View.Manager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -101,6 +102,8 @@ namespace Runtime.CameraControl
         private List<ActionBasedControllerManager> _locomotionControllerManagers =
             new List<ActionBasedControllerManager>();
 
+        private ViewManager _viewManager;
+
         private void Awake()
         {
             _mainCamTransform = Camera.main.transform;
@@ -114,6 +117,11 @@ namespace Runtime.CameraControl
             inputActions.upAction.action.canceled += OnUpReleased;
             inputActions.downAction.action.started += OnDownPressed;
             inputActions.downAction.action.canceled += OnDownReleased;
+        }
+
+        private void Start()
+        {
+            _viewManager = ViewManager.Instance;
         }
 
         private void OnDestroy()

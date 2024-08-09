@@ -118,8 +118,16 @@ namespace Runtime.View.Manager
 
         [Foldout("Events")]
         public UnityEvent onAnyCamDestroyed = new UnityEvent();
+
+        [Foldout("Events")]
         public UnityEvent onAnyCamSpawned = new UnityEvent();
 
+        [Foldout("Events")]
+        public UnityEvent onViewPanelDocked = new UnityEvent();
+
+        [Foldout("Events")]
+        public UnityEvent onViewPanelUndocked = new UnityEvent();
+        
         public int CurrentActiveViewCount
         {
             get
@@ -191,7 +199,7 @@ namespace Runtime.View.Manager
         public DroneViewPair SpawnDrone()
         {
             if (_viewMode != ViewMode.Drone) return null;
-            
+
             var config = droneViewConfigs.FirstOrDefault(x => x.instance == null);
             if (config == null) return null;
             config.instance = Instantiate(config.prefab);
@@ -214,45 +222,38 @@ namespace Runtime.View.Manager
                 view = new ViewPanelData();
                 _viewPanels.Add(view);
                 view.BasePanel = args.interactableObject.transform.GetComponent<BaseViewPanel>();
-
+                view.backgroundImage = view.interactable.GetComponentInChildren<Image>();
                 view.interactable = (XRGrabInteractable)args.interactableObject;
+            }
+
+            //view already in list
+            //move out of hud if currently in hud
+            if (view.BasePanel.IsInHud)
+            {
+                //move it out of hud
+                view.interactable.transform.parent = null;
+                view.BasePanel.IsInHud = false;
+
+                //set to original scale again
+                view.interactable.transform.localScale = view.originalScale;
+
+                //change color
+                view.backgroundImage.color = worldColor;
+
+                onViewPanelUndocked.Invoke();
+            }
+            //otherwise move into the hud
+            else
+            {
+                //will move it into the hud now
                 view.BasePanel.IsInHud = true;
+
                 view.originalScale = args.interactableObject.transform.localScale;
                 //move into the hud
                 args.interactableObject.transform.parent = viewParent.transform;
-
                 //change color
-                view.backgroundImage = view.interactable.GetComponentInChildren<Image>();
                 view.backgroundImage.color = hudColor;
-            }
-            else
-            {
-                //view already in list
-                //move out of hud
-                if (view.BasePanel.IsInHud)
-                {
-                    //move it out of hud
-                    view.interactable.transform.parent = null;
-                    view.BasePanel.IsInHud = false;
-
-                    //set to original scale again
-                    view.interactable.transform.localScale = view.originalScale;
-
-                    //change color
-                    view.backgroundImage.color = worldColor;
-                }
-                //move into the hud
-                else
-                {
-                    //will move it into the hud now
-                    view.BasePanel.IsInHud = true;
-
-                    view.originalScale = args.interactableObject.transform.localScale;
-                    //move into the hud
-                    args.interactableObject.transform.parent = viewParent.transform;
-                    //change color
-                    view.backgroundImage.color = hudColor;
-                }
+                onViewPanelDocked.Invoke();
             }
         }
 
@@ -271,7 +272,6 @@ namespace Runtime.View.Manager
             {
                 view.interactable.transform.parent = null;
             }
-            // MoveViewIntoHudWithScaling(view);
         }
 
         public void AdjustNewViewPanelPosition(BaseViewPair viewPair)

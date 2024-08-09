@@ -1,13 +1,19 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 09.08.2024
+- continue to work on the study manager
+    - the events and everythign ought to work now, need to be implemented in scene now and be tested tho
+    - todo: still need to fix up the timer for the user and drone relative stuff...
+
+
 ## 08.08.2024
 - worked on the study manager
     - added a package for easy saving to a txt file ("fast log to file")
     - made study Manager and a studyDataRecord with all the stuff i want to track
     - then i went bouldering and motivation is gone now ^^'
     - will continue tomorrow :D
-
+- revisioned tracked data a bit -> for task two (free exploration changed also track the spawned and destroyed count) + duration + prefered drone mode
 
 ## 07.08.2024
 - cleaned up study scene

@@ -321,6 +321,7 @@ MonoBehaviour:
   movementMode: 0
   modelOutline: {fileID: 5634180261203350754}
   _isSelected: 0
+  <test>k__BackingField: 0
 --- !u!114 &891518435939542052
 MonoBehaviour:
   m_ObjectHideFlags: 0

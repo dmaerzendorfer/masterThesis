@@ -12,6 +12,8 @@ namespace Runtime
         public Text viewModeText;
         public Text viewModeTextButton;
 
+        public bool canSwapMode = true;
+
         private void Start()
         {
             UpdateActiveCamCountDisplay();
@@ -19,8 +21,9 @@ namespace Runtime
             viewManager.onAnyCamSpawned.AddListener(UpdateActiveCamCountDisplay);
         }
 
-        public void ToggleMode()
+        public void ToggleMode(bool force = false)
         {
+            if (!canSwapMode && !force) return;
             var currentMode = viewManager.ViewMode;
             viewManager.ViewMode = currentMode == ViewMode.Drone ? ViewMode.OCE : ViewMode.Drone;
 
@@ -33,6 +36,7 @@ namespace Runtime
         {
             viewManager.DeleteAllActiveViews();
         }
+
         private void UpdateActiveCamCountDisplay()
         {
             camCountText.text = $"Active Cams: {viewManager.CurrentActiveViewCount}/5";
