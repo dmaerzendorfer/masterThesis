@@ -123,11 +123,14 @@ namespace Runtime.View.Manager
         public UnityEvent onAnyCamSpawned = new UnityEvent();
 
         [Foldout("Events")]
+        public UnityEvent<DroneViewPair> onDroneCamSpawned = new UnityEvent<DroneViewPair>();
+
+        [Foldout("Events")]
         public UnityEvent onViewPanelDocked = new UnityEvent();
 
         [Foldout("Events")]
         public UnityEvent onViewPanelUndocked = new UnityEvent();
-        
+
         public int CurrentActiveViewCount
         {
             get
@@ -206,6 +209,7 @@ namespace Runtime.View.Manager
             config.instance.basePanel.panelText.text = config.panelTitle;
             config.instance.onViewPairDeleted.AddListener(() => onAnyCamDestroyed.Invoke());
             onAnyCamSpawned.Invoke();
+            onDroneCamSpawned.Invoke(config.instance);
             return config.instance;
         }
 
@@ -222,8 +226,8 @@ namespace Runtime.View.Manager
                 view = new ViewPanelData();
                 _viewPanels.Add(view);
                 view.BasePanel = args.interactableObject.transform.GetComponent<BaseViewPanel>();
-                view.backgroundImage = view.interactable.GetComponentInChildren<Image>();
                 view.interactable = (XRGrabInteractable)args.interactableObject;
+                view.backgroundImage = view.interactable.GetComponentInChildren<Image>();
             }
 
             //view already in list

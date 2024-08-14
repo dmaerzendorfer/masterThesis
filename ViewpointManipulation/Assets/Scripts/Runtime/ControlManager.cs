@@ -17,6 +17,11 @@ namespace Runtime
         private void Start()
         {
             UpdateActiveCamCountDisplay();
+            HookUpCamCount();
+        }
+
+        public void HookUpCamCount()
+        {
             viewManager.onAnyCamDestroyed.AddListener(UpdateActiveCamCountDisplay);
             viewManager.onAnyCamSpawned.AddListener(UpdateActiveCamCountDisplay);
         }

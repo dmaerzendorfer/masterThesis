@@ -118,7 +118,7 @@ namespace Runtime
 
     public class StudyDataRecord
     {
-        public TaskOne TaskOne;
-        public TaskTwo TaskTwo;
+        public TaskOne TaskOne = new TaskOne();
+        public TaskTwo TaskTwo = new TaskTwo();
     }
 }

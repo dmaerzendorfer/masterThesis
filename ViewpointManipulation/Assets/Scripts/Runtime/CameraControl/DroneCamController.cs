@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using NaughtyAttributes;
 using Runtime.View.Manager;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
@@ -68,6 +70,7 @@ namespace Runtime.CameraControl
             get { return _isSelected; }
             set
             {
+                if (value == _isSelected) return;
                 _isSelected = value;
                 if (_isSelected)
                 {
@@ -76,6 +79,7 @@ namespace Runtime.CameraControl
                     inputActions.EnableAllActions();
                     //disable default vr locomotion actions
                     SetLocomotionEnabled(false);
+                    onSelected.Invoke(this);
                 }
                 else
                 {
@@ -84,11 +88,22 @@ namespace Runtime.CameraControl
                     inputActions.DisableAllActions();
                     //enable default vr locomotion actions
                     SetLocomotionEnabled(true);
+                    onUnselected.Invoke(this);
 
                     ResetAnyInput();
                 }
             }
         }
+
+        [Foldout("Events")]
+        public UnityEvent<DroneCamController> onMovementModeChange = new UnityEvent<DroneCamController>();
+
+        [Foldout("Events")]
+        public UnityEvent<DroneCamController> onSelected = new UnityEvent<DroneCamController>();
+
+        [Foldout("Events")]
+        public UnityEvent<DroneCamController> onUnselected = new UnityEvent<DroneCamController>();
+
 
         private Transform _mainCamTransform;
 
@@ -139,6 +154,9 @@ namespace Runtime.CameraControl
             inputActions.upAction.action.canceled -= OnUpReleased;
             inputActions.downAction.action.started -= OnDownPressed;
             inputActions.downAction.action.canceled -= OnDownReleased;
+
+            //setting selected in order to trigger the unselect event
+            IsSelected = false;
         }
 
         private void Update()
@@ -199,11 +217,13 @@ namespace Runtime.CameraControl
             if (movementMode == DroneMovementMode.DroneRelative)
             {
                 movementMode = DroneMovementMode.UserRelative;
+                onMovementModeChange.Invoke(this);
                 return "User Relative";
             }
             else
             {
                 movementMode = DroneMovementMode.DroneRelative;
+                onMovementModeChange.Invoke(this);
                 return "Drone Relative";
             }
         }

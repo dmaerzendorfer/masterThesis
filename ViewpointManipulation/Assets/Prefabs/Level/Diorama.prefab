@@ -24676,7 +24676,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  lookAtTarget: {fileID: 0}
+  lookAtTarget: {fileID: 3702616382150611731}
 --- !u!114 &6174976882609993024
 MonoBehaviour:
   m_ObjectHideFlags: 0

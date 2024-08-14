@@ -1,6 +1,17 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 14.08.2024
+- after some break I continue!
+- added the timer for the user and drone relative control mode to the recorded data
+- added text fields to display instructions and tested study manager in scene
+- created pilot study scene with just two pois
+
+- todos next time:
+    - tested study with a build on the quest
+    - test in more detail if measured values make sense
+        (lost track of poi counters are super high, seems wrong)
+
 ## 09.08.2024
 - continue to work on the study manager
     - the events and everythign ought to work now, need to be implemented in scene now and be tested tho

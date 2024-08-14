@@ -77,6 +77,7 @@ namespace Runtime
 
             if (_isInView)
             {
+                Debug.Log("no longer in veiw");
                 OnIsNoLongerInView.Invoke();
             }
 
