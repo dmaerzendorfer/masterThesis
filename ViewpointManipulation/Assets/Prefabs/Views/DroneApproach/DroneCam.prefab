@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8401028905637751121}
   - component: {fileID: 4269298756511041613}
   - component: {fileID: 7616362455929551638}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Cam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,15 @@ MonoBehaviour:
   movementMode: 0
   modelOutline: {fileID: 5634180261203350754}
   _isSelected: 0
-  <test>k__BackingField: 0
+  onMovementModeChange:
+    m_PersistentCalls:
+      m_Calls: []
+  onSelected:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnselected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &891518435939542052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,7 +493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2213329985765243804}
   - component: {fileID: 5634180261203350754}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,9 +544,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2213329985765243804}
     m_Modifications:
+    - target: {fileID: 1689318313802474048, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 3135885430043781501, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
       propertyPath: m_Name
       value: Thruster2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135885430043781501, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146363166894652209, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5611489296382159474, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
       propertyPath: m_LocalScale.x
@@ -592,6 +612,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7092976028410941422, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979966156967272371, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -610,6 +638,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2213329985765243804}
     m_Modifications:
+    - target: {fileID: 1689318313802474048, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 1689318313802710624, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
@@ -617,6 +649,14 @@ PrefabInstance:
     - target: {fileID: 3135885430043781501, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
       propertyPath: m_Name
       value: Thruster
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135885430043781501, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146363166894652209, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5611489296382159474, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
       propertyPath: m_LocalScale.x
@@ -669,6 +709,14 @@ PrefabInstance:
     - target: {fileID: 5611489296382159474, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092976028410941422, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979966156967272371, guid: 7282a00ff6243ff4c92124d8e2cb8130, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

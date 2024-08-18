@@ -164,7 +164,7 @@ namespace Runtime.View.Manager
             _viewManager.onAnyCamSpawned.AddListener(() => _studyDataRecord.TaskOne.SpawnedCamCount++);
             _viewManager.onAnyCamDestroyed.AddListener(() => _studyDataRecord.TaskOne.DeletedCamCount++);
             _viewManager.onDroneCamSpawned.AddListener(DroneSpawned);
-            
+
             for (int i = 0; i < pointOfInterests.Length; i++)
             {
                 var poi = pointOfInterests[i];
@@ -197,20 +197,6 @@ namespace Runtime.View.Manager
 
                             _foundPoisCount++;
                         });
-                        poi.OnIsNowInView.AddListener(() =>
-                        {
-                            if (_studyDataRecord.TaskOne.TimeForPoiOne == 0)
-                            {
-                                _studyDataRecord.TaskOne.TimeForPoiOne = _timer;
-                            }
-
-                            _foundPoisCount++;
-                        });
-                        poi.OnIsNoLongerInView.AddListener(() =>
-                        {
-                            _studyDataRecord.TaskOne.LostTrackOfPoiOne++;
-                            _foundPoisCount--;
-                        });
                         poi.OnIsNoLongerInView.AddListener(() =>
                         {
                             _studyDataRecord.TaskOne.LostTrackOfPoiTwo++;
@@ -218,7 +204,7 @@ namespace Runtime.View.Manager
                         });
                         break;
                     case 2:
-                    poi.OnIsNowInView.AddListener(() =>
+                        poi.OnIsNowInView.AddListener(() =>
                         {
                             if (_studyDataRecord.TaskOne.TimeForPoiThree == 0)
                             {
@@ -285,7 +271,7 @@ namespace Runtime.View.Manager
                         break;
                 }
             }
-            
+
             foreach (var oceObj in oceInteractables)
             {
                 oceObj.enabled = _studyDataRecord.TaskOne.Mode == ViewMode.OCE;
@@ -327,7 +313,7 @@ namespace Runtime.View.Manager
             _userRelativeActive = false;
 
             //set control mode in record
-            _studyDataRecord.TaskOne.Mode = _viewManager.ViewMode;
+            _studyDataRecord.TaskTwo.Mode = _viewManager.ViewMode;
             //hook up all the events
             _viewManager.onViewPanelDocked.AddListener(() => _studyDataRecord.TaskTwo.DockCount++);
             _viewManager.onViewPanelUndocked.AddListener(() => _studyDataRecord.TaskTwo.UnDockCount++);

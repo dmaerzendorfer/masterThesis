@@ -10,6 +10,8 @@ namespace Runtime
         public bool useOutline = false;
         public float minDistance = 1f;
 
+        public bool showDebugRay = false;
+
         [ShowIf("useOutline")]
         public Outline outline;
 
@@ -32,27 +34,47 @@ namespace Runtime
             _renderer = GetComponent<Renderer>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
-            if (_renderer.isVisible)
+            //check if not occluded line of sight to any cam is possible
+            //only do the linecast and frustum check if the renderer is visible
+            bool tempInView = false;
+            //need to go through all the cameras to know for certain if poi is no longer in view or not
+            foreach (var cam in Camera.allCameras)
             {
-                //check if not occluded line of sight to any cam is possible
-                //only do the linecast and frustum check if the renderer is visible
-                foreach (var cam in Camera.allCameras)
-                {
-                    if (cam == null) continue;
-                    CheckIfVisible(cam);
-                    //dont check further once its seen
-                    if (_isInView) return;
-                }
+                if (cam == null) continue;
+                tempInView |= CheckIfVisible(cam);
+                //dont check further once its seen
+                if (tempInView) break;
             }
+
+            if (!_isInView && tempInView)
+            {
+                Debug.Log("Now in view");
+                OnIsNowInView.Invoke();
+            }
+
+            if (_isInView && !tempInView)
+            {
+                Debug.Log("no longer in view");
+                OnIsNoLongerInView.Invoke();
+            }
+
+
+            _isInView = tempInView;
+            if (useOutline)
+                outline.enabled = _isInView;
         }
 
-        private void CheckIfVisible(Camera cam)
+        private bool CheckIfVisible(Camera cam)
         {
             //check if even close enough to cam
-            // var dir = (_renderer.bounds.center - cam.transform.position).normalized;
-            // Debug.DrawRay(transform.position, -dir * minDistance, Color.yellow);
+            if (showDebugRay)
+            {
+                var dir = (_renderer.bounds.center - cam.transform.position).normalized;
+                Debug.DrawRay(transform.position, -dir * minDistance, Color.yellow);
+            }
+
             if (Vector3.Distance(_renderer.bounds.center, cam.transform.position) <= minDistance)
             {
                 //check if in frustum
@@ -60,30 +82,18 @@ namespace Runtime
                 if (GeometryUtility.TestPlanesAABB(planes, _renderer.bounds))
                 {
                     //check if not occluded
-                    if (!Physics.Linecast(cam.transform.position, cam.transform.position, out var hit))
-                    {
-                        if (!_isInView)
-                        {
-                            OnIsNowInView.Invoke();
-                        }
 
-                        _isInView = true;
-                        if (useOutline)
-                            outline.enabled = true;
-                        return;
+                    if (!Physics.Linecast(_renderer.bounds.center, cam.transform.position, out var hit,
+                            ~LayerMask.GetMask("CamModel")))
+                    {
+                        // Debug.Log("didnt hit a collider");
+                        return true;
                     }
+                    // Debug.Log("hit a collider");
                 }
             }
 
-            if (_isInView)
-            {
-                Debug.Log("no longer in veiw");
-                OnIsNoLongerInView.Invoke();
-            }
-
-            _isInView = false;
-            if (useOutline)
-                outline.enabled = false;
+            return false;
         }
     }
 }

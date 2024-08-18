@@ -1,8 +1,20 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 18.08.2024
+- updated table buttons to use activate and select
+    - nvm doesnt change that i have to use the side button on the controller...
+- fixed lost track counter in recorded data
+- fixed inaccuracy with the poi occlussion checking
+    - https://www.reddit.com/r/Unity3D/comments/10cak5x/how_can_i_know_if_a_mesh_is_visibleinside_the/
+    - would be even better to do it in a shader but i only fixed my incorrect linecast
+    - my error was suuuuuuuuper stupid...
+        - was checking for collisions from cam pos to cam pos... and not from renderer.bounds.center to cam pos, aaaaaaaaaaaaaaahhhhh
+    - got the problem that my assets often just have mesh colliders that are not super accurate to their actual geometry.
+        - could replace it with rough primitive colliders if need be for eG the guillotine
+
 ## 14.08.2024
-- after some break I continue!
+- after some break I finally continue!
 - added the timer for the user and drone relative control mode to the recorded data
 - added text fields to display instructions and tested study manager in scene
 - created pilot study scene with just two pois
@@ -11,6 +23,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
     - tested study with a build on the quest
     - test in more detail if measured values make sense
         (lost track of poi counters are super high, seems wrong)
+    - change the control table buttons to be use activate instead of select! (or just both)
 
 ## 09.08.2024
 - continue to work on the study manager
