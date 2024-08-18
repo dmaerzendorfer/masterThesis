@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2290833571499380702, guid: 468c949fbbf931d4394a582eaca06b26, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 2295
+      value: 67831
       objectReference: {fileID: 0}
     - target: {fileID: 5675054625892343407, guid: 468c949fbbf931d4394a582eaca06b26, type: 3}
       propertyPath: m_Layer

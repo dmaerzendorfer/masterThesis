@@ -2958,7 +2958,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 64631
+    m_Bits: 130167
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -7933,7 +7933,7 @@ MonoBehaviour:
   m_ConeCastAngle: 6
   m_RaycastMask:
     serializedVersion: 2
-    m_Bits: 2147483681
+    m_Bits: 2147549217
   m_RaycastTriggerInteraction: 1
   m_RaycastSnapVolumeInteraction: 1
   m_HitClosestOnly: 0
@@ -15511,7 +15511,7 @@ MonoBehaviour:
   m_ConeCastAngle: 6
   m_RaycastMask:
     serializedVersion: 2
-    m_Bits: 2147483681
+    m_Bits: 2147549217
   m_RaycastTriggerInteraction: 1
   m_RaycastSnapVolumeInteraction: 1
   m_HitClosestOnly: 0

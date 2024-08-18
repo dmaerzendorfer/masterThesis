@@ -304,7 +304,7 @@ namespace Runtime.View.Manager
             instructionTmp.transform.parent.gameObject.SetActive(true);
             instructionTmp.text =
                 $"Now explore the diorama with the other control method as long as you want. \n In order to exit press the 'Exit' button on the control table.";
-            DOVirtual.DelayedCall(10, () => { instructionTmp.transform.parent.gameObject.SetActive(false); });
+            DOVirtual.DelayedCall(7, () => { instructionTmp.transform.parent.gameObject.SetActive(false); });
 
             _timer = 0f;
             _droneRelativeTimer = 0f;

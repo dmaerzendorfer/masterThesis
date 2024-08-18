@@ -12,6 +12,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
         - was checking for collisions from cam pos to cam pos... and not from renderer.bounds.center to cam pos, aaaaaaaaaaaaaaahhhhh
     - got the problem that my assets often just have mesh colliders that are not super accurate to their actual geometry.
         - could replace it with rough primitive colliders if need be for eG the guillotine
+- did a testrun myself and stuff seems in order :)
 
 ## 14.08.2024
 - after some break I finally continue!
