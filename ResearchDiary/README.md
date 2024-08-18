@@ -13,6 +13,11 @@ These notes act as progress report (research diary) throughout the thesis work. 
     - got the problem that my assets often just have mesh colliders that are not super accurate to their actual geometry.
         - could replace it with rough primitive colliders if need be for eG the guillotine
 - did a testrun myself and stuff seems in order :)
+- followed this video for building onto quest 2
+    - https://www.youtube.com/watch?v=pNYY1JsS7tY
+    - i successfully put a build onto the quest
+        - however since i save my record of the study in unities file structure and dont know where i could find that on the quest once the apk build is on i will not conduct the study just on the quest
+            - will run the study from the editor instead, has the benefit of having the ability to watch what the user sees and i can easier get my data that way and i dont have to tinker with it again to make it work in a build :)
 
 ## 14.08.2024
 - after some break I finally continue!
