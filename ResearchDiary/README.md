@@ -1,6 +1,14 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 19.08.2024
+- texted markus asking for a meeting
+- made oce cams selectable via their viewpanel
+    - at first tried to make my own button since the unity one only provides on Click
+    - then tried to use Event Trigger component -> this allows me to hook into the UI EventSystem and use the press and release events
+        - problem here however i dont know what pressed it, so what controller
+    - finally just added an extra collider to the panel that is linked to the corresponding oceInteractable :)
+
 ## 18.08.2024
 - updated table buttons to use activate and select
     - nvm doesnt change that i have to use the side button on the controller...
@@ -18,6 +26,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
     - i successfully put a build onto the quest
         - however since i save my record of the study in unities file structure and dont know where i could find that on the quest once the apk build is on i will not conduct the study just on the quest
             - will run the study from the editor instead, has the benefit of having the ability to watch what the user sees and i can easier get my data that way and i dont have to tinker with it again to make it work in a build :)
+- future todos: talk with markus and maybe make the oce cam also selectable via its panel
 
 ## 14.08.2024
 - after some break I finally continue!

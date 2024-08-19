@@ -310,6 +310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf530342266694c4a811af45f221cd84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6976841732052214176 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 7035314687759419113, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+  m_PrefabInstance: {fileID: 103809257201919817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3698573528868136584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -366,6 +371,14 @@ PrefabInstance:
       propertyPath: oceViewPair
       value: 
       objectReference: {fileID: 2449535102025352715}
+    - target: {fileID: 3570936677917305277, guid: bc0f132e7b6eae841bb7ea9b8e5dcba5, type: 3}
+      propertyPath: m_Colliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3570936677917305277, guid: bc0f132e7b6eae841bb7ea9b8e5dcba5, type: 3}
+      propertyPath: m_Colliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 6976841732052214176}
     - target: {fileID: 5190285222818061286, guid: bc0f132e7b6eae841bb7ea9b8e5dcba5, type: 3}
       propertyPath: m_Name
       value: OrbitCamera3

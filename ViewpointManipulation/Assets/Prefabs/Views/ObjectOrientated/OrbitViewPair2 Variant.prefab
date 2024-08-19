@@ -385,6 +385,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 145895340915520702, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
   m_PrefabInstance: {fileID: 4593798351104175770}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &6801005181546522739 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 7035314687759419113, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+  m_PrefabInstance: {fileID: 4593798351104175770}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4744586735761864774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -409,6 +414,14 @@ PrefabInstance:
       propertyPath: oceViewPair
       value: 
       objectReference: {fileID: 2255953256334118872}
+    - target: {fileID: 4824517183582804799, guid: 8b202693ca73a184bbf39820df5dadcc, type: 3}
+      propertyPath: m_Colliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824517183582804799, guid: 8b202693ca73a184bbf39820df5dadcc, type: 3}
+      propertyPath: m_Colliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 6801005181546522739}
     - target: {fileID: 8566495268321122217, guid: 8b202693ca73a184bbf39820df5dadcc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

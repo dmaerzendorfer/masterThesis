@@ -310,6 +310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf530342266694c4a811af45f221cd84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &7989980330755049195 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 7035314687759419113, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+  m_PrefabInstance: {fileID: 1098994480427450370}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8693207133185506106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -374,6 +379,14 @@ PrefabInstance:
       propertyPath: oceViewPair
       value: 
       objectReference: {fileID: 3444931980566126912}
+    - target: {fileID: 7472194171000077253, guid: 88298b8a565b44144bcc7c5a8ac5c5ee, type: 3}
+      propertyPath: m_Colliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472194171000077253, guid: 88298b8a565b44144bcc7c5a8ac5c5ee, type: 3}
+      propertyPath: m_Colliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 7989980330755049195}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

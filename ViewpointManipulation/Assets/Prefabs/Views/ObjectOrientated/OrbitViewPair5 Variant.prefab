@@ -64,6 +64,14 @@ PrefabInstance:
       propertyPath: oceViewPair
       value: 
       objectReference: {fileID: 8495756093353309191}
+    - target: {fileID: 8338193244194410486, guid: f7aa6dd72423aa04a914ce2f877af2ff, type: 3}
+      propertyPath: m_Colliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338193244194410486, guid: f7aa6dd72423aa04a914ce2f877af2ff, type: 3}
+      propertyPath: m_Colliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 3803917168956576684}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -389,6 +397,11 @@ PrefabInstance:
       addedObject: {fileID: 5073400996664054524}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+--- !u!65 &3803917168956576684 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 7035314687759419113, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+  m_PrefabInstance: {fileID: 6154256773690135877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6300004711327130107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 145895340915520702, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
