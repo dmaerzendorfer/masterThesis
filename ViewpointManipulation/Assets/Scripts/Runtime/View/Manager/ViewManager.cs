@@ -24,7 +24,8 @@ namespace Runtime.View.Manager
     public enum ViewMode
     {
         OCE = 0,
-        Drone = 1 << 0
+        Drone = 1 << 0,
+        Hover = 1 << 1
     }
 
     [Serializable]
@@ -46,6 +47,17 @@ namespace Runtime.View.Manager
 
         [HideInInspector]
         public DroneViewPair instance = null;
+    }
+
+    [Serializable]
+    public class HoverViewConfig
+    {
+        public String panelTitle;
+
+        public HoverViewPair prefab;
+
+        [HideInInspector]
+        public HoverViewPair instance = null;
     }
 
 
@@ -77,14 +89,29 @@ namespace Runtime.View.Manager
                 {
                     droneSpawnAction.action.Disable();
                 }
+
+                if (_viewMode == ViewMode.Hover)
+                {
+                    hoverCamSpawner.isSpawningEnabled = true;
+                }
+                else
+                {
+                    hoverCamSpawner.isSpawningEnabled = false;
+                }
             }
         }
+
+        [Foldout("ViewSpawning")]
+        public HoverCamSpawner hoverCamSpawner;
 
         [Foldout("ViewSpawning")]
         public List<OceViewConfig> oceViewConfigs;
 
         [Foldout("ViewSpawning")]
         public List<DroneViewConfig> droneViewConfigs;
+
+        [Foldout("ViewSpawning")]
+        public List<HoverViewConfig> hoverViewConfigs;
 
         [Foldout("ViewSpawning")]
         public InputActionReference droneSpawnAction;
@@ -141,6 +168,8 @@ namespace Runtime.View.Manager
                         return oceViewConfigs.Count(x => x.instance != null);
                     case ViewMode.Drone:
                         return droneViewConfigs.Count(x => x.instance != null);
+                    case ViewMode.Hover:
+                        return hoverViewConfigs.Count(x => x.instance != null);
                     default:
                         return 0;
                 }
@@ -172,10 +201,43 @@ namespace Runtime.View.Manager
             {
                 return SpawnDrone();
             }
-            else
+            else if (ViewMode == ViewMode.OCE)
             {
                 return SpawnOce();
             }
+            else
+            {
+                return SpawnHover();
+            }
+        }
+
+        /// <summary>
+        /// Spawns a hover viewpair if possible. otherwise returns null. if a hover viewpair is currently active returns that one
+        /// </summary>
+        /// <returns></returns>
+        public HoverViewPair SpawnHover()
+        {
+            if (_viewMode != ViewMode.Hover) return null;
+
+            //first check if there is a currently selected one
+            var selected = hoverViewConfigs.FirstOrDefault(x =>
+            {
+                if (x.instance != null)
+                    return x.instance.hoverCamController.IsSelected;
+                return false;
+            });
+            if (selected != null) return selected.instance;
+
+            //if not create a new one if we are not yet at the limit
+            var config = hoverViewConfigs.FirstOrDefault(x => x.instance == null);
+            if (config == null) return null;
+            config.instance = Instantiate(config.prefab);
+            config.instance.basePanel.panelText.text = config.panelTitle;
+            config.instance.onViewPairDeleted.AddListener(() => onAnyCamDestroyed.Invoke());
+            config.instance.hoverCamController.IsSelected = true;
+            onAnyCamSpawned.Invoke();
+            AdjustNewViewPanelPosition(config.instance);
+            return config.instance;
         }
 
         /// <summary>

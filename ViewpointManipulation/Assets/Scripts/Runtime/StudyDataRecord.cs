@@ -5,7 +5,7 @@ namespace Runtime
     public class TaskOne
     {
         public ViewMode
-            Mode = ViewMode.OCE; //OCE or drone -> for task one (not the exploration one, there its flipped!)
+            Mode = ViewMode.Hover; //hover or drone -> for task one (not the exploration one, there its flipped!)
 
         //all times are in seconds
         public float Duration = 0f; //pressed start (of task one with pois)
@@ -33,7 +33,7 @@ namespace Runtime
 
         public override string ToString()
         {
-            return $"{(Mode == ViewMode.Drone ? "Drone" : "OCE")};{Duration:F};" +
+            return $"{(Mode == ViewMode.Drone ? "Drone" : (Mode == ViewMode.Hover ? "Hover" : "OCE"))};{Duration:F};" +
                    $"{TimeForPoiOne:F};" +
                    $"{LostTrackOfPoiOne:D};" +
                    $"{TimeForPoiTwo:F};" +
@@ -81,7 +81,7 @@ namespace Runtime
     public class TaskTwo
     {
         public ViewMode
-            Mode = ViewMode.Drone; //OCE or drone -> for task one (not the exploration one, there its flipped!)
+            Mode = ViewMode.Drone; //Hover or drone -> for task one (not the exploration one, there its flipped!)
 
         //all times are in milliseconds
         public float Duration = 0f;
@@ -95,7 +95,7 @@ namespace Runtime
 
         public override string ToString()
         {
-            return $"{(Mode == ViewMode.Drone ? "Drone" : "OCE")};{Duration:F};" +
+            return $"{(Mode == ViewMode.Drone ? "Drone" : (Mode == ViewMode.Hover ? "Hover" : "OCE"))};{Duration:F};" +
                    $"{SpawnedCamCount:D};" +
                    $"{DeletedCamCount:D};" +
                    $"{DockCount:D};" +

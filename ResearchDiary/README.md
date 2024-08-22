@@ -3,6 +3,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
 
 ## 22.08.2024
 - implementing a hover-cam in vr to replace the old oce orbit cam
+    - should work out fine, might need some detailed testing with study task however :)
 
 ## 21.08.2024
 - meeting with markus

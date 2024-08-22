@@ -30,7 +30,7 @@ namespace Runtime
         {
             if (!canSwapMode && !force) return;
             var currentMode = viewManager.ViewMode;
-            viewManager.ViewMode = currentMode == ViewMode.Drone ? ViewMode.OCE : ViewMode.Drone;
+            viewManager.ViewMode = currentMode == ViewMode.Drone ? ViewMode.Hover : ViewMode.Drone;
 
             string mode = viewManager.ViewMode == ViewMode.Drone ? "Drone" : "OCE";
             viewModeText.text = $"Current Mode: {mode}";

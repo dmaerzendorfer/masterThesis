@@ -21,7 +21,7 @@ namespace Runtime.View.ViewPair
 
         public abstract void ReceiveSelect();
 
-        public void DeleteViewPair()
+        public virtual void DeleteViewPair()
         {
             onViewPairDeleted.Invoke();
             Destroy(basePanel.gameObject);

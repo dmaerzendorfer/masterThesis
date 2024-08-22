@@ -1483,7 +1483,7 @@ GameObject:
   - component: {fileID: 849829691790199603}
   - component: {fileID: 4529172306225338844}
   - component: {fileID: 1557301292701565269}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3071,6 +3071,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01
       objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.25
@@ -3194,6 +3198,10 @@ PrefabInstance:
     - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11337,6 +11345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.75
@@ -15170,6 +15182,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.25
@@ -15794,6 +15810,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.25
@@ -15859,6 +15879,10 @@ PrefabInstance:
     - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18193,6 +18217,10 @@ PrefabInstance:
     - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23194,6 +23222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.75
@@ -23255,6 +23287,10 @@ PrefabInstance:
     - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23888,6 +23924,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.25
@@ -24105,6 +24145,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.25
@@ -24294,6 +24338,10 @@ PrefabInstance:
     - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30151,6 +30199,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.75
@@ -32863,6 +32915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.25
@@ -32924,6 +32980,10 @@ PrefabInstance:
     - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34060,6 +34120,10 @@ PrefabInstance:
     - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Path_Dirt_01 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 153302, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 492634, guid: c4ea6c556c8f2064a877d7f0982758f3, type: 3}
       propertyPath: m_LocalPosition.x

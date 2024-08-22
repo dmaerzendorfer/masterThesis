@@ -2225,7 +2225,7 @@ GameObject:
   - component: {fileID: 4333868152398726342}
   - component: {fileID: 1455261042952719042}
   - component: {fileID: 5469220212868072320}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: SeperatingWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2832,7 +2832,7 @@ GameObject:
   - component: {fileID: 2331892078657345313}
   - component: {fileID: 4347193225416599051}
   - component: {fileID: 446870438252107699}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: SM_Buildings_Block_1x1_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7483,7 +7483,7 @@ GameObject:
   - component: {fileID: 3731580667383105000}
   - component: {fileID: 8694873303553112642}
   - component: {fileID: 4258911353565878593}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: SM_Buildings_Block_1x1_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9921,7 +9921,7 @@ GameObject:
   - component: {fileID: 277341773750009797}
   - component: {fileID: 4639277550987159228}
   - component: {fileID: 44570811697782763}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: SM_Buildings_Block_1x1_01 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13945,7 +13945,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5089298694785016977}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14275,6 +14275,18 @@ PrefabInstance:
       propertyPath: outlineColor.a
       value: 0.60784316
       objectReference: {fileID: 0}
+    - target: {fileID: 2151116856863988702, guid: b7d7ef67cd34375418fa04275f211822, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294260455459289065, guid: b7d7ef67cd34375418fa04275f211822, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2346567963580160303, guid: b7d7ef67cd34375418fa04275f211822, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2518999266400043869, guid: b7d7ef67cd34375418fa04275f211822, type: 3}
       propertyPath: outlineWidth
       value: 1
@@ -14306,6 +14318,14 @@ PrefabInstance:
     - target: {fileID: 3395643470814876202, guid: b7d7ef67cd34375418fa04275f211822, type: 3}
       propertyPath: outlineColor.r
       value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532017498378884381, guid: b7d7ef67cd34375418fa04275f211822, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3682249395425415335, guid: b7d7ef67cd34375418fa04275f211822, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4141705083392162138, guid: b7d7ef67cd34375418fa04275f211822, type: 3}
       propertyPath: m_Enabled
@@ -14373,7 +14393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6251892142947028901, guid: b7d7ef67cd34375418fa04275f211822, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6337643951919354483, guid: b7d7ef67cd34375418fa04275f211822, type: 3}
       propertyPath: m_Enabled
@@ -14441,7 +14461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8048872497269790308, guid: b7d7ef67cd34375418fa04275f211822, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8317725520829097555, guid: b7d7ef67cd34375418fa04275f211822, type: 3}
       propertyPath: outlineWidth
@@ -14462,6 +14482,10 @@ PrefabInstance:
     - target: {fileID: 8844216791881307466, guid: b7d7ef67cd34375418fa04275f211822, type: 3}
       propertyPath: minDistance
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102230847271933887, guid: b7d7ef67cd34375418fa04275f211822, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

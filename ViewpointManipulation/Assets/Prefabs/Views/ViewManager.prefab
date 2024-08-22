@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d6e2416f5e3814fb34d1bbaba8660d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _viewMode: 0
+  _viewMode: 2
+  hoverCamSpawner: {fileID: 0}
   oceViewConfigs:
   - panelTitle: OrbitCam 1
     prefab: {fileID: 2346009038153097538, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
@@ -77,8 +78,24 @@ MonoBehaviour:
   - panelTitle: DroneCam 5
     prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
     instance: {fileID: 0}
+  hoverViewConfigs:
+  - panelTitle: HoverCam 1
+    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: HoverCam 2
+    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: HoverCam3
+    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: HoverCam 4
+    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: HoverCam 5
+    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
+    instance: {fileID: 0}
   droneSpawnAction: {fileID: -6465576503248765194, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  droneUnselectAction: {fileID: 0}
+  droneUnselectAction: {fileID: 3427017767692873761, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   droneSpawnLocation: {fileID: 0}
   viewPanelDistance: 2
   droneSpawningDistance: 0.5
@@ -89,5 +106,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onAnyCamSpawned:
+    m_PersistentCalls:
+      m_Calls: []
+  onDroneCamSpawned:
+    m_PersistentCalls:
+      m_Calls: []
+  onViewPanelDocked:
+    m_PersistentCalls:
+      m_Calls: []
+  onViewPanelUndocked:
     m_PersistentCalls:
       m_Calls: []
