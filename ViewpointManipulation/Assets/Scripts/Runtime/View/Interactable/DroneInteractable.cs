@@ -31,7 +31,7 @@ namespace Runtime.View.Interactable
                 return;
             }
 
-            _viewManager.droneViewConfigs.ForEach(x =>
+            _viewManager.droneViewModeHandler.viewConfigs.ForEach(x =>
             {
                 if (x.instance != null)
                     x.instance.droneCamController.IsSelected = false;

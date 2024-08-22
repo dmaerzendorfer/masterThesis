@@ -69,7 +69,7 @@ namespace Runtime.CameraControl
                 if (value == true)
                 {
                     //unselect any currently selected hoverCams
-                    ViewManager.Instance.hoverViewConfigs.ForEach(x =>
+                    ViewManager.Instance.hoverViewModeHandler.viewConfigs.ForEach(x =>
                     {
                         if (x.instance)
                             x.instance.hoverCamController.IsSelected = false;

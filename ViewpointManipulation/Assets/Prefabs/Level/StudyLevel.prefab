@@ -2225,7 +2225,7 @@ GameObject:
   - component: {fileID: 4333868152398726342}
   - component: {fileID: 1455261042952719042}
   - component: {fileID: 5469220212868072320}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: SeperatingWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2316,7 +2316,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: caed417d0c17a134696ff2ef8b52a764, type: 3}
 --- !u!1 &1753460479800600741
@@ -2832,7 +2832,7 @@ GameObject:
   - component: {fileID: 2331892078657345313}
   - component: {fileID: 4347193225416599051}
   - component: {fileID: 446870438252107699}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: SM_Buildings_Block_1x1_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2923,7 +2923,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: caed417d0c17a134696ff2ef8b52a764, type: 3}
 --- !u!1 &2061731538443817202
@@ -7483,7 +7483,7 @@ GameObject:
   - component: {fileID: 3731580667383105000}
   - component: {fileID: 8694873303553112642}
   - component: {fileID: 4258911353565878593}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: SM_Buildings_Block_1x1_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7574,7 +7574,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: caed417d0c17a134696ff2ef8b52a764, type: 3}
 --- !u!1 &4779923912381801556
@@ -9921,7 +9921,7 @@ GameObject:
   - component: {fileID: 277341773750009797}
   - component: {fileID: 4639277550987159228}
   - component: {fileID: 44570811697782763}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: SM_Buildings_Block_1x1_01 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10012,7 +10012,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: caed417d0c17a134696ff2ef8b52a764, type: 3}
 --- !u!1 &6663548883328211375
@@ -13945,7 +13945,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5089298694785016977}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}

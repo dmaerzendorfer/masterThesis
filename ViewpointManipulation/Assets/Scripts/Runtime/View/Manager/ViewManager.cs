@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using _Generics.Scripts.Runtime;
 using NaughtyAttributes;
+using Runtime.View.Manager.ViewModeHandler;
 using Runtime.View.Panel;
 using Runtime.View.ViewPair;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -28,38 +28,6 @@ namespace Runtime.View.Manager
         Hover = 1 << 1
     }
 
-    [Serializable]
-    public class OceViewConfig
-    {
-        public String panelTitle;
-        public OceViewPair prefab;
-
-        [HideInInspector]
-        public OceViewPair instance = null;
-    }
-
-    [Serializable]
-    public class DroneViewConfig
-    {
-        public String panelTitle;
-
-        public DroneViewPair prefab;
-
-        [HideInInspector]
-        public DroneViewPair instance = null;
-    }
-
-    [Serializable]
-    public class HoverViewConfig
-    {
-        public String panelTitle;
-
-        public HoverViewPair prefab;
-
-        [HideInInspector]
-        public HoverViewPair instance = null;
-    }
-
 
     /// <summary>
     /// Manages the spawning of OCE ViewPairs and Drone ViewPairs. In addition manages the moving of view panels in and out of the 'HUD'.
@@ -77,60 +45,48 @@ namespace Runtime.View.Manager
             get { return _viewMode; }
             set
             {
-                if (_viewMode == value) return;
-                //make sure to delete any views of the incorrect mode on changing
-                DeleteAllActiveViews();
                 _viewMode = value;
-                if (_viewMode == ViewMode.Drone)
+                switch (_viewMode)
                 {
-                    droneSpawnAction.action.Enable();
-                }
-                else
-                {
-                    droneSpawnAction.action.Disable();
-                }
+                    case ViewMode.OCE:
+                        droneViewModeHandler.Deactivate();
+                        hoverViewModeHandler.Deactivate();
 
-                if (_viewMode == ViewMode.Hover)
-                {
-                    hoverCamSpawner.isSpawningEnabled = true;
-                }
-                else
-                {
-                    hoverCamSpawner.isSpawningEnabled = false;
+                        oceViewModeHandler.Activate();
+                        break;
+                    case ViewMode.Drone:
+                        hoverViewModeHandler.Deactivate();
+                        oceViewModeHandler.Deactivate();
+
+                        droneViewModeHandler.Activate();
+                        break;
+                    case ViewMode.Hover:
+                        oceViewModeHandler.Deactivate();
+                        droneViewModeHandler.Deactivate();
+
+                        hoverViewModeHandler.Activate();
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
             }
         }
 
         [Foldout("ViewSpawning")]
-        public HoverCamSpawner hoverCamSpawner;
+        public DroneViewModeHandler droneViewModeHandler;
 
         [Foldout("ViewSpawning")]
-        public List<OceViewConfig> oceViewConfigs;
+        public OceViewModeHandler oceViewModeHandler;
 
         [Foldout("ViewSpawning")]
-        public List<DroneViewConfig> droneViewConfigs;
-
-        [Foldout("ViewSpawning")]
-        public List<HoverViewConfig> hoverViewConfigs;
-
-        [Foldout("ViewSpawning")]
-        public InputActionReference droneSpawnAction;
-
-        [Foldout("ViewSpawning")]
-        public InputActionReference droneUnselectAction;
-
-        [Foldout("ViewSpawning")]
-        public Transform droneSpawnLocation;
-
-        [Foldout("ViewSpawning")]
-        public float viewPanelDistance = 3.5f;
-
-        [Foldout("ViewSpawning")]
-        public float droneSpawningDistance = 1f;
+        public HoverViewModeHandler hoverViewModeHandler;
 
         #endregion
 
         #region ViewPanel Settings
+
+        [Foldout("ViewPanels")]
+        public float viewPanelDistance = 2f;
 
         [Foldout("ViewPanels")]
         public GameObject viewParent;
@@ -165,11 +121,11 @@ namespace Runtime.View.Manager
                 switch (_viewMode)
                 {
                     case ViewMode.OCE:
-                        return oceViewConfigs.Count(x => x.instance != null);
+                        return oceViewModeHandler.CurrentActiveViewCount;
                     case ViewMode.Drone:
-                        return droneViewConfigs.Count(x => x.instance != null);
+                        return droneViewModeHandler.CurrentActiveViewCount;
                     case ViewMode.Hover:
-                        return hoverViewConfigs.Count(x => x.instance != null);
+                        return hoverViewModeHandler.CurrentActiveViewCount;
                     default:
                         return 0;
                 }
@@ -185,94 +141,46 @@ namespace Runtime.View.Manager
             _mainCam = Camera.main;
             //to apply the viewmode which is selected in the inspector
             ViewMode = _viewMode;
-            droneSpawnAction.action.performed += OnDroneSpawn;
-            droneUnselectAction.action.performed += OnDroneUnselect;
-        }
-
-        private void OnDestroy()
-        {
-            droneSpawnAction.action.performed -= OnDroneSpawn;
-            droneUnselectAction.action.performed -= OnDroneUnselect;
         }
 
         public BaseViewPair SpawnViewPair()
         {
-            if (ViewMode == ViewMode.Drone)
+            switch (ViewMode)
             {
-                return SpawnDrone();
+                case ViewMode.OCE:
+                    var ocePair = oceViewModeHandler.SpawnViewPair();
+                    if (ocePair != null)
+                    {
+                        ocePair.onViewPairDeleted.AddListener(() => onAnyCamDestroyed.Invoke());
+                        onAnyCamSpawned.Invoke();
+                    }
+
+                    return ocePair;
+                    break;
+                case ViewMode.Drone:
+                    var dronePair = droneViewModeHandler.SpawnViewPair();
+                    if (dronePair != null)
+                    {
+                        dronePair.onViewPairDeleted.AddListener(() => onAnyCamDestroyed.Invoke());
+                        onAnyCamSpawned.Invoke();
+                        onDroneCamSpawned.Invoke(dronePair);
+                    }
+
+                    return dronePair;
+                    break;
+                case ViewMode.Hover:
+                    var hoverPair = hoverViewModeHandler.SpawnViewPair();
+                    if (hoverPair != null)
+                    {
+                        hoverPair.onViewPairDeleted.AddListener(() => onAnyCamDestroyed.Invoke());
+                        onAnyCamSpawned.Invoke();
+                    }
+
+                    return hoverPair;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
-            else if (ViewMode == ViewMode.OCE)
-            {
-                return SpawnOce();
-            }
-            else
-            {
-                return SpawnHover();
-            }
-        }
-
-        /// <summary>
-        /// Spawns a hover viewpair if possible. otherwise returns null. if a hover viewpair is currently active returns that one
-        /// </summary>
-        /// <returns></returns>
-        public HoverViewPair SpawnHover()
-        {
-            if (_viewMode != ViewMode.Hover) return null;
-
-            //first check if there is a currently selected one
-            var selected = hoverViewConfigs.FirstOrDefault(x =>
-            {
-                if (x.instance != null)
-                    return x.instance.hoverCamController.IsSelected;
-                return false;
-            });
-            if (selected != null) return selected.instance;
-
-            //if not create a new one if we are not yet at the limit
-            var config = hoverViewConfigs.FirstOrDefault(x => x.instance == null);
-            if (config == null) return null;
-            config.instance = Instantiate(config.prefab);
-            config.instance.basePanel.panelText.text = config.panelTitle;
-            config.instance.onViewPairDeleted.AddListener(() => onAnyCamDestroyed.Invoke());
-            config.instance.hoverCamController.IsSelected = true;
-            onAnyCamSpawned.Invoke();
-            AdjustNewViewPanelPosition(config.instance);
-            return config.instance;
-        }
-
-        /// <summary>
-        /// Spawns a oce viewpair if possible. otherwise returns null.
-        /// </summary>
-        /// <returns></returns>
-        public OceViewPair SpawnOce()
-        {
-            if (_viewMode != ViewMode.OCE) return null;
-
-            var config = oceViewConfigs.FirstOrDefault(x => x.instance == null);
-            if (config == null) return null;
-            config.instance = Instantiate(config.prefab);
-            config.instance.basePanel.panelText.text = config.panelTitle;
-            config.instance.onViewPairDeleted.AddListener(() => onAnyCamDestroyed.Invoke());
-            onAnyCamSpawned.Invoke();
-            return config.instance;
-        }
-
-        /// <summary>
-        /// Spawns a drone viewpair if possible. otherwise returns null.
-        /// </summary>
-        /// <returns></returns>
-        public DroneViewPair SpawnDrone()
-        {
-            if (_viewMode != ViewMode.Drone) return null;
-
-            var config = droneViewConfigs.FirstOrDefault(x => x.instance == null);
-            if (config == null) return null;
-            config.instance = Instantiate(config.prefab);
-            config.instance.basePanel.panelText.text = config.panelTitle;
-            config.instance.onViewPairDeleted.AddListener(() => onAnyCamDestroyed.Invoke());
-            onAnyCamSpawned.Invoke();
-            onDroneCamSpawned.Invoke(config.instance);
-            return config.instance;
         }
 
         /// <summary>
@@ -355,86 +263,29 @@ namespace Runtime.View.Manager
             }
         }
 
-        public void AdjustNewDronePosition(DroneViewPair viewPair)
-        {
-            //set panel pos
-            RaycastHit hit;
-            var transf = viewPair.droneCamController.transform;
-
-            if (Physics.Raycast(transf.position, _mainCam.transform.forward, out hit, droneSpawningDistance))
-            {
-                transf.position = hit.point;
-            }
-            else
-            {
-                transf.position += _mainCam.transform.forward * droneSpawningDistance;
-            }
-        }
-
         public void DeleteAllActiveViews()
         {
-            var hasViewCountChanged = false;
+            var count = 0;
             switch (_viewMode)
             {
                 case ViewMode.OCE:
-                    oceViewConfigs.ForEach(x =>
-                    {
-                        if (x.instance != null)
-                        {
-                            x.instance.DeleteViewPair();
-                            x.instance = null;
-                            hasViewCountChanged = true;
-                        }
-                    });
+                    count = oceViewModeHandler.DeleteAllActiveViews();
                     break;
                 case ViewMode.Drone:
 
-                    droneViewConfigs.ForEach(x =>
-                    {
-                        if (x.instance != null)
-                        {
-                            x.instance.DeleteViewPair();
-                            x.instance = null;
-                            hasViewCountChanged = true;
-                        }
-                    });
+                    count = droneViewModeHandler.DeleteAllActiveViews();
+                    break;
+
+                case ViewMode.Hover:
+                    count = hoverViewModeHandler.DeleteAllActiveViews();
+
                     break;
                 default:
                     return;
             }
 
-            if (hasViewCountChanged)
+            if (count > 0)
                 onAnyCamDestroyed.Invoke();
-        }
-
-        private void OnDroneUnselect(InputAction.CallbackContext callbackContext)
-        {
-            foreach (var droneViewConfig in droneViewConfigs)
-            {
-                if (droneViewConfig.instance != null)
-                {
-                    droneViewConfig.instance.droneCamController.IsSelected = false;
-                }
-            }
-        }
-
-        private void OnDroneSpawn(InputAction.CallbackContext callbackContext)
-        {
-            OnDroneUnselect(callbackContext);
-
-            var dronePair = SpawnDrone();
-            if (dronePair == null) return;
-            //set drone pos
-            var transf = dronePair.droneCamController.transform;
-            transf.position = droneSpawnLocation.position;
-            transf.forward = _mainCam.transform.forward;
-            //then adjust pos
-            AdjustNewDronePosition(dronePair);
-            //then adjust view panel pos
-            AdjustNewViewPanelPosition(dronePair);
-
-            //activateDrone
-            dronePair.droneCamController.IsSelected = true;
         }
     }
 }

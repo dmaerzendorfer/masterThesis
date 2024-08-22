@@ -1,4 +1,5 @@
 ﻿using Runtime.View.Manager;
+using Runtime.View.ViewPair;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -30,9 +31,9 @@ namespace Runtime
             if (rightController.TryGetCurrent3DRaycastHit(out var hit))
             {
                 if (!layerMask.Contains(hit.collider.gameObject.layer)) return;
-                
+
                 //spawn hoverCam via viewmanager and set its target
-                var hover = viewManager.SpawnHover();
+                var hover = (HoverViewPair)viewManager.SpawnViewPair();
                 hover.hoverCamController.target = hit.collider;
                 hover.hoverCamController.currentLookAt = hit.point;
                 hover.hoverCamController.SetInitialPos();

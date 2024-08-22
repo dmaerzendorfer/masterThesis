@@ -134,6 +134,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &294859038 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1336663787991559743, guid: bfdbd2bdb98c97346a05d96760980027, type: 3}
+  m_PrefabInstance: {fileID: 7568352114175411132}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446f697d34c549d0b497f9e0d32bd094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &658105228 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6836912661098712087, guid: bfdbd2bdb98c97346a05d96760980027, type: 3}
@@ -150,6 +161,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00ae07eb0d7f15f40ae27028d38c3eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1380751785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5618125342156123586, guid: 80e587e662dbdbf43a49660207ba8d55, type: 3}
+  m_PrefabInstance: {fileID: 6105155288905015693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1404261576 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4402745378794633543, guid: bfdbd2bdb98c97346a05d96760980027, type: 3}
@@ -614,7 +630,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2693599849408912143, guid: 80e587e662dbdbf43a49660207ba8d55, type: 3}
   m_PrefabInstance: {fileID: 6105155288905015693}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1380751785}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdff3ef417340be48a2d04017cf23d16, type: 3}
@@ -628,18 +644,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2860089285467530107, guid: af22989bf212d974daeb879da28efab0, type: 3}
+      propertyPath: droneSpawnLocation
+      value: 
+      objectReference: {fileID: 7568352114175411133}
     - target: {fileID: 3235249784550059910, guid: af22989bf212d974daeb879da28efab0, type: 3}
       propertyPath: m_Name
       value: ViewManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
+      propertyPath: _viewMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
       propertyPath: viewParent
       value: 
       objectReference: {fileID: 658105228}
     - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
-      propertyPath: droneSpawnLocation
+      propertyPath: onAnyCamSpawned.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
+      propertyPath: onAnyCamSpawned.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
+      propertyPath: onAnyCamSpawned.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7568352114175411133}
+      objectReference: {fileID: 1380751785}
+    - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
+      propertyPath: onAnyCamSpawned.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6258976747596282598, guid: af22989bf212d974daeb879da28efab0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -680,6 +716,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8762522022104242788, guid: af22989bf212d974daeb879da28efab0, type: 3}
+      propertyPath: hoverCamSpawner
+      value: 
+      objectReference: {fileID: 294859038}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

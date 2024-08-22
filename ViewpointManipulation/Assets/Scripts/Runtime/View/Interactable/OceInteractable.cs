@@ -16,7 +16,7 @@ namespace Runtime.View.Interactable
 
         private ViewManager _viewManager;
         private OceViewPair _mostRecentOceViewPair = null;
-        
+
         private void Start()
         {
             _viewManager = ViewManager.Instance;
@@ -28,7 +28,8 @@ namespace Runtime.View.Interactable
             base.OnSelectEntered(args);
 
             //spawn orbit cam and set lookat target
-            _mostRecentOceViewPair = _viewManager.SpawnOce();
+            if (_viewManager.ViewMode != ViewMode.OCE) return;
+            _mostRecentOceViewPair = (OceViewPair)_viewManager.SpawnViewPair();
             if (_mostRecentOceViewPair == null)
                 return;
             _mostRecentOceViewPair.orbitCamController.SetTarget(lookAtTarget);
@@ -39,7 +40,7 @@ namespace Runtime.View.Interactable
             //move the view panel to an opportune position
             _viewManager.AdjustNewViewPanelPosition(_mostRecentOceViewPair);
         }
-        
+
         protected override void OnSelectExited(SelectExitEventArgs args)
         {
             base.OnSelectExited(args);
@@ -48,6 +49,5 @@ namespace Runtime.View.Interactable
             args.interactableObject = camInteractable;
             camInteractable.CallOnSelectExited(args);
         }
-       
     }
 }

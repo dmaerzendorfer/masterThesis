@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6258976747596282598}
   - component: {fileID: 4779992598695807458}
+  - component: {fileID: 8762522022104242788}
+  - component: {fileID: 2860089285467530107}
+  - component: {fileID: 2038006987820351866}
   m_Layer: 0
   m_Name: ViewManager
   m_TagString: Untagged
@@ -45,60 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _viewMode: 2
-  hoverCamSpawner: {fileID: 0}
-  oceViewConfigs:
-  - panelTitle: OrbitCam 1
-    prefab: {fileID: 2346009038153097538, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
-    instance: {fileID: 0}
-  - panelTitle: OrbitCam 2
-    prefab: {fileID: 2255953256334118872, guid: 810d9a4583a35ee4e8c5aa22e08708b2, type: 3}
-    instance: {fileID: 0}
-  - panelTitle: OrbitCam 3
-    prefab: {fileID: 2449535102025352715, guid: 846b8359b5624464080fc00dc80648c7, type: 3}
-    instance: {fileID: 0}
-  - panelTitle: OrbitCam 4
-    prefab: {fileID: 3444931980566126912, guid: 2674feaaad6b5bb4aa4a6d9575c88c34, type: 3}
-    instance: {fileID: 0}
-  - panelTitle: OrbitCam 5
-    prefab: {fileID: 8495756093353309191, guid: 5f590562bd90b3f4087a829cb42c371f, type: 3}
-    instance: {fileID: 0}
-  droneViewConfigs:
-  - panelTitle: DroneCam 1
-    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
-    instance: {fileID: 0}
-  - panelTitle: DroneCam 2
-    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
-    instance: {fileID: 0}
-  - panelTitle: DroneCam 3
-    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
-    instance: {fileID: 0}
-  - panelTitle: DroneCam 4
-    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
-    instance: {fileID: 0}
-  - panelTitle: DroneCam 5
-    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
-    instance: {fileID: 0}
-  hoverViewConfigs:
-  - panelTitle: HoverCam 1
-    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
-    instance: {fileID: 0}
-  - panelTitle: HoverCam 2
-    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
-    instance: {fileID: 0}
-  - panelTitle: HoverCam3
-    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
-    instance: {fileID: 0}
-  - panelTitle: HoverCam 4
-    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
-    instance: {fileID: 0}
-  - panelTitle: HoverCam 5
-    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
-    instance: {fileID: 0}
-  droneSpawnAction: {fileID: -6465576503248765194, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  droneUnselectAction: {fileID: 3427017767692873761, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  droneSpawnLocation: {fileID: 0}
+  droneViewModeHandler: {fileID: 2860089285467530107}
+  oceViewModeHandler: {fileID: 2038006987820351866}
+  hoverViewModeHandler: {fileID: 8762522022104242788}
   viewPanelDistance: 2
-  droneSpawningDistance: 0.5
   viewParent: {fileID: 0}
   worldColor: {r: 0, g: 0, b: 0, a: 1}
   hudColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -117,3 +70,92 @@ MonoBehaviour:
   onViewPanelUndocked:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8762522022104242788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3235249784550059910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10b5320c70e4456831a3dc633f0bbf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewConfigs:
+  - panelTitle: Hover Cam 1
+    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: Hover Cam 2
+    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: Hover Cam 3
+    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: Hover Cam 4
+    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: Hover Cam 5
+    prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
+    instance: {fileID: 0}
+  hoverCamSpawner: {fileID: 0}
+--- !u!114 &2860089285467530107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3235249784550059910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435545fcb3b9462096fef0f624dec10c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewConfigs:
+  - panelTitle: Drone Cam 1
+    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: Drone Cam 2
+    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: Drone Cam 3
+    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: Drone Cam 4
+    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: Drone Cam5
+    prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
+    instance: {fileID: 0}
+  droneSpawnAction: {fileID: -6465576503248765194, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  droneUnselectAction: {fileID: 3427017767692873761, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  droneSpawnLocation: {fileID: 0}
+  droneSpawningDistance: 1
+--- !u!114 &2038006987820351866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3235249784550059910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be2300d72e50441f8fe837aa8f28eb51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewConfigs:
+  - panelTitle: Oce Cam 1
+    prefab: {fileID: 2346009038153097538, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: Oce Cam 2
+    prefab: {fileID: 2255953256334118872, guid: 810d9a4583a35ee4e8c5aa22e08708b2, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: Oce Cam 3
+    prefab: {fileID: 2449535102025352715, guid: 846b8359b5624464080fc00dc80648c7, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: Oce Cam 4
+    prefab: {fileID: 3444931980566126912, guid: 2674feaaad6b5bb4aa4a6d9575c88c34, type: 3}
+    instance: {fileID: 0}
+  - panelTitle: Oce Cam 5
+    prefab: {fileID: 8495756093353309191, guid: 5f590562bd90b3f4087a829cb42c371f, type: 3}
+    instance: {fileID: 0}

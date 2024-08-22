@@ -50,13 +50,11 @@ namespace Runtime
 
             if (!_isInView && tempInView)
             {
-                Debug.Log("Now in view");
                 OnIsNowInView.Invoke();
             }
 
             if (_isInView && !tempInView)
             {
-                Debug.Log("no longer in view");
                 OnIsNoLongerInView.Invoke();
             }
 

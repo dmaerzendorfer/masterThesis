@@ -4,6 +4,8 @@ These notes act as progress report (research diary) throughout the thesis work. 
 ## 22.08.2024
 - implementing a hover-cam in vr to replace the old oce orbit cam
     - should work out fine, might need some detailed testing with study task however :)
+    - note that i did make a rather easy version of it tho -> the movement just uses the cameras up vector. so if it reaches the top of it stuff gets wonky. i think the paper has a solution for it but imma ignore that for now^^'
+- refactored the viewManager to be more readable and extendable :)
 
 ## 21.08.2024
 - meeting with markus
