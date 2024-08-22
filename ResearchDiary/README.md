@@ -1,6 +1,73 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 22.08.2024
+- implementing a hover-cam in vr to replace the old oce orbit cam
+
+## 21.08.2024
+- meeting with markus
+- made little showcase vid:
+<br/>
+<video width="640" height="480" controls>
+  <source src="images/viewPointManipShowcase.mp4" type="video/mp4">
+</video>
+
+- presented my current work status and my plan for the study
+ - **questionnaire:**
+    - 1. legal stuff ->  für daten erhebung etc. -> ask markus if there is a template somewhere...
+    - 2. generic stuff -> eg age, experience in VR, gender etc. -> same here if there is a template somewhere
+    - 3. simulator sickness part -> simulator sickness questionnaire (SSQ)
+        - https://conservancy.umn.edu/server/api/core/bitstreams/70c8fe0f-c84a-4d0e-80ba-b97822a5cf95/content
+        - or better VRSQ!
+            - https://www.sciencedirect.com/science/article/pii/S000368701730282X
+    - 4. embodiment part 
+        - https://www.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2020.575943/full
+        - with some alterations if need be
+    - 5. exploration part ->
+        - custom questions on the part after the user explores after the main study (all questions use a 1-5 range with strongly aggree/disagree etc.)
+            - what method did you use for the exploration part -> oce or drone
+            - this method works well for exploration
+            - how many views did you usually use concurrently?
+    - 6. usability part -> system usability scale (SUS)
+        - https://www.researchgate.net/publication/228593520_SUS_A_quick_and_dirty_usability_scale
+    - 7. any thing the user wants to remark
+- questions i have for markus:
+    - how many people should i aim for? 20? 10 for drone 10 for oce?
+        - bei den abschlussarbeiten -> let me check again
+        -
+    - gibts irgendwo ein template für legal stuff and default vr questions eG experience age gender etc?
+        -
+    - gibts wo gute templates für VRSQ/SUS etc oder muss ich das direkt aus dem paper rausholen und selbst was zusammenstellen?
+        - online zu finden
+    - ab wann sind wieder leute an der FH damit ich ppl für meine study finde?
+        - 
+- open stuff:
+    - check literature what papers exist regarding free drone cam with forward etc direction. 
+    - check papers markus sent me -> literature stuff! zeugs begründen
+    - sutdie zusammenschreiben -> und markus schicken direkt im -> preference orbit + interview am ende
+- pois verstecken -> zwei verteilungen und 
+- is oce vs drone unfair?
+- what do i want to show with user study? that oce is shit in finding stuff?
+- wie steuere ich mehrere dronen und was ist die beste steuer methode?
+- sehr manuell derzeit -> was semi automatisches wäre nice -> zB hover-Cam paper any point -> damit vergleich von autonome steuerung und eher manuell
+
+- raycast -> to anything in diorama -> makes orbit cam
+
+- make two or three sets of pois that i can use with randomised
+- questionnaires: ssq, nasa tlx, sus
+- maybe add max time
+- paper on studies: https://programs.sigchi.org/chi/2024/program/content/147138
+
+- todos:
+    - update oce to not need objects but jsut raycast -> make it semi automatic look into hover cam
+    - write down user study part in overleaf in all the detail
+        - here also check if i find literature regarding what drone movement mode makes sence (will track myself tho, leaf users the choice and we'll see what they say.)
+
+- stuff done: 
+    - read through papers sent by markus
+    - look into hover-cam in more detail, should be doable :) will implement it tomorrow
+
+
 ## 19.08.2024
 - texted markus asking for a meeting
 - made oce cams selectable via their viewpanel
