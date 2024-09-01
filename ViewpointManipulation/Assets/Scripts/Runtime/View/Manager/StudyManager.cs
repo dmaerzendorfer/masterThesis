@@ -1,25 +1,33 @@
+using System;
 using DG.Tweening;
 using FastFileLog;
 using Runtime.CameraControl;
 using Runtime.View.Interactable;
 using Runtime.View.ViewPair;
 using TMPro;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Runtime.View.Manager
 {
+    [Serializable]
+    public struct PoiSet
+    {
+        public PointOfInterest[] pois;
+    }
+
     public class StudyManager : MonoBehaviour
     {
         public TextMeshProUGUI poiCounterTmp;
         public TextMeshProUGUI instructionTmp;
         public GameObject separationWall;
         public GameObject diorama;
-        public PointOfInterest[] pointOfInterests;
-        public OceInteractable[] oceInteractables;
+        public PoiSet[] poiSets;
         public ControlManager controlManager;
 
         private StudyDataRecord _studyDataRecord;
-        private bool _isInTaskOne = false;
+        private int _currentTask = -1;
         private bool _isStudyRunning = false;
         private ViewManager _viewManager;
         private float _timer = 0f;
@@ -28,6 +36,9 @@ namespace Runtime.View.Manager
         private float _userRelativeTimer = 0f;
         private bool _userRelativeActive = false;
         private int _foundPoisCount = 0;
+        private int _mostRecentlyUsedSet = -1;
+        private int _currentSet = -1;
+        private PointOfInterest[] _currentPointOfInterests;
 
         private void Start()
         {
@@ -51,10 +62,10 @@ namespace Runtime.View.Manager
                 }
             }
 
-            if (_isInTaskOne)
+            if (_currentTask != -1)
             {
-                poiCounterTmp.text = $"Found POIs: {_foundPoisCount}/{pointOfInterests.Length}";
-                if (_foundPoisCount == pointOfInterests.Length)
+                poiCounterTmp.text = $"Found POIs: {_foundPoisCount}/{_currentPointOfInterests.Length}";
+                if (_foundPoisCount == _currentPointOfInterests.Length)
                 {
                     AllPoisFound();
                 }
@@ -71,17 +82,31 @@ namespace Runtime.View.Manager
             _viewManager.DeleteAllActiveViews();
 
             _studyDataRecord = new StudyDataRecord();
-            LogManager.Log(gameObject, "Start of Study - Task One: POIs");
-            _isInTaskOne = true;
+            LogManager.Log(gameObject, "Start of Study");
+            _currentTask = 0;
             _isStudyRunning = true;
             controlManager.canSwapMode = false;
 
-            SetupTaskOneTracking();
+            if (_mostRecentlyUsedSet == -1)
+            {
+                _currentSet = Random.Range(0, poiSets.Length);
+            }
+            else
+            {
+                do
+                {
+                    _currentSet = Random.Range(0, poiSets.Length);
+                } while (_currentSet == _mostRecentlyUsedSet);
+            }
+
+            _currentPointOfInterests = poiSets[_currentSet].pois;
+
+            SetupTaskTracking();
 
             //show instructions
             instructionTmp.transform.parent.gameObject.SetActive(true);
             instructionTmp.text =
-                $"Find the {pointOfInterests.Length} hidden POIs in the diorama opposite of the control table!";
+                $"Find the {_currentPointOfInterests.Length} hidden POIs in the diorama opposite of the control table!";
             DOVirtual.DelayedCall(3, () => { instructionTmp.transform.parent.gameObject.SetActive(false); });
             poiCounterTmp.transform.parent.gameObject.SetActive(true);
 
@@ -92,19 +117,54 @@ namespace Runtime.View.Manager
 
         public void AllPoisFound()
         {
-            _isInTaskOne = false;
-            _studyDataRecord.TaskOne.Duration = _timer;
+            //save current task
+            _studyDataRecord.Tasks[_currentTask].Duration = _timer;
+            _studyDataRecord.Tasks[_currentTask].TimeInDroneRelativeMode = _droneRelativeTimer;
+            _studyDataRecord.Tasks[_currentTask].TimeInUserRelativeMode = _userRelativeTimer;
 
-            LogManager.Log(gameObject, _studyDataRecord.TaskOne.GetHeader());
-            LogManager.Log(gameObject, _studyDataRecord.TaskOne.ToString());
+            LogManager.Log(gameObject, _studyDataRecord.Tasks[_currentTask].GetHeader());
+            LogManager.Log(gameObject, _studyDataRecord.Tasks[_currentTask].ToString());
 
-            LogManager.Log(gameObject, "All POIs found, swapping to open exploration part");
+            CleanupTaskTracking();
+            //either stop test or start second one
 
-            CleanupTaskOneTracking();
+            if (_currentTask == 1)
+            {
+                //we are done
+                LogManager.Log(gameObject, "End of Study");
+                diorama.SetActive(false);
+                separationWall.SetActive(true);
+                _viewManager.DeleteAllActiveViews();
+
+                instructionTmp.transform.parent.gameObject.SetActive(true);
+                instructionTmp.text =
+                    $"Study over, well done :)";
+                DOVirtual.DelayedCall(3, () => { instructionTmp.transform.parent.gameObject.SetActive(false); });
+
+
+                return;
+            }
+
+            //set the correct pois
+            if (_mostRecentlyUsedSet == -1)
+            {
+                _currentSet = Random.Range(0, poiSets.Length);
+            }
+            else
+            {
+                do
+                {
+                    _currentSet = Random.Range(0, poiSets.Length);
+                } while (_currentSet == _mostRecentlyUsedSet);
+            }
+
+            //setup tracking again
+            _mostRecentlyUsedSet = _currentSet;
+            _currentPointOfInterests = null;
+            _currentTask++;
 
             controlManager.ToggleMode(true);
-
-            SetupTaskTwoTracking();
+            SetupTaskTracking();
         }
 
         public void EndStudy()
@@ -112,39 +172,19 @@ namespace Runtime.View.Manager
             _isStudyRunning = false;
             controlManager.canSwapMode = true;
 
-            //make sure to save duration if not done yet
-            if (_isInTaskOne)
-            {
-                _studyDataRecord.TaskOne.Duration = _timer;
-                _studyDataRecord.TaskOne.TimeInDroneRelativeMode = _droneRelativeTimer;
-                _studyDataRecord.TaskOne.TimeInUserRelativeMode = _userRelativeTimer;
+            _currentPointOfInterests = null;
+            _mostRecentlyUsedSet = _currentSet;
+            _currentSet = -1;
 
-                LogManager.Log(gameObject, _studyDataRecord.TaskOne.GetHeader());
-                LogManager.Log(gameObject, _studyDataRecord.TaskOne.ToString());
+            CleanupTaskTracking();
 
-                CleanupTaskOneTracking();
-            }
-            else
-            {
-                _studyDataRecord.TaskTwo.Duration = _timer;
-                _studyDataRecord.TaskTwo.TimeInDroneRelativeMode = _droneRelativeTimer;
-                _studyDataRecord.TaskTwo.TimeInUserRelativeMode = _userRelativeTimer;
-
-                LogManager.Log(gameObject, _studyDataRecord.TaskTwo.GetHeader());
-                LogManager.Log(gameObject, _studyDataRecord.TaskTwo.ToString());
-
-                CleanupTaskTwoTracking();
-            }
-
-
-            LogManager.Log(gameObject, (_isInTaskOne ? "End of Study whilst task one not complete!" : "End of Study"));
-            //disable diorama, show wall again
+            LogManager.Log(gameObject, "Early end of Study via button press");
             diorama.SetActive(false);
             separationWall.SetActive(true);
             _viewManager.DeleteAllActiveViews();
         }
 
-        private void SetupTaskOneTracking()
+        private void SetupTaskTracking()
         {
             _foundPoisCount = 0;
             _timer = 0f;
@@ -154,116 +194,132 @@ namespace Runtime.View.Manager
             _userRelativeActive = false;
 
             poiCounterTmp.gameObject.SetActive(true);
-            poiCounterTmp.text = $"Found POIs: {_foundPoisCount}/{pointOfInterests.Length}";
+            poiCounterTmp.text = $"Found POIs: {_foundPoisCount}/{_currentPointOfInterests.Length}";
+
+            var task = _studyDataRecord.Tasks[_currentTask];
 
             //set oce mode in record
-            _studyDataRecord.TaskOne.Mode = _viewManager.ViewMode;
+            task.Mode = _viewManager.ViewMode;
+            task.SetIndex = _currentSet;
+
+            //enable the correct pois
+            for (int i = 0; i < poiSets.Length; i++)
+            {
+                bool shouldBeActive = i == _currentSet;
+
+                foreach (var pointOfInterest in poiSets[i].pois)
+                {
+                    pointOfInterest.gameObject.SetActive(shouldBeActive);
+                }
+            }
+
+
             //hook up all the events
-            _viewManager.onViewPanelDocked.AddListener(() => _studyDataRecord.TaskOne.DockCount++);
-            _viewManager.onViewPanelUndocked.AddListener(() => _studyDataRecord.TaskOne.UnDockCount++);
-            _viewManager.onAnyCamSpawned.AddListener(() => _studyDataRecord.TaskOne.SpawnedCamCount++);
-            _viewManager.onAnyCamDestroyed.AddListener(() => _studyDataRecord.TaskOne.DeletedCamCount++);
+            _viewManager.onViewPanelDocked.AddListener(() => task.DockCount++);
+            _viewManager.onViewPanelUndocked.AddListener(() => task.UnDockCount++);
+            _viewManager.onAnyCamSpawned.AddListener(() => task.SpawnedCamCount++);
+            _viewManager.onAnyCamDestroyed.AddListener(() => task.DeletedCamCount++);
             _viewManager.onDroneCamSpawned.AddListener(DroneSpawned);
 
-            for (int i = 0; i < pointOfInterests.Length; i++)
+            for (int i = 0; i < _currentPointOfInterests.Length; i++)
             {
-                var poi = pointOfInterests[i];
+                var poi = _currentPointOfInterests[i];
                 //quite the ugly code duplication but i just want to have it work for now
                 switch (i)
                 {
                     case 0:
                         poi.OnIsNowInView.AddListener(() =>
                         {
-                            if (_studyDataRecord.TaskOne.TimeForPoiOne == 0)
+                            if (task.TimeForPoiOne == 0)
                             {
-                                _studyDataRecord.TaskOne.TimeForPoiOne = _timer;
+                                task.TimeForPoiOne = _timer;
                             }
 
                             _foundPoisCount++;
                         });
                         poi.OnIsNoLongerInView.AddListener(() =>
                         {
-                            _studyDataRecord.TaskOne.LostTrackOfPoiOne++;
+                            task.LostTrackOfPoiOne++;
                             _foundPoisCount--;
                         });
                         break;
                     case 1:
                         poi.OnIsNowInView.AddListener(() =>
                         {
-                            if (_studyDataRecord.TaskOne.TimeForPoiTwo == 0)
+                            if (task.TimeForPoiTwo == 0)
                             {
-                                _studyDataRecord.TaskOne.TimeForPoiTwo = _timer;
+                                task.TimeForPoiTwo = _timer;
                             }
 
                             _foundPoisCount++;
                         });
                         poi.OnIsNoLongerInView.AddListener(() =>
                         {
-                            _studyDataRecord.TaskOne.LostTrackOfPoiTwo++;
+                            task.LostTrackOfPoiTwo++;
                             _foundPoisCount--;
                         });
                         break;
                     case 2:
                         poi.OnIsNowInView.AddListener(() =>
                         {
-                            if (_studyDataRecord.TaskOne.TimeForPoiThree == 0)
+                            if (task.TimeForPoiThree == 0)
                             {
-                                _studyDataRecord.TaskOne.TimeForPoiThree = _timer;
+                                task.TimeForPoiThree = _timer;
                             }
 
                             _foundPoisCount++;
                         });
                         poi.OnIsNoLongerInView.AddListener(() =>
                         {
-                            _studyDataRecord.TaskOne.TimeForPoiThree++;
+                            task.TimeForPoiThree++;
                             _foundPoisCount--;
                         });
                         break;
                     case 3:
                         poi.OnIsNowInView.AddListener(() =>
                         {
-                            if (_studyDataRecord.TaskOne.TimeForPoiFour == 0)
+                            if (task.TimeForPoiFour == 0)
                             {
-                                _studyDataRecord.TaskOne.TimeForPoiFour = _timer;
+                                task.TimeForPoiFour = _timer;
                             }
 
                             _foundPoisCount++;
                         });
                         poi.OnIsNoLongerInView.AddListener(() =>
                         {
-                            _studyDataRecord.TaskOne.TimeForPoiFour++;
+                            task.TimeForPoiFour++;
                             _foundPoisCount--;
                         });
                         break;
                     case 4:
                         poi.OnIsNowInView.AddListener(() =>
                         {
-                            if (_studyDataRecord.TaskOne.TimeForPoiFive == 0)
+                            if (task.TimeForPoiFive == 0)
                             {
-                                _studyDataRecord.TaskOne.TimeForPoiFive = _timer;
+                                task.TimeForPoiFive = _timer;
                             }
 
                             _foundPoisCount++;
                         });
                         poi.OnIsNoLongerInView.AddListener(() =>
                         {
-                            _studyDataRecord.TaskOne.TimeForPoiFive++;
+                            task.TimeForPoiFive++;
                             _foundPoisCount--;
                         });
                         break;
                     case 5:
                         poi.OnIsNowInView.AddListener(() =>
                         {
-                            if (_studyDataRecord.TaskOne.TimeForPoiSix == 0)
+                            if (task.TimeForPoiSix == 0)
                             {
-                                _studyDataRecord.TaskOne.TimeForPoiSix = _timer;
+                                task.TimeForPoiSix = _timer;
                             }
 
                             _foundPoisCount++;
                         });
                         poi.OnIsNoLongerInView.AddListener(() =>
                         {
-                            _studyDataRecord.TaskOne.TimeForPoiSix++;
+                            task.TimeForPoiSix++;
                             _foundPoisCount--;
                         });
                         break;
@@ -271,16 +327,17 @@ namespace Runtime.View.Manager
                         break;
                 }
             }
-
-            foreach (var oceObj in oceInteractables)
-            {
-                oceObj.enabled = _studyDataRecord.TaskOne.Mode == ViewMode.OCE;
-            }
         }
 
-        private void CleanupTaskOneTracking()
+        private void CleanupTaskTracking()
         {
             poiCounterTmp.transform.parent.gameObject.SetActive(false);
+
+            _timer = 0f;
+            _droneRelativeTimer = 0f;
+            _userRelativeTimer = 0f;
+            _droneRelativeActive = false;
+            _userRelativeActive = false;
 
             //unhook events
             _viewManager.onViewPanelDocked.RemoveAllListeners();
@@ -289,53 +346,11 @@ namespace Runtime.View.Manager
             _viewManager.onAnyCamDestroyed.RemoveAllListeners();
             _viewManager.onDroneCamSpawned.RemoveAllListeners();
 
-            foreach (var poi in pointOfInterests)
+            foreach (var poi in _currentPointOfInterests)
             {
                 poi.OnIsNowInView.RemoveAllListeners();
                 poi.OnIsNoLongerInView.RemoveAllListeners();
             }
-
-            //since we remove all listeners we have to hook the control table up again
-            controlManager.HookUpCamCount();
-        }
-
-        private void SetupTaskTwoTracking()
-        {
-            instructionTmp.transform.parent.gameObject.SetActive(true);
-            instructionTmp.text =
-                $"Now explore the diorama with the other control method as long as you want. \n In order to exit press the 'Exit' button on the control table.";
-            DOVirtual.DelayedCall(7, () => { instructionTmp.transform.parent.gameObject.SetActive(false); });
-
-            _timer = 0f;
-            _droneRelativeTimer = 0f;
-            _userRelativeTimer = 0f;
-            _droneRelativeActive = false;
-            _userRelativeActive = false;
-
-            //set control mode in record
-            _studyDataRecord.TaskTwo.Mode = _viewManager.ViewMode;
-            //hook up all the events
-            _viewManager.onViewPanelDocked.AddListener(() => _studyDataRecord.TaskTwo.DockCount++);
-            _viewManager.onViewPanelUndocked.AddListener(() => _studyDataRecord.TaskTwo.UnDockCount++);
-            _viewManager.onAnyCamSpawned.AddListener(() => _studyDataRecord.TaskTwo.SpawnedCamCount++);
-            _viewManager.onAnyCamDestroyed.AddListener(() => _studyDataRecord.TaskTwo.DeletedCamCount++);
-
-            _viewManager.onDroneCamSpawned.AddListener(DroneSpawned);
-
-            foreach (var oceObj in oceInteractables)
-            {
-                oceObj.enabled = _studyDataRecord.TaskTwo.Mode == ViewMode.OCE;
-            }
-        }
-
-        private void CleanupTaskTwoTracking()
-        {
-            //unhook up all the events
-            _viewManager.onViewPanelDocked.RemoveAllListeners();
-            _viewManager.onViewPanelUndocked.RemoveAllListeners();
-            _viewManager.onAnyCamSpawned.RemoveAllListeners();
-            _viewManager.onAnyCamDestroyed.RemoveAllListeners();
-            _viewManager.onDroneCamSpawned.RemoveAllListeners();
 
             //since we remove all listeners we have to hook the control table up again
             controlManager.HookUpCamCount();

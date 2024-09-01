@@ -2,10 +2,13 @@
 
 namespace Runtime
 {
-    public class TaskOne
+    public class Task
     {
         public ViewMode
             Mode = ViewMode.Hover; //hover or drone -> for task one (not the exploration one, there its flipped!)
+
+        //todo: scrap that task one stuff and add an index for what poi set is used
+        public int SetIndex = 0;
 
         //all times are in seconds
         public float Duration = 0f; //pressed start (of task one with pois)
@@ -33,30 +36,31 @@ namespace Runtime
 
         public override string ToString()
         {
-            return $"{(Mode == ViewMode.Drone ? "Drone" : (Mode == ViewMode.Hover ? "Hover" : "OCE"))};{Duration:F};" +
-                   $"{TimeForPoiOne:F};" +
-                   $"{LostTrackOfPoiOne:D};" +
-                   $"{TimeForPoiTwo:F};" +
-                   $"{LostTrackOfPoiTwo:D};" +
-                   $"{TimeForPoiThree:F};" +
-                   $"{LostTrackOfPoiThree:D};" +
-                   $"{TimeForPoiFour:F};" +
-                   $"{LostTrackOfPoiFour:D};" +
-                   $"{TimeForPoiFive:F};" +
-                   $"{LostTrackOfPoiFive:D};" +
-                   $"{TimeForPoiSix:F};" +
-                   $"{LostTrackOfPoiSix:D};" +
-                   $"{SpawnedCamCount:D};" +
-                   $"{DeletedCamCount:D};" +
-                   $"{DockCount:D};" +
-                   $"{UnDockCount:D};" +
-                   $"{TimeInUserRelativeMode:F};" +
-                   $"{TimeInDroneRelativeMode:F}";
+            return
+                $"{(Mode == ViewMode.Drone ? "Drone" : (Mode == ViewMode.Hover ? "Hover" : "OCE"))};{SetIndex:D};{Duration:F};" +
+                $"{TimeForPoiOne:F};" +
+                $"{LostTrackOfPoiOne:D};" +
+                $"{TimeForPoiTwo:F};" +
+                $"{LostTrackOfPoiTwo:D};" +
+                $"{TimeForPoiThree:F};" +
+                $"{LostTrackOfPoiThree:D};" +
+                $"{TimeForPoiFour:F};" +
+                $"{LostTrackOfPoiFour:D};" +
+                $"{TimeForPoiFive:F};" +
+                $"{LostTrackOfPoiFive:D};" +
+                $"{TimeForPoiSix:F};" +
+                $"{LostTrackOfPoiSix:D};" +
+                $"{SpawnedCamCount:D};" +
+                $"{DeletedCamCount:D};" +
+                $"{DockCount:D};" +
+                $"{UnDockCount:D};" +
+                $"{TimeInUserRelativeMode:F};" +
+                $"{TimeInDroneRelativeMode:F}";
         }
 
         public string GetHeader()
         {
-            return "Mode;Duration;" +
+            return "Mode;SetIndex;Duration;" +
                    "TimeForPoiOne;" +
                    "LostTrackOfPoiOne;" +
                    "TimeForPoiTwo;" +
@@ -78,47 +82,8 @@ namespace Runtime
         }
     }
 
-    public class TaskTwo
-    {
-        public ViewMode
-            Mode = ViewMode.Drone; //Hover or drone -> for task one (not the exploration one, there its flipped!)
-
-        //all times are in milliseconds
-        public float Duration = 0f;
-        public int SpawnedCamCount = 0; //how often the user spawned a cam
-        public int DeletedCamCount = 0; //how often the user deleted a cam
-        public int DockCount = 0; //how often the user docked a view-panel to the hud
-        public int UnDockCount = 0; //how often the user undocked a view-panel from the hud
-
-        public float TimeInUserRelativeMode = 0f; //time spent with an active drone cam in user relative mode
-        public float TimeInDroneRelativeMode = 0f; //time spend with an active drone cam in drone relative mode
-
-        public override string ToString()
-        {
-            return $"{(Mode == ViewMode.Drone ? "Drone" : (Mode == ViewMode.Hover ? "Hover" : "OCE"))};{Duration:F};" +
-                   $"{SpawnedCamCount:D};" +
-                   $"{DeletedCamCount:D};" +
-                   $"{DockCount:D};" +
-                   $"{UnDockCount:D};" +
-                   $"{TimeInUserRelativeMode:F};" +
-                   $"{TimeInDroneRelativeMode:F}";
-        }
-
-        public string GetHeader()
-        {
-            return "Mode;Duration;" +
-                   "SpawnedCamCount;" +
-                   "DeletedCamCount;" +
-                   "DockCount;" +
-                   "UnDockCount;" +
-                   "TimeInUserRelativeMode;" +
-                   "TimeInDroneRelativeMode";
-        }
-    }
-
     public class StudyDataRecord
     {
-        public TaskOne TaskOne = new TaskOne();
-        public TaskTwo TaskTwo = new TaskTwo();
+        public Task[] Tasks = new Task[2];
     }
 }

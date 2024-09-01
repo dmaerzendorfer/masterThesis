@@ -1,11 +1,41 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 01.09.2024
+- updating the studyManager
+    - should use poi sets now and support the new task structure
+    - needs testing tho
+
+## 29.08.2024
+- only have ~2.5h so will do some techincal stuff 
+- did the stuff from yesterdays todo (some at least)
+- gave all the characters in the diorama colliders since they where missing
+- did start with updating the studyManager, but leaving the rest for tomorrow morning
+## 28.08.2024
+- continue with writing the user study chapter
+    - did finish for now, will most likely need revisions but meh.
+- todos: 
+    - write the system overview of hover cam, free drone and the view panels and make some graphics
+    - write the AI thingy in the appendix (done-ish)
+    - create 2 more sets of 6 hidden pois -> made it so that there are 5 pois in each set -> done
+    - make hover cam raycast longer and with a cursor at the end. (done ish, line is longer but recticle only works for interactables so scrapped it.)
+    - make selected hoverCams have a green outline (done)
+
+## 27.08.2024
+- was in vienna/linz on the weekend, so no work on thesis but now i have time again
+- tested the new hover cam in my current study scene whether or not all the pois can be found etc.
+    - seems to work
+    - will need to update study-manager a bit later to use 3 different sets of possible pois
+    - will need to make the overcam selection a bit better -> longer ray and maybe a pointer at the end or so -> most likely just set the layerMask in the ray interactor and it should be good?
+- started with writing down the plan for the study
+    - did the intro and related literature + some literature research. pretty much done, experimented wiht chat gpt for better phrasing as well. still need to make a graphic and finish the procedure of the study. then want to write down the system of manipulating the study eG the controls for it and the appendix on the AI usage.
+
 ## 22.08.2024
 - implementing a hover-cam in vr to replace the old oce orbit cam
     - should work out fine, might need some detailed testing with study task however :)
     - note that i did make a rather easy version of it tho -> the movement just uses the cameras up vector. so if it reaches the top of it stuff gets wonky. i think the paper has a solution for it but imma ignore that for now^^'
 - refactored the viewManager to be more readable and extendable :)
+- todos later: write down everything and make new controls sheet (maybe even more or less fancy for the overleaf doc?)
 
 ## 21.08.2024
 - meeting with markus
@@ -36,10 +66,9 @@ These notes act as progress report (research diary) throughout the thesis work. 
     - 7. any thing the user wants to remark
 - questions i have for markus:
     - how many people should i aim for? 20? 10 for drone 10 for oce?
-        - bei den abschlussarbeiten -> let me check again
         -
     - gibts irgendwo ein template für legal stuff and default vr questions eG experience age gender etc?
-        -
+        - bei den abschlussarbeiten -> let me check again
     - gibts wo gute templates für VRSQ/SUS etc oder muss ich das direkt aus dem paper rausholen und selbst was zusammenstellen?
         - online zu finden
     - ab wann sind wieder leute an der FH damit ich ppl für meine study finde?
@@ -47,7 +76,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
 - open stuff:
     - check literature what papers exist regarding free drone cam with forward etc direction. 
     - check papers markus sent me -> literature stuff! zeugs begründen
-    - sutdie zusammenschreiben -> und markus schicken direkt im -> preference orbit + interview am ende
+    - studie zusammenschreiben -> und markus schicken direkt im -> preference orbit + interview am ende
 - pois verstecken -> zwei verteilungen und 
 - is oce vs drone unfair?
 - what do i want to show with user study? that oce is shit in finding stuff?
@@ -64,7 +93,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
 - todos:
     - update oce to not need objects but jsut raycast -> make it semi automatic look into hover cam
     - write down user study part in overleaf in all the detail
-        - here also check if i find literature regarding what drone movement mode makes sence (will track myself tho, leaf users the choice and we'll see what they say.)
+        - here also check if i find literature regarding what drone movement mode makes sence (will track myself tho, leave users the choice and we'll see what they say.)
 
 - stuff done: 
     - read through papers sent by markus
