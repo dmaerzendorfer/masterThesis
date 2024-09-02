@@ -84,9 +84,12 @@ namespace Runtime.View.Manager.ViewModeHandler
 
         private void OnDroneSpawn(InputAction.CallbackContext callbackContext)
         {
+            //failsave, shouldnt be the case but :shrug:
+            if (_viewManager.ViewMode != ViewMode.Drone) return;
+            
             OnDroneUnselect(callbackContext);
 
-            var dronePair = SpawnViewPair();
+            var dronePair = (DroneViewPair)_viewManager.SpawnViewPair();
             if (dronePair == null) return;
             //set drone pos
             var transf = dronePair.droneCamController.transform;

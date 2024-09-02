@@ -2,10 +2,8 @@ using System;
 using DG.Tweening;
 using FastFileLog;
 using Runtime.CameraControl;
-using Runtime.View.Interactable;
 using Runtime.View.ViewPair;
 using TMPro;
-using Unity.Burst.Intrinsics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -62,7 +60,7 @@ namespace Runtime.View.Manager
                 }
             }
 
-            if (_currentTask != -1)
+            if (_currentTask != -1 && _currentPointOfInterests != null)
             {
                 poiCounterTmp.text = $"Found POIs: {_foundPoisCount}/{_currentPointOfInterests.Length}";
                 if (_foundPoisCount == _currentPointOfInterests.Length)
@@ -87,19 +85,7 @@ namespace Runtime.View.Manager
             _isStudyRunning = true;
             controlManager.canSwapMode = false;
 
-            if (_mostRecentlyUsedSet == -1)
-            {
-                _currentSet = Random.Range(0, poiSets.Length);
-            }
-            else
-            {
-                do
-                {
-                    _currentSet = Random.Range(0, poiSets.Length);
-                } while (_currentSet == _mostRecentlyUsedSet);
-            }
-
-            _currentPointOfInterests = poiSets[_currentSet].pois;
+            DecideOnPoiSet();
 
             SetupTaskTracking();
 
@@ -131,10 +117,17 @@ namespace Runtime.View.Manager
             if (_currentTask == 1)
             {
                 //we are done
+                _isStudyRunning = false;
+                controlManager.canSwapMode = true;
+
+                _currentPointOfInterests = null;
+                _currentSet = -1;
+
                 LogManager.Log(gameObject, "End of Study");
                 diorama.SetActive(false);
                 separationWall.SetActive(true);
                 _viewManager.DeleteAllActiveViews();
+
 
                 instructionTmp.transform.parent.gameObject.SetActive(true);
                 instructionTmp.text =
@@ -146,37 +139,43 @@ namespace Runtime.View.Manager
             }
 
             //set the correct pois
-            if (_mostRecentlyUsedSet == -1)
-            {
-                _currentSet = Random.Range(0, poiSets.Length);
-            }
-            else
-            {
-                do
-                {
-                    _currentSet = Random.Range(0, poiSets.Length);
-                } while (_currentSet == _mostRecentlyUsedSet);
-            }
+            DecideOnPoiSet();
+
 
             //setup tracking again
-            _mostRecentlyUsedSet = _currentSet;
-            _currentPointOfInterests = null;
             _currentTask++;
 
             controlManager.ToggleMode(true);
             SetupTaskTracking();
+            //show instructions
+            instructionTmp.transform.parent.gameObject.SetActive(true);
+            instructionTmp.text =
+                $"Now find the {_currentPointOfInterests.Length} hidden POIs with the other method!";
+            DOVirtual.DelayedCall(3, () => { instructionTmp.transform.parent.gameObject.SetActive(false); });
+            poiCounterTmp.transform.parent.gameObject.SetActive(true);
         }
 
         public void EndStudy()
         {
+            if (!_isStudyRunning) return;
+
+            //save task if one is active
+            _studyDataRecord.Tasks[_currentTask].Duration = _timer;
+            _studyDataRecord.Tasks[_currentTask].TimeInDroneRelativeMode = _droneRelativeTimer;
+            _studyDataRecord.Tasks[_currentTask].TimeInUserRelativeMode = _userRelativeTimer;
+
+            LogManager.Log(gameObject, "saving task in case its not saved yet");
+            LogManager.Log(gameObject, _studyDataRecord.Tasks[_currentTask].GetHeader());
+            LogManager.Log(gameObject, _studyDataRecord.Tasks[_currentTask].ToString());
+
+
             _isStudyRunning = false;
             controlManager.canSwapMode = true;
 
-            _currentPointOfInterests = null;
-            _mostRecentlyUsedSet = _currentSet;
             _currentSet = -1;
 
             CleanupTaskTracking();
+            _currentPointOfInterests = null;
 
             LogManager.Log(gameObject, "Early end of Study via button press");
             diorama.SetActive(false);
@@ -212,7 +211,6 @@ namespace Runtime.View.Manager
                     pointOfInterest.gameObject.SetActive(shouldBeActive);
                 }
             }
-
 
             //hook up all the events
             _viewManager.onViewPanelDocked.AddListener(() => task.DockCount++);
@@ -271,7 +269,7 @@ namespace Runtime.View.Manager
                         });
                         poi.OnIsNoLongerInView.AddListener(() =>
                         {
-                            task.TimeForPoiThree++;
+                            task.LostTrackOfPoiThree++;
                             _foundPoisCount--;
                         });
                         break;
@@ -287,7 +285,7 @@ namespace Runtime.View.Manager
                         });
                         poi.OnIsNoLongerInView.AddListener(() =>
                         {
-                            task.TimeForPoiFour++;
+                            task.LostTrackOfPoiFour++;
                             _foundPoisCount--;
                         });
                         break;
@@ -303,7 +301,7 @@ namespace Runtime.View.Manager
                         });
                         poi.OnIsNoLongerInView.AddListener(() =>
                         {
-                            task.TimeForPoiFive++;
+                            task.LostTrackOfPoiFive++;
                             _foundPoisCount--;
                         });
                         break;
@@ -319,7 +317,7 @@ namespace Runtime.View.Manager
                         });
                         poi.OnIsNoLongerInView.AddListener(() =>
                         {
-                            task.TimeForPoiSix++;
+                            task.LostTrackOfPoiSix++;
                             _foundPoisCount--;
                         });
                         break;
@@ -327,6 +325,25 @@ namespace Runtime.View.Manager
                         break;
                 }
             }
+        }
+
+        private void DecideOnPoiSet()
+        {
+            Debug.Log($"most recent set was:{_mostRecentlyUsedSet}");
+            if (_mostRecentlyUsedSet == -1)
+            {
+                _currentSet = Random.Range(0, poiSets.Length);
+            }
+            else
+            {
+                do
+                {
+                    _currentSet = Random.Range(0, poiSets.Length);
+                } while (_currentSet == _mostRecentlyUsedSet);
+            }
+
+            _currentPointOfInterests = poiSets[_currentSet].pois;
+            _mostRecentlyUsedSet = _currentSet;
         }
 
         private void CleanupTaskTracking()
@@ -358,6 +375,8 @@ namespace Runtime.View.Manager
 
         private void DroneSpawned(DroneViewPair droneViewPair)
         {
+            // DroneSelected(droneViewPair.droneCamController);
+
             droneViewPair.droneCamController.onSelected.AddListener(DroneSelected);
             droneViewPair.droneCamController.onUnselected.AddListener(DroneUnselected);
             droneViewPair.droneCamController.onMovementModeChange.AddListener(DroneModeChanged);

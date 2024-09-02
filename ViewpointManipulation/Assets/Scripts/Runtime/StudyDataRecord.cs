@@ -85,5 +85,11 @@ namespace Runtime
     public class StudyDataRecord
     {
         public Task[] Tasks = new Task[2];
+
+        public StudyDataRecord()
+        {
+            Tasks[0] = new Task();
+            Tasks[1] = new Task();
+        }
     }
 }

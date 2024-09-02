@@ -1,6 +1,10 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 02.09.2024
+- tested the updated study manager with the oculus
+    - had to fix lots of little bugs but seems to be correct now :)
+
 ## 01.09.2024
 - updating the studyManager
     - should use poi sets now and support the new task structure
