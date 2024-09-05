@@ -99,6 +99,7 @@ MonoBehaviour:
     prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
     instance: {fileID: 0}
   hoverCamSpawner: {fileID: 0}
+  hoverCamUnselectAction: {fileID: -7326252254546553951, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &2860089285467530107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,8 +128,8 @@ MonoBehaviour:
   - panelTitle: Drone Cam5
     prefab: {fileID: 220595269630202490, guid: b759ea24456535d48b1e785ca463f64e, type: 3}
     instance: {fileID: 0}
-  droneSpawnAction: {fileID: -6465576503248765194, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  droneUnselectAction: {fileID: 3427017767692873761, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  droneSpawnAction: {fileID: -5282061501281653390, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  droneUnselectAction: {fileID: -7326252254546553951, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   droneSpawnLocation: {fileID: 0}
   droneSpawningDistance: 1
 --- !u!114 &2038006987820351866

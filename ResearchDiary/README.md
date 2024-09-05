@@ -1,9 +1,21 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 05.09.2024
+- created pdf of current user study writings and sent to markus for feedback
+- told markus 'bout schmiede and that i wont have time during it
+- updated the controls in the unity project to be more concise
+    - also updated some graphics in the written doc
+    - needs to be tested next time :)
+
+## 04.09.2024
+- continue with written part -> the system stuff about oce and drone with controls diagram etc.
+- todo: need to change drone spawn button and deselect button to be the same as with the hoverCam!
+
 ## 02.09.2024
 - tested the updated study manager with the oculus
     - had to fix lots of little bugs but seems to be correct now :)
+    - forgot to make text smaller!
 
 ## 01.09.2024
 - updating the studyManager

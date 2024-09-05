@@ -329,7 +329,6 @@ namespace Runtime.View.Manager
 
         private void DecideOnPoiSet()
         {
-            Debug.Log($"most recent set was:{_mostRecentlyUsedSet}");
             if (_mostRecentlyUsedSet == -1)
             {
                 _currentSet = Random.Range(0, poiSets.Length);

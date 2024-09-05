@@ -1,12 +1,14 @@
 ﻿using System.Linq;
 using Runtime.View.ViewPair;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Runtime.View.Manager.ViewModeHandler
 {
     public class HoverViewModeHandler : BaseViewModeHandler<HoverViewPair>
     {
         public HoverCamSpawner hoverCamSpawner;
+        public InputActionReference hoverCamUnselectAction;
 
         private Camera _mainCam;
         private ViewManager _viewManager;
@@ -16,6 +18,12 @@ namespace Runtime.View.Manager.ViewModeHandler
         {
             _mainCam = Camera.main;
             _viewManager = ViewManager.Instance;
+            hoverCamUnselectAction.action.performed += OnHoverCamUnselect;
+        }
+
+        private void OnDestroy()
+        {
+            hoverCamUnselectAction.action.performed -= OnHoverCamUnselect;
         }
 
         public override HoverViewPair SpawnViewPair()
@@ -45,6 +53,7 @@ namespace Runtime.View.Manager.ViewModeHandler
         {
             _isActivated = true;
             hoverCamSpawner.isSpawningEnabled = true;
+            hoverCamUnselectAction.action.Enable();
         }
 
         public override void Deactivate()
@@ -52,6 +61,18 @@ namespace Runtime.View.Manager.ViewModeHandler
             base.Deactivate();
             _isActivated = false;
             hoverCamSpawner.isSpawningEnabled = false;
+            hoverCamUnselectAction.action.Disable();
+        }
+
+        private void OnHoverCamUnselect(InputAction.CallbackContext callbackContext)
+        {
+            foreach (var hoverCamViewConfig in viewConfigs)
+            {
+                if (hoverCamViewConfig.instance != null)
+                {
+                    hoverCamViewConfig.instance.hoverCamController.IsSelected = false;
+                }
+            }
         }
     }
 }

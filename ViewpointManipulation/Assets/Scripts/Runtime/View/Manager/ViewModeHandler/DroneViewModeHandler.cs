@@ -46,6 +46,7 @@ namespace Runtime.View.Manager.ViewModeHandler
         {
             _isActivated = true;
             droneSpawnAction.action.Enable();
+            droneUnselectAction.action.Enable();
         }
 
         public override void Deactivate()
@@ -53,6 +54,7 @@ namespace Runtime.View.Manager.ViewModeHandler
             base.Deactivate();
             _isActivated = false;
             droneSpawnAction.action.Disable();
+            droneUnselectAction.action.Disable();
         }
 
         private void OnDroneUnselect(InputAction.CallbackContext callbackContext)

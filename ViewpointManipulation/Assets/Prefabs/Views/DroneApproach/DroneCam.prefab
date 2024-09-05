@@ -316,8 +316,8 @@ MonoBehaviour:
   inputActions:
     moveAction: {fileID: 298688722076725967, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     yawPitchAction: {fileID: -6428105322773342981, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    upAction: {fileID: -7326252254546553951, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    downAction: {fileID: -5282061501281653390, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    upAction: {fileID: -2649991628088206010, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    downAction: {fileID: 3427017767692873761, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   movementMode: 0
   modelOutline: {fileID: 5634180261203350754}
   _isSelected: 0
