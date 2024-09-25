@@ -1,6 +1,17 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 25.09.2024
+- back from the schmiede break
+- wanted to look through markus' feedback but pdf only has one comment
+    - got a reconstructed version, will update accordingly
+- compiling a pdf to use as questionnaire
+    - https://docs.google.com/document/d/1pOi6_5J4P7pPiAMelq2dTRtjnc-yMxo0LSVbflbdC_4/edit?usp=sharing
+
+- todo: add code for pausing in between the oce and drone part of the study. so users can fill in their questionnaire part real quick
+    - also test the early stop of the study if its fine (if ppl cant go on anymore)
+    - integrate markus' feedback
+
 ## 05.09.2024
 - created pdf of current user study writings and sent to markus for feedback
 - told markus 'bout schmiede and that i wont have time during it
