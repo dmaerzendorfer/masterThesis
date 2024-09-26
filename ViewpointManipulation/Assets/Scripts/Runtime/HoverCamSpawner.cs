@@ -17,11 +17,13 @@ namespace Runtime
 
         private void Start()
         {
+            spawnActionRight.action.Enable();
             spawnActionRight.action.performed += OnRightSpawn;
         }
 
         private void OnDestroy()
         {
+            spawnActionRight.action.Disable();
             spawnActionRight.action.performed -= OnRightSpawn;
         }
 

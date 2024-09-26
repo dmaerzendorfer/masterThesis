@@ -99,7 +99,7 @@ MonoBehaviour:
     prefab: {fileID: 1040591211904177285, guid: d9ef21d38eaeadc49bd4a698c1cee546, type: 3}
     instance: {fileID: 0}
   hoverCamSpawner: {fileID: 0}
-  hoverCamUnselectAction: {fileID: -7326252254546553951, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  hoverCamUnselectAction: {fileID: -2719103732117898221, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &2860089285467530107
 MonoBehaviour:
   m_ObjectHideFlags: 0

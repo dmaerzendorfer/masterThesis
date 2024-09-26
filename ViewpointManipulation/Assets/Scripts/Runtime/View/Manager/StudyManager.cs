@@ -41,6 +41,8 @@ namespace Runtime.View.Manager
         private void Start()
         {
             _viewManager = ViewManager.Instance;
+
+            _studyDataRecord = new StudyDataRecord();
         }
 
 
@@ -79,9 +81,9 @@ namespace Runtime.View.Manager
         {
             _viewManager.DeleteAllActiveViews();
 
-            _studyDataRecord = new StudyDataRecord();
             LogManager.Log(gameObject, "Start of Study");
-            _currentTask = 0;
+            //increase currenTask, if its at -1 we start with 0, after the first task(0) users need to press start again for the second one (1)
+            _currentTask++;
             _isStudyRunning = true;
             controlManager.canSwapMode = false;
 
@@ -114,6 +116,10 @@ namespace Runtime.View.Manager
             CleanupTaskTracking();
             //either stop test or start second one
 
+            diorama.SetActive(false);
+            separationWall.SetActive(true);
+            _viewManager.DeleteAllActiveViews();
+
             if (_currentTask == 1)
             {
                 //we are done
@@ -122,11 +128,9 @@ namespace Runtime.View.Manager
 
                 _currentPointOfInterests = null;
                 _currentSet = -1;
+                _currentTask = -1;
 
                 LogManager.Log(gameObject, "End of Study");
-                diorama.SetActive(false);
-                separationWall.SetActive(true);
-                _viewManager.DeleteAllActiveViews();
 
 
                 instructionTmp.transform.parent.gameObject.SetActive(true);
@@ -137,22 +141,33 @@ namespace Runtime.View.Manager
 
                 return;
             }
+            //there is a second part for the study
 
-            //set the correct pois
-            DecideOnPoiSet();
-
-
-            //setup tracking again
-            _currentTask++;
-
+            //show info and let user know to press start again
             controlManager.ToggleMode(true);
-            SetupTaskTracking();
-            //show instructions
+            //set currentPointOfInterests to null so we dont enter here again...
+            _currentPointOfInterests = null;
+
             instructionTmp.transform.parent.gameObject.SetActive(true);
             instructionTmp.text =
-                $"Now find the {_currentPointOfInterests.Length} hidden POIs with the other method!";
+                $"Press start study again for part 2 :)";
             DOVirtual.DelayedCall(3, () => { instructionTmp.transform.parent.gameObject.SetActive(false); });
-            poiCounterTmp.transform.parent.gameObject.SetActive(true);
+
+
+            // //set the correct pois
+            // DecideOnPoiSet();
+            //
+            //
+            // //setup tracking again
+            // _currentTask++;
+            //
+            // SetupTaskTracking();
+            // //show instructions
+            // instructionTmp.transform.parent.gameObject.SetActive(true);
+            // instructionTmp.text =
+            //     $"Now find the {_currentPointOfInterests.Length} hidden POIs with the other method!";
+            // DOVirtual.DelayedCall(3, () => { instructionTmp.transform.parent.gameObject.SetActive(false); });
+            // poiCounterTmp.transform.parent.gameObject.SetActive(true);
         }
 
         public void EndStudy()
@@ -173,6 +188,7 @@ namespace Runtime.View.Manager
             controlManager.canSwapMode = true;
 
             _currentSet = -1;
+            _currentTask = -1;
 
             CleanupTaskTracking();
             _currentPointOfInterests = null;

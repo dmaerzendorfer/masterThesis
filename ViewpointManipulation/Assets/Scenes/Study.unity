@@ -712,6 +712,10 @@ PrefabInstance:
       value: ViewManager
       objectReference: {fileID: 0}
     - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
+      propertyPath: _viewMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779992598695807458, guid: af22989bf212d974daeb879da28efab0, type: 3}
       propertyPath: viewParent
       value: 
       objectReference: {fileID: 658105228}

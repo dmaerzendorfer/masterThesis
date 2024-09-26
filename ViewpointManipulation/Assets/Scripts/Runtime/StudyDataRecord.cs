@@ -7,7 +7,6 @@ namespace Runtime
         public ViewMode
             Mode = ViewMode.Hover; //hover or drone -> for task one (not the exploration one, there its flipped!)
 
-        //todo: scrap that task one stuff and add an index for what poi set is used
         public int SetIndex = 0;
 
         //all times are in seconds
@@ -60,7 +59,7 @@ namespace Runtime
 
         public string GetHeader()
         {
-            return "Mode;SetIndex;Duration;" +
+            return "Mode;PoiSetIndex;Duration;" +
                    "TimeForPoiOne;" +
                    "LostTrackOfPoiOne;" +
                    "TimeForPoiTwo;" +
