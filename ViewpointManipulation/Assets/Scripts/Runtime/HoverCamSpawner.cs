@@ -36,7 +36,7 @@ namespace Runtime
 
                 //spawn hoverCam via viewmanager and set its target
                 var hover = (HoverViewPair)viewManager.SpawnViewPair();
-                hover.hoverCamController.target = hit.collider;
+                hover.hoverCamController.Target = hit.collider;
                 hover.hoverCamController.currentLookAt = hit.point;
                 hover.hoverCamController.SetInitialPos();
             }

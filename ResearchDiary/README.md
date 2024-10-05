@@ -9,10 +9,12 @@ These notes act as progress report (research diary) throughout the thesis work. 
     - adjust info text positions and show duration
     - make all pois easier to find
     - change system to use 3 pois
-    - remove/update the XR interactive controller hints
-    - update control table to use ui buttons instead of grab buttons
+    - remove/update the XR interactive controller hints -> check and they are jsut for basic locomotion so i will leave them (also dont know how to add ones for buttons)
+    - update control table to use ui buttons instead of grab buttons - done
+    - move seperating wall closer to diorama to not get ppl stuck in it -done
+    - select buttons in view-panel should show if cam is selected or not! -> should be done now, needs testing ->
     - fix hoverCam top orientation thingy
-    - add a highlight border to hoverCams object
+    - add a highlight border to hoverCams object -> added logic for it, needs testing ->
 
 ## 04.10.2024
 - continue with writing stuff and iterating

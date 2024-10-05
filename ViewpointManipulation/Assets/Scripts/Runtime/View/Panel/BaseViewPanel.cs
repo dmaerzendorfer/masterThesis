@@ -15,6 +15,8 @@ namespace Runtime.View.Panel
         public BezierCurve curve;
 
         public TextMeshProUGUI panelText;
+        public TextMeshProUGUI selectText;
+
 
         [HideInInspector]
         public BaseViewPair myViewPair;

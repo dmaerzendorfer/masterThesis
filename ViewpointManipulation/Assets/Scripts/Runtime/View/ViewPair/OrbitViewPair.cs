@@ -3,9 +3,15 @@ using UnityEngine;
 
 namespace Runtime.View.ViewPair
 {
-    public class OceViewPair : BaseViewPair
+    public class OrbitViewPair : BaseViewPair
     {
         public OrbitCamController orbitCamController;
+
+        public override void Awake()
+        {
+            base.Awake();
+            orbitCamController.viewPair = this;
+        }
 
         public override void ReceiveSelect()
         {

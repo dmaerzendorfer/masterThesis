@@ -6,6 +6,12 @@ namespace Runtime.View.ViewPair
     {
         public HoverCamController hoverCamController;
 
+        public override void Awake()
+        {
+            base.Awake();
+            hoverCamController.viewPair = this;
+        }
+
         public override void ReceiveSelect()
         {
             hoverCamController.IsSelected = !hoverCamController.IsSelected;

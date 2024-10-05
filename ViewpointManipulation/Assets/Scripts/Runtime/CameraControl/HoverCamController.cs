@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using NaughtyAttributes;
 using Runtime.View.Manager;
+using Runtime.View.ViewPair;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -46,10 +48,25 @@ namespace Runtime.CameraControl
         public float distanceToObject = 1f;
         public float minDistanceToObject = .5f;
 
-        public Collider target;
+        // public Collider target;
         public Vector3 currentLookAt;
 
         public Outline modelOutline;
+
+        [Foldout("Target-Outline Settings")]
+        public bool shouldDisplayTargetOutline = true;
+
+        [Foldout("Target-Outline Settings")]
+        public Outline.Mode outlineMode = Outline.Mode.OutlineAll;
+
+        [Foldout("Target-Outline Settings")]
+        public Color outlineColor = Color.cyan;
+
+        [Foldout("Target-Outline Settings")]
+        public float outlineWidth = 2f;
+
+        [HideInInspector]
+        public HoverViewPair viewPair;
 
         [SerializeField]
         private bool _isSelected = false;
@@ -59,6 +76,27 @@ namespace Runtime.CameraControl
         private List<ActionBasedControllerManager> _locomotionControllerManagers =
             new List<ActionBasedControllerManager>();
 
+        private Outline _targetOutlineInstance;
+
+
+        public Collider Target
+        {
+            get { return _target; }
+            set
+            {
+                if (value == _target) return;
+                _target = value;
+                //a new target has been set, update the target outline if need be
+                if (shouldDisplayTargetOutline)
+                {
+                    Destroy(_targetOutlineInstance);
+                    _targetOutlineInstance = _target.AddComponent<Outline>();
+                    _targetOutlineInstance.OutlineMode = outlineMode;
+                    _targetOutlineInstance.OutlineColor = outlineColor;
+                    _targetOutlineInstance.OutlineWidth = outlineWidth;
+                }
+            }
+        }
 
         public bool IsSelected
         {
@@ -77,22 +115,22 @@ namespace Runtime.CameraControl
                 }
 
                 _isSelected = value;
+                if (_targetOutlineInstance) _targetOutlineInstance.enabled = _isSelected;
+                modelOutline.enabled = _isSelected;
+                //update panels selection button to display correctly
+                viewPair.basePanel.selectText.text = _isSelected ? "Unselect" : "Select";
+                //disable/enable default vr locomotion actions
+                SetLocomotionEnabled(!_isSelected);
                 if (_isSelected)
                 {
-                    modelOutline.enabled = true;
-                    //enable drone actions
+                    //enable actions
                     inputActions.EnableAllActions();
-                    //disable default vr locomotion actions
-                    SetLocomotionEnabled(false);
                     onSelected.Invoke(this);
                 }
                 else
                 {
-                    modelOutline.enabled = false;
-                    //disable drone actions
+                    //disable actions
                     inputActions.DisableAllActions();
-                    //enable default vr locomotion actions
-                    SetLocomotionEnabled(true);
                     onUnselected.Invoke(this);
 
                     ResetAnyInput();
@@ -110,6 +148,7 @@ namespace Runtime.CameraControl
         private bool _inPressed = false;
         private bool _outPressed = false;
         private Vector2 _moveInput = Vector2.zero;
+        private Collider _target;
 
         private void Start()
         {
@@ -171,7 +210,7 @@ namespace Runtime.CameraControl
             Vector3 newPos = transform.position + movement;
 
             //search new closest point
-            var closestPoint = target.ClosestPoint(newPos);
+            var closestPoint = _target.ClosestPoint(newPos);
 
             //make camera look at closest point
             transform.LookAt(closestPoint);

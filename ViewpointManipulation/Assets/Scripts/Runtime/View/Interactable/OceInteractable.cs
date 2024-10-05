@@ -15,7 +15,7 @@ namespace Runtime.View.Interactable
         public Transform lookAtTarget;
 
         private ViewManager _viewManager;
-        private OceViewPair _mostRecentOceViewPair = null;
+        private OrbitViewPair _mostRecentOrbitViewPair = null;
 
         private void Start()
         {
@@ -29,23 +29,23 @@ namespace Runtime.View.Interactable
 
             //spawn orbit cam and set lookat target
             if (_viewManager.ViewMode != ViewMode.OCE) return;
-            _mostRecentOceViewPair = (OceViewPair)_viewManager.SpawnViewPair();
-            if (_mostRecentOceViewPair == null)
+            _mostRecentOrbitViewPair = (OrbitViewPair)_viewManager.SpawnViewPair();
+            if (_mostRecentOrbitViewPair == null)
                 return;
-            _mostRecentOceViewPair.orbitCamController.SetTarget(lookAtTarget);
-            var camInteractable = _mostRecentOceViewPair.orbitCamController.GetComponent<OceCamInteractable>();
+            _mostRecentOrbitViewPair.orbitCamController.SetTarget(lookAtTarget);
+            var camInteractable = _mostRecentOrbitViewPair.orbitCamController.GetComponent<OceCamInteractable>();
             args.interactableObject = camInteractable;
             camInteractable.CallOnSelectEntered(args);
 
             //move the view panel to an opportune position
-            _viewManager.AdjustNewViewPanelPosition(_mostRecentOceViewPair);
+            _viewManager.AdjustNewViewPanelPosition(_mostRecentOrbitViewPair);
         }
 
         protected override void OnSelectExited(SelectExitEventArgs args)
         {
             base.OnSelectExited(args);
-            if (_mostRecentOceViewPair == null) return;
-            var camInteractable = _mostRecentOceViewPair.orbitCamController.GetComponent<OceCamInteractable>();
+            if (_mostRecentOrbitViewPair == null) return;
+            var camInteractable = _mostRecentOrbitViewPair.orbitCamController.GetComponent<OceCamInteractable>();
             args.interactableObject = camInteractable;
             camInteractable.CallOnSelectExited(args);
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NaughtyAttributes;
 using Runtime.View.Manager;
+using Runtime.View.ViewPair;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -62,6 +63,9 @@ namespace Runtime.CameraControl
 
         public Outline modelOutline;
 
+        [HideInInspector]
+        public DroneViewPair viewPair;
+
         [SerializeField]
         private bool _isSelected = false;
 
@@ -72,22 +76,22 @@ namespace Runtime.CameraControl
             {
                 if (value == _isSelected) return;
                 _isSelected = value;
+                modelOutline.enabled = _isSelected;
+                //update panels selection button to display correctly
+                viewPair.basePanel.selectText.text = _isSelected ? "Unselect" : "Select";
+                //enable/disable default vr locomotion actions
+                SetLocomotionEnabled(!_isSelected);
+                
                 if (_isSelected)
                 {
-                    modelOutline.enabled = true;
                     //enable drone actions
                     inputActions.EnableAllActions();
-                    //disable default vr locomotion actions
-                    SetLocomotionEnabled(false);
                     onSelected.Invoke(this);
                 }
                 else
                 {
-                    modelOutline.enabled = false;
                     //disable drone actions
                     inputActions.DisableAllActions();
-                    //enable default vr locomotion actions
-                    SetLocomotionEnabled(true);
                     onUnselected.Invoke(this);
 
                     ResetAnyInput();

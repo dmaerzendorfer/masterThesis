@@ -2226,6 +2226,7 @@ MonoBehaviour:
   renderImage: {fileID: 2434759595801501395}
   curve: {fileID: 7362854923493753864}
   panelText: {fileID: 7456892152373864311}
+  selectText: {fileID: 8163919327197815030}
   myViewPair: {fileID: 0}
   movementToggleText: {fileID: 2530650877109533587}
 --- !u!1 &3269950701275122803

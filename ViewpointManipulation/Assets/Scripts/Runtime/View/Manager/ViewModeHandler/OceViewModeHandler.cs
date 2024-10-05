@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Runtime.View.Manager.ViewModeHandler
 {
-    public class OceViewModeHandler : BaseViewModeHandler<OceViewPair>
+    public class OceViewModeHandler : BaseViewModeHandler<OrbitViewPair>
     {
         private Camera _mainCam;
         private ViewManager _viewManager;
@@ -16,7 +16,7 @@ namespace Runtime.View.Manager.ViewModeHandler
             _viewManager = ViewManager.Instance;
         }
 
-        public override OceViewPair SpawnViewPair()
+        public override OrbitViewPair SpawnViewPair()
         {
             if (!_isActivated) return null;
 

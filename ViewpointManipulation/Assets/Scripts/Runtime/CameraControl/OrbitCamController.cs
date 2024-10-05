@@ -1,5 +1,6 @@
 using Cinemachine;
 using NaughtyAttributes;
+using Runtime.View.ViewPair;
 using UnityEngine;
 
 namespace Runtime.CameraControl
@@ -17,6 +18,8 @@ namespace Runtime.CameraControl
         [BoxGroup("Circle Settings")]
         public int circleSubdivisions = 100;
 
+        [HideInInspector]
+        public OrbitViewPair viewPair;
 
         private CinemachineOrbitalTransposer _orbitalTransposer;
 

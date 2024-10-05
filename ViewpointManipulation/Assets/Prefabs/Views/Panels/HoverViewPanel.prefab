@@ -2714,6 +2714,7 @@ MonoBehaviour:
   renderImage: {fileID: 2058535516762027459}
   curve: {fileID: 6371841658387196071}
   panelText: {fileID: 3816657415882482464}
+  selectText: {fileID: 7444336973887891209}
   myViewPair: {fileID: 0}
 --- !u!1 &3576905117422947703
 GameObject:

@@ -10,7 +10,6 @@ namespace Runtime
 
         public Text camCountText;
         public Text viewModeText;
-        public Text viewModeTextButton;
 
         public bool canSwapMode = true;
 
@@ -34,7 +33,6 @@ namespace Runtime
 
             string mode = viewManager.ViewMode == ViewMode.Drone ? "Drone" : "OCE";
             viewModeText.text = $"Current Mode: {mode}";
-            viewModeTextButton.text = mode;
         }
 
         public void DeleteAllCams()

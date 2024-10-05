@@ -6,6 +6,13 @@ namespace Runtime.View.ViewPair
     {
         public DroneCamController droneCamController;
 
+
+        public override void Awake()
+        {
+            base.Awake();
+            droneCamController.viewPair = this;
+        }
+
         public override void ReceiveSelect()
         {
             droneCamController.IsSelected = !droneCamController.IsSelected;
