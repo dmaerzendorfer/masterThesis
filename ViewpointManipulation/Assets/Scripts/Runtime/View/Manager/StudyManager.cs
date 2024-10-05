@@ -362,7 +362,7 @@ namespace Runtime.View.Manager
             _viewManager.onAnyCamDestroyed.RemoveAllListeners();
             _viewManager.onDroneCamSpawned.RemoveAllListeners();
 
-            if (_currentPointOfInterests)
+            if (_currentPointOfInterests != null)
             {
                 foreach (var poi in _currentPointOfInterests)
                 {
