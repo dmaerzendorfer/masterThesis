@@ -28,13 +28,11 @@ namespace Runtime.View.Manager.ViewModeHandler
                 return viewConfigs.Count(x => x.instance != null);
             }
         }
-
-        public abstract T SpawnViewPair();
-
+        
         /// <summary>
-        /// 
+        ///  Deletes all active views pairs.
         /// </summary>
-        /// <returns>how many cameras where deleted</returns>
+        /// <returns>how many view pairs where deleted</returns>
         public int DeleteAllActiveViews()
         {
             var count = 0;
@@ -50,6 +48,7 @@ namespace Runtime.View.Manager.ViewModeHandler
             return count;
         }
 
+        public abstract T SpawnViewPair();
         public abstract void Activate();
 
         public virtual void Deactivate()

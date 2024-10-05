@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Generics.Scripts.Runtime
+namespace Runtime
 {
     public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
     {

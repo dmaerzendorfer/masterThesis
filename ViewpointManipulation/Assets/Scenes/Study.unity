@@ -269,6 +269,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9091804951150616092, guid: fc8f34039057a6a438f2b6ca78278a9c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -611,10 +615,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 895193427968516892, guid: 80e587e662dbdbf43a49660207ba8d55, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1154452289645457465, guid: 80e587e662dbdbf43a49660207ba8d55, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.799
@@ -655,28 +655,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1433938118244111903, guid: 80e587e662dbdbf43a49660207ba8d55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1370464064}
     - target: {fileID: 2693599849408912143, guid: 80e587e662dbdbf43a49660207ba8d55, type: 3}
       propertyPath: viewManager
       value: 
       objectReference: {fileID: 6329463013679848972}
-    - target: {fileID: 4587161243623650679, guid: 80e587e662dbdbf43a49660207ba8d55, type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 5618125342156123586, guid: 80e587e662dbdbf43a49660207ba8d55, type: 3}
       propertyPath: m_Name
       value: ControlTable
       objectReference: {fileID: 0}
-    - target: {fileID: 6184431506962162662, guid: 80e587e662dbdbf43a49660207ba8d55, type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1370464064}
-    - target: {fileID: 7554984093626236802, guid: 80e587e662dbdbf43a49660207ba8d55, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071337333168338715, guid: 80e587e662dbdbf43a49660207ba8d55, type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 8633282664613800953, guid: 80e587e662dbdbf43a49660207ba8d55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1370464064}
     m_RemovedComponents: []
@@ -1066,7 +1058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2677565434868245441, guid: 4d879d14736b5664b9afa32ec746654d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3877251981163600728, guid: 4d879d14736b5664b9afa32ec746654d, type: 3}
       propertyPath: m_LocalPosition.x

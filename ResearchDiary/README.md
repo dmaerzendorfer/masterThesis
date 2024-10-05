@@ -1,6 +1,68 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 05.10.2024
+- integrating pilot test feedback today
+- todos:
+    - make controls sheet
+    - make controller layout explain picture (so ppl hopefully know what buttons i mean)
+    - adjust info text positions and show duration
+    - make all pois easier to find
+    - change system to use 3 pois
+    - remove/update the XR interactive controller hints
+    - update control table to use ui buttons instead of grab buttons
+    - fix hoverCam top orientation thingy
+    - add a highlight border to hoverCams object
+
+## 04.10.2024
+- continue with writing stuff and iterating
+- started with writing about technical implementation
+- will start with the improvements of the study tomorrow 
+## 03.10.2024
+- iterating over everything i have written so far
+- updated markus
+- tomorrow will start to update code to include my learnings from the pilot test
+    - that was the plan at least, but didnt finish with revisions on the writen part completely yet. will continue to iterate tomorrow. did start with technical implementation a bit, but that has lower prio and will be finished later
+
+## 02.10.2024
+- didnt have time till now ^^'
+- interating over markus' feedback and writing stuff down about pilot study
+    - did first draft of the feedback at least, might need additional iterations
+    - will continue with that tomorrow, today only did the user study part, but lots moved to introduction and related work section so need to rework that entire thing
+- starting friday i will fix the techincal stuff that needs changing that i found out via the pilot test
+
+
+## 29.09.2024
+- did a pilot study with a friend of mine (just went through my planned user study)
+    - did find out a few things:
+        - it takes too long (>1h and we stopped early)
+            - will streamline the explanation -> write myself a sheet with all important bits and record a video I can show of
+            - so for real deal make show em the vid, and then throw them in and explain important stuff again.
+            - make less pois to find! (perhaps 3 or just 2) [were 5 before]
+                - also will make pois easier to find!
+        - have some points to make system more user-friendly:
+            - eG let the select button show if selected or not
+            - got more points but dont have my notes with me right now...
+            - need to fully implement hover-cam (ignored the behaviourup thingy )
+            - pressing buttons was also a bit rough (sometimes its trigger, sometimes its grab) but cant do much about that without outright removing my pysical buttons -> which I just might do actually!
+            - als it seemed like managing the view panels was adding too much stress to my user, but I wont change that. thats just an observation
+- will try to update markus' feedback now.
+- overall goal right now: till sunday 6.9. finish integrating my learnings from the pilot test, incoperate markus' feedback and maybe write abit about the technical implementation
+
+             
+
+## 27.09.2024
+- am at home in upper austria right now
+- created a excel for my tracked user study data
+    - so i can just copy paste in stuff
+    - and check if the data makes sense
+
+## 26.09.2024
+- had to help annika with her exhibition today so have little time
+- looked into adding a necessary button press in between the user study phases of oce and drone test.
+    - done, noticed that the study manager code is quite ugly but I wont touch a running system
+    - also it seems I need to close the program in order for my log manager to actually write stuff -> but I think thats a good idea anyway. I always tested like this so there is a smaller change for stuff to break if i reset it manually. 
+
 ## 25.09.2024
 - back from the schmiede break
 - wanted to look through markus' feedback but pdf only has one comment

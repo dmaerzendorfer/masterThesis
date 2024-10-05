@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using _Generics.Scripts.Runtime;
 using NaughtyAttributes;
 using Runtime.View.Manager.ViewModeHandler;
 using Runtime.View.Panel;
@@ -38,7 +37,7 @@ namespace Runtime.View.Manager
 
         [Foldout("ViewSpawning")]
         [SerializeField]
-        private ViewMode _viewMode = ViewMode.OCE;
+        private ViewMode _viewMode = ViewMode.Hover;
 
         public ViewMode ViewMode
         {
@@ -272,13 +271,10 @@ namespace Runtime.View.Manager
                     count = oceViewModeHandler.DeleteAllActiveViews();
                     break;
                 case ViewMode.Drone:
-
                     count = droneViewModeHandler.DeleteAllActiveViews();
                     break;
-
                 case ViewMode.Hover:
                     count = hoverViewModeHandler.DeleteAllActiveViews();
-
                     break;
                 default:
                     return;
