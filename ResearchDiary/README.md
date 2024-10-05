@@ -5,17 +5,18 @@ These notes act as progress report (research diary) throughout the thesis work. 
 - integrating pilot test feedback today
 - todos:
     - make controls sheet
+        - update display ingame!
     - make controller layout explain picture (so ppl hopefully know what buttons i mean)
-    - adjust info text positions and show duration
+    - adjust info text positions and show duration -> done
     - make all pois easier to find
-    - change system to use 3 pois
-    - remove/update the XR interactive controller hints -> check and they are jsut for basic locomotion so i will leave them (also dont know how to add ones for buttons)
+    - change system to use 3 pois -> done
+    - remove/update the XR interactive controller hints -> check and they are jsut for basic locomotion so i will leave them (also dont know how to add ones for buttons) -> done
     - update control table to use ui buttons instead of grab buttons - done
     - move seperating wall closer to diorama to not get ppl stuck in it -done
-    - select buttons in view-panel should show if cam is selected or not! -> should be done now, needs testing ->
+    - select buttons in view-panel should show if cam is selected or not! -> should be done now, needs testing -> done
     - fix hoverCam top orientation thingy
-    - add a highlight border to hoverCams object -> added logic for it, needs testing ->
-
+    - add a highlight border to hoverCams object -> added logic for it, needs testing -> done
+    - add a sound feedback for when a poi is found the first time -> done
 ## 04.10.2024
 - continue with writing stuff and iterating
 - started with writing about technical implementation

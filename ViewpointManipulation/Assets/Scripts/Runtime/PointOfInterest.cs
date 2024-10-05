@@ -7,6 +7,7 @@ namespace Runtime
     [RequireComponent(typeof(Renderer))]
     public class PointOfInterest : MonoBehaviour
     {
+        public string poiName = "no-name";
         public bool useOutline = false;
         public float minDistance = 1f;
 

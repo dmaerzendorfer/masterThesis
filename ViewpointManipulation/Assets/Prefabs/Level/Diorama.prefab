@@ -3080,6 +3080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_BoxingGlove_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1320539295254762, guid: e9be0263a06856c4d96e5614c5650332, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4624705404240664, guid: e9be0263a06856c4d96e5614c5650332, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1
@@ -3163,6 +3167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94f4dc8c4284194c99025033e231933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poiName: BoxingGloves
   useOutline: 1
   minDistance: 4
   showDebugRay: 0
@@ -3398,6 +3403,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_VR_Headset_02
       objectReference: {fileID: 0}
+    - target: {fileID: 1923758745062150, guid: 781783f5d55b96841a8efd922183fe69, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4618889203873860, guid: 781783f5d55b96841a8efd922183fe69, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.07
@@ -3484,6 +3493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94f4dc8c4284194c99025033e231933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poiName: HMD
   useOutline: 1
   minDistance: 4
   showDebugRay: 0
@@ -9465,7 +9475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 130748, guid: c4dc818a3d0107c43a6ad73bdfca8766, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 414978, guid: c4dc818a3d0107c43a6ad73bdfca8766, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9526,6 +9536,10 @@ PrefabInstance:
     - target: {fileID: 1623159398296151530, guid: c4dc818a3d0107c43a6ad73bdfca8766, type: 3}
       propertyPath: outlineColor.r
       value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790998518859692223, guid: c4dc818a3d0107c43a6ad73bdfca8766, type: 3}
+      propertyPath: poiName
+      value: Burger
       objectReference: {fileID: 0}
     - target: {fileID: 8790998518859692223, guid: c4dc818a3d0107c43a6ad73bdfca8766, type: 3}
       propertyPath: minDistance
@@ -9869,7 +9883,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 177958, guid: 31bea3e529df47e4eaa3fad5fda198b2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 443680, guid: 31bea3e529df47e4eaa3fad5fda198b2, type: 3}
       propertyPath: m_LocalScale.x
@@ -9934,6 +9948,10 @@ PrefabInstance:
     - target: {fileID: 2292139134876963803, guid: 31bea3e529df47e4eaa3fad5fda198b2, type: 3}
       propertyPath: outlineColor.r
       value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097449259303474384, guid: 31bea3e529df47e4eaa3fad5fda198b2, type: 3}
+      propertyPath: poiName
+      value: WaterPipe
       objectReference: {fileID: 0}
     - target: {fileID: 9097449259303474384, guid: 31bea3e529df47e4eaa3fad5fda198b2, type: 3}
       propertyPath: minDistance
@@ -10115,7 +10133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1129298058911086, guid: 5981e1d3341b66c4c8a11edf0e2e63d9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4287848401675204, guid: 5981e1d3341b66c4c8a11edf0e2e63d9, type: 3}
       propertyPath: m_LocalScale.x
@@ -10184,6 +10202,10 @@ PrefabInstance:
     - target: {fileID: 1868684753794809115, guid: 5981e1d3341b66c4c8a11edf0e2e63d9, type: 3}
       propertyPath: outlineColor.r
       value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 6496535260141261067, guid: 5981e1d3341b66c4c8a11edf0e2e63d9, type: 3}
+      propertyPath: poiName
+      value: KickMe
       objectReference: {fileID: 0}
     - target: {fileID: 6496535260141261067, guid: 5981e1d3341b66c4c8a11edf0e2e63d9, type: 3}
       propertyPath: minDistance
@@ -12592,6 +12614,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_LargeSign_Donut_01
       objectReference: {fileID: 0}
+    - target: {fileID: 197498, guid: 96d2057686904ad4baef89b50eb9c9e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 467068, guid: 96d2057686904ad4baef89b50eb9c9e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.805763
@@ -12631,6 +12657,10 @@ PrefabInstance:
     - target: {fileID: 467068, guid: 96d2057686904ad4baef89b50eb9c9e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5753323604112772316, guid: 96d2057686904ad4baef89b50eb9c9e8, type: 3}
+      propertyPath: poiName
+      value: Donut
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14539,6 +14569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Sign_GiveWay_01
       objectReference: {fileID: 0}
+    - target: {fileID: 165046, guid: 4170b399e985d6549a784678829905ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 451060, guid: 4170b399e985d6549a784678829905ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.8699999
@@ -14578,6 +14612,10 @@ PrefabInstance:
     - target: {fileID: 451060, guid: 4170b399e985d6549a784678829905ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685178659582757739, guid: 4170b399e985d6549a784678829905ad, type: 3}
+      propertyPath: poiName
+      value: GiveWaySign
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14727,7 +14765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 175378, guid: a916a44328d322240bd1aaaca22fc8a7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 414190, guid: a916a44328d322240bd1aaaca22fc8a7, type: 3}
       propertyPath: m_LocalScale.x
@@ -14796,6 +14834,10 @@ PrefabInstance:
     - target: {fileID: 2169468990309493285, guid: a916a44328d322240bd1aaaca22fc8a7, type: 3}
       propertyPath: outlineColor.r
       value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298423763337829051, guid: a916a44328d322240bd1aaaca22fc8a7, type: 3}
+      propertyPath: poiName
+      value: Taxi
       objectReference: {fileID: 0}
     - target: {fileID: 2298423763337829051, guid: a916a44328d322240bd1aaaca22fc8a7, type: 3}
       propertyPath: minDistance
@@ -15275,7 +15317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 129530, guid: 94ee31a3d58997f4788e26bcab5a03dc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 465568, guid: 94ee31a3d58997f4788e26bcab5a03dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15316,6 +15358,10 @@ PrefabInstance:
     - target: {fileID: 465568, guid: 94ee31a3d58997f4788e26bcab5a03dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661625951829960638, guid: 94ee31a3d58997f4788e26bcab5a03dc, type: 3}
+      propertyPath: poiName
+      value: SodaBottle
       objectReference: {fileID: 0}
     - target: {fileID: 6661625951829960638, guid: 94ee31a3d58997f4788e26bcab5a03dc, type: 3}
       propertyPath: minDistance
@@ -15478,9 +15524,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 109238, guid: 446f7ff8ef8707242a32cac44fec75f6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3055175530141552224}
-    - targetCorrespondingSourceObject: {fileID: 109238, guid: 446f7ff8ef8707242a32cac44fec75f6, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 600771659557713460}
     - targetCorrespondingSourceObject: {fileID: 109238, guid: 446f7ff8ef8707242a32cac44fec75f6, type: 3}
       insertIndex: -1
@@ -15499,24 +15542,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 109238, guid: 446f7ff8ef8707242a32cac44fec75f6, type: 3}
   m_PrefabInstance: {fileID: 3742323593306342701}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3055175530141552224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3742323593306386331}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!54 &600771659557713460
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15583,7 +15608,7 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3055175530141552224}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -15598,7 +15623,7 @@ MonoBehaviour:
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3055175530141552224}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -16002,6 +16027,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_PolygonCity_Veh_Car_Small_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1098664898953688, guid: d6e2601c4f144db459adb4f5e7affc65, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4508286580018686, guid: d6e2601c4f144db459adb4f5e7affc65, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3
@@ -16114,6 +16143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94f4dc8c4284194c99025033e231933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poiName: BlueCar
   useOutline: 1
   minDistance: 10
   showDebugRay: 1
@@ -20871,6 +20901,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Door_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1815345801761848, guid: 6d34f074083a0dc4d9798f703bad35de, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4135569096795916, guid: 6d34f074083a0dc4d9798f703bad35de, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -20974,6 +21008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94f4dc8c4284194c99025033e231933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poiName: BlueDoor
   useOutline: 1
   minDistance: 4
   showDebugRay: 0
@@ -23999,9 +24034,6 @@ PrefabInstance:
       addedObject: {fileID: 7312918756243109457}
     - targetCorrespondingSourceObject: {fileID: 127338, guid: 360c73b9bf9a34d4c84bc0581d0499eb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8494608645927268299}
-    - targetCorrespondingSourceObject: {fileID: 127338, guid: 360c73b9bf9a34d4c84bc0581d0499eb, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2281363314073495127}
     - targetCorrespondingSourceObject: {fileID: 147054, guid: 360c73b9bf9a34d4c84bc0581d0499eb, type: 3}
       insertIndex: -1
@@ -24109,7 +24141,7 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8494608645927268299}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -24124,7 +24156,7 @@ MonoBehaviour:
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8494608645927268299}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -24247,24 +24279,6 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   lookAtTarget: {fileID: 1643317901679253356}
---- !u!114 &8494608645927268299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5686050950274246377}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!65 &2281363314073495127
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25332,7 +25346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1366551059062300, guid: 6d6df00930f742f4eb77495f4b0b4c9c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4527920668958658, guid: 6d6df00930f742f4eb77495f4b0b4c9c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25393,6 +25407,10 @@ PrefabInstance:
     - target: {fileID: 7873465126142691106, guid: 6d6df00930f742f4eb77495f4b0b4c9c, type: 3}
       propertyPath: outlineColor.r
       value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730259064376888777, guid: 6d6df00930f742f4eb77495f4b0b4c9c, type: 3}
+      propertyPath: poiName
+      value: Banana
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25802,9 +25820,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 169570, guid: 594d2b648448ef1458c5263b32ba1e1f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8750030153043058215}
-    - targetCorrespondingSourceObject: {fileID: 169570, guid: 594d2b648448ef1458c5263b32ba1e1f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6174976882609993024}
   m_SourcePrefab: {fileID: 100100000, guid: 594d2b648448ef1458c5263b32ba1e1f, type: 3}
 --- !u!1 &6429010972611515008 stripped
 GameObject:
@@ -25877,7 +25892,7 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6174976882609993024}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -25892,7 +25907,7 @@ MonoBehaviour:
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6174976882609993024}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -26015,24 +26030,6 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   lookAtTarget: {fileID: 3702616382150611731}
---- !u!114 &6174976882609993024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6429010972611515008}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!4 &6429010972611804036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 458598, guid: 594d2b648448ef1458c5263b32ba1e1f, type: 3}
@@ -26422,6 +26419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Crate_Question_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1906384758145082, guid: d19c36dc5f97d444fa54380cf09bd828, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4625151964636756, guid: d19c36dc5f97d444fa54380cf09bd828, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -26503,6 +26504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94f4dc8c4284194c99025033e231933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poiName: QuestionCrate
   useOutline: 1
   minDistance: 4
   showDebugRay: 1
@@ -29623,9 +29625,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 141480, guid: df9f1d2dab4510b4d8d47ec43af7f7ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2992481283694083771}
-    - targetCorrespondingSourceObject: {fileID: 141480, guid: df9f1d2dab4510b4d8d47ec43af7f7ed, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2996259974616281898}
   m_SourcePrefab: {fileID: 100100000, guid: df9f1d2dab4510b4d8d47ec43af7f7ed, type: 3}
 --- !u!1 &7219325142732226144 stripped
 GameObject:
@@ -29698,7 +29697,7 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2996259974616281898}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -29713,7 +29712,7 @@ MonoBehaviour:
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2996259974616281898}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -29836,24 +29835,6 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   lookAtTarget: {fileID: 3695161052487434807}
---- !u!114 &2996259974616281898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7219325142732226144}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!4 &7219325142732483578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 408882, guid: df9f1d2dab4510b4d8d47ec43af7f7ed, type: 3}
@@ -32105,7 +32086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1022413198891606, guid: 670095002324ee240a76c644c6bc1c57, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4395237232055614, guid: 670095002324ee240a76c644c6bc1c57, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32146,6 +32127,10 @@ PrefabInstance:
     - target: {fileID: 4395237232055614, guid: 670095002324ee240a76c644c6bc1c57, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 339422170387589432, guid: 670095002324ee240a76c644c6bc1c57, type: 3}
+      propertyPath: poiName
+      value: Controller
       objectReference: {fileID: 0}
     - target: {fileID: 578961974091970181, guid: 670095002324ee240a76c644c6bc1c57, type: 3}
       propertyPath: outline
@@ -34108,9 +34093,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 144138, guid: 015f23238a8ca9f4d80f824581484228, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 575813259207910165}
-    - targetCorrespondingSourceObject: {fileID: 144138, guid: 015f23238a8ca9f4d80f824581484228, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3062107144160283827}
     - targetCorrespondingSourceObject: {fileID: 144138, guid: 015f23238a8ca9f4d80f824581484228, type: 3}
       insertIndex: -1
@@ -34121,24 +34103,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 144138, guid: 015f23238a8ca9f4d80f824581484228, type: 3}
   m_PrefabInstance: {fileID: 8317599963484497060}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &575813259207910165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8317599963484362670}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!54 &3062107144160283827
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34205,7 +34169,7 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 575813259207910165}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -34220,7 +34184,7 @@ MonoBehaviour:
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 575813259207910165}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -35502,7 +35466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1308899828073608, guid: e42189c530de6c944961b54c51a398e6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4703707677970600, guid: e42189c530de6c944961b54c51a398e6, type: 3}
       propertyPath: m_LocalScale.y
@@ -35571,6 +35535,10 @@ PrefabInstance:
     - target: {fileID: 3001347119702196548, guid: e42189c530de6c944961b54c51a398e6, type: 3}
       propertyPath: outlineColor.r
       value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969333961949687515, guid: e42189c530de6c944961b54c51a398e6, type: 3}
+      propertyPath: poiName
+      value: Gun
       objectReference: {fileID: 0}
     - target: {fileID: 3969333961949687515, guid: e42189c530de6c944961b54c51a398e6, type: 3}
       propertyPath: minDistance
