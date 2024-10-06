@@ -1,6 +1,11 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 06.10.2024
+- not feeling like masterarbeit today, so will only do some smaller stuff
+    - made pois easier to find
+    - did some minor writing on the implementation
+
 ## 05.10.2024
 - integrating pilot test feedback today
 - todos:
