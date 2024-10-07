@@ -529,6 +529,7 @@ MonoBehaviour:
   radiusSpeed: 50
   circleRenderer: {fileID: 0}
   circleSubdivisions: 100
+  viewPair: {fileID: 0}
   _showCircle: 1
 --- !u!114 &1058415619
 MonoBehaviour:
@@ -1008,6 +1009,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4203205051262947761, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203205051262947761, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203205051262947761, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203205051262947761, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203205051262947761, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203205051262947761, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4589409119791687137, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
       propertyPath: m_Name
       value: OrbitViewPair1
@@ -1066,6 +1091,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5294522058408371414, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607170275255196404, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607170275255196404, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607170275255196404, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607170275255196404, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607170275255196404, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607170275255196404, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097541392064026851, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097541392064026851, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097541392064026851, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097541392064026851, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097541392064026851, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097541392064026851, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7237117455915359384, guid: e9f90dbf824a501439a9e794e413e7ee, type: 3}

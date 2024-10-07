@@ -155,7 +155,6 @@ namespace Runtime.View.Manager
                     }
 
                     return ocePair;
-                    break;
                 case ViewMode.Drone:
                     var dronePair = droneViewModeHandler.SpawnViewPair();
                     if (dronePair != null)
@@ -166,7 +165,6 @@ namespace Runtime.View.Manager
                     }
 
                     return dronePair;
-                    break;
                 case ViewMode.Hover:
                     var hoverPair = hoverViewModeHandler.SpawnViewPair();
                     if (hoverPair != null)
@@ -176,7 +174,6 @@ namespace Runtime.View.Manager
                     }
 
                     return hoverPair;
-                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

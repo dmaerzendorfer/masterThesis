@@ -37,6 +37,19 @@ namespace Runtime.CameraControl
         }
     }
 
+    public enum UpMode
+    {
+        Global = 0, //uses the global up for the movement
+        RestrictedGlobal = 1 << 0, //doesnt allow closer movement to north or south pole
+        Local = 1 << 1, //uses the cameras up for the movement
+
+        RectifyingLocal =
+            1 << 2, //uses the cameras up for the movement but aligns its up to the global again after movement input is gone
+
+        SelectiveLocal =
+            1 << 3, //global but switches to local if close enough to north/south pole, also rectifies on movement end again
+    }
+
     // based on https://dl.acm.org/doi/pdf/10.1145/1053427.1053439
     public class HoverCamController : MonoBehaviour
     {
@@ -48,7 +61,14 @@ namespace Runtime.CameraControl
         public float distanceToObject = 1f;
         public float minDistanceToObject = .5f;
 
-        // public Collider target;
+        public UpMode upMode = UpMode.RestrictedGlobal;
+
+        [ShowIf("upMode", UpMode.RestrictedGlobal)]
+        public float restrictedGlobalAngle = 5f;
+
+        [ShowIf("upMode", UpMode.SelectiveLocal)]
+        public float selectiveLocalAngle = 5f;
+
         public Vector3 currentLookAt;
 
         public Outline modelOutline;
@@ -77,6 +97,8 @@ namespace Runtime.CameraControl
             new List<ActionBasedControllerManager>();
 
         private Outline _targetOutlineInstance;
+        private Vector3 _recentClosestPoint = Vector3.zero;
+        private bool _temporarilyLocalUp = false;
 
 
         public Collider Target
@@ -178,6 +200,12 @@ namespace Runtime.CameraControl
             {
                 DoMove(_moveInput);
             }
+            else if (upMode == UpMode.RectifyingLocal || upMode == UpMode.SelectiveLocal)
+            {
+                //make sure to rectify the cameras orientation so up is the global up again
+                transform.LookAt(_recentClosestPoint);
+                _temporarilyLocalUp = false;
+            }
 
             if (_outPressed)
             {
@@ -211,9 +239,32 @@ namespace Runtime.CameraControl
 
             //search new closest point
             var closestPoint = _target.ClosestPoint(newPos);
+            var angle = Vector3.Angle(_target.transform.up, closestPoint - newPos);
+
+            if (upMode == UpMode.RestrictedGlobal)
+            {
+                //check if we would be in the restricted area
+                if (angle <= restrictedGlobalAngle || (180 - angle) <= restrictedGlobalAngle) return;
+            }
+            else if (upMode == UpMode.SelectiveLocal)
+            {
+                //if we are in the selectiveLocalAngle we temporarily change to local up mode
+                if (angle <= selectiveLocalAngle || (180 - angle) <= selectiveLocalAngle)
+                    _temporarilyLocalUp = true;
+            }
+
+            _recentClosestPoint = closestPoint;
 
             //make camera look at closest point
-            transform.LookAt(closestPoint);
+            if (upMode == UpMode.Global || upMode == UpMode.RestrictedGlobal || !_temporarilyLocalUp)
+            {
+                transform.LookAt(closestPoint);
+            }
+            else if (upMode == UpMode.Local || upMode == UpMode.RectifyingLocal || _temporarilyLocalUp)
+            {
+                transform.LookAt(closestPoint,
+                    transform.up); //this uses the local up so the camera can smoothly transition over the "north-pole" of the lookAtTarget
+            }
 
             //correct distance of camera
             var currDistance = (closestPoint - newPos).magnitude;
@@ -223,6 +274,7 @@ namespace Runtime.CameraControl
             // clip distance traveled to movement vectors length for smooth movement
             var camClipping = (newPos - transform.position).normalized * movement.magnitude;
             var lookAtClipping = (newLookAt - currentLookAt).normalized * movement.magnitude;
+
 
             //set final currentTarget and pos after clipping (not look dir tho for some important reason!)
             transform.position += camClipping;

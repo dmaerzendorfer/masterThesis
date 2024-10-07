@@ -21,16 +21,9 @@ namespace Runtime.CameraControl
     [Serializable]
     public class DroneActions
     {
-        //left joystick
         public InputActionReference moveAction;
-
-        //right joystick, x = yaw, y = pitch
         public InputActionReference yawPitchAction;
-
-        //B button
         public InputActionReference upAction;
-
-        //A button
         public InputActionReference downAction;
 
         public void EnableAllActions()
@@ -233,7 +226,7 @@ namespace Runtime.CameraControl
         }
 
         /// <summary>
-        /// 
+        /// Tries to find the LocomotionSystem in the current scene.
         /// </summary>
         /// <returns>whether locomotion system was found</returns>
         private bool TryToFindLocomotion()

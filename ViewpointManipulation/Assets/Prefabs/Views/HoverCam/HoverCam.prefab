@@ -132,9 +132,16 @@ MonoBehaviour:
     zoomOutAction: {fileID: -6465576503248765194, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   distanceToObject: 1
   minDistanceToObject: 0.5
-  target: {fileID: 0}
+  upMode: 8
+  restrictedGlobalAngle: 5
+  selectiveLocalAngle: 5
   currentLookAt: {x: -4.69, y: 1.81, z: 6.23}
   modelOutline: {fileID: 5018689781682440715}
+  shouldDisplayTargetOutline: 1
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  viewPair: {fileID: 0}
   _isSelected: 0
   onSelected:
     m_PersistentCalls:
