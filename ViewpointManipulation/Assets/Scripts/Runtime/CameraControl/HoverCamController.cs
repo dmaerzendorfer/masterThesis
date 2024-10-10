@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using NaughtyAttributes;
 using Runtime.View.Manager;
 using Runtime.View.ViewPair;
@@ -10,6 +11,8 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 namespace Runtime.CameraControl
 {
@@ -226,7 +229,8 @@ namespace Runtime.CameraControl
         {
             var dir = (transform.position - currentLookAt).normalized;
             transform.position = currentLookAt + dir * distanceToObject;
-            transform.LookAt(currentLookAt);
+            //do a move with no input to correctly make the cam look towards the closest point 
+            DoMove(Vector2.zero);
         }
 
         private void DoMove(Vector2 input)

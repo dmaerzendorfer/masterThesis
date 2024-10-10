@@ -1,14 +1,59 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 10.10.2024
+- continue with worky work
+- read over full doc again > done
+- created intro video > done
+    - stuff to show:
+        - 1st spawn in, walk around a bit, look at controller
+        - then look at control table, hover over the buttons
+        - change camera mode -> show the first mode, try it out
+        - change camera mode again -> try it out and find the poi
+        - go back to control table, start study and look at diorama
+        - end early
+- created tutorial sheet > done
+    - show controller layout
+    - show actions for:
+        - locomotion
+        - grabbing
+        - UI
+        - view panel
+            - the buttons
+            - how to move 
+            - how to put in hub and world
+        - drone cam
+            - how to spawn
+            - how to select/unselect
+            - how to delete
+            - control drone
+                - swap mode as well
+        - hover cam
+            - how to spawn
+            - how to select/unselect
+            - how to delete
+            - how to control it
+- texted markus with updated version, asked him how many participants he would recommend > done
+    - also ask about his opintion on the needed words
+## 09.10.2024
+- continued writing the tech implemenation in the paper
+    - btw seems like my overleaf doesnt want to compile right now...
+- need to review everything tomorrow, fix overleaf, create a video and tutorial diagrams
+
+
 ## 07.10.2024
 - further work on the pilot test feedback
     - fixed the hoverCam error
-
+    - finished writing on tech implementation
+- will do the control sheet and video on wednesday
+- will prove read over full doc again on wednesday and let markus know of my status
+- nvm didnt quite finish writing tech implementation, still got avatar, pois, studymanager and control manager left...
+    - my brain is too dead right now for that.
 ## 06.10.2024
 - not feeling like masterarbeit today, so will only do some smaller stuff
     - made pois easier to find
     - did some minor writing on the implementation
+    - also need to write a bit more on what hoverCam actually does in related work
 
 ## 05.10.2024
 - integrating pilot test feedback today
@@ -23,7 +68,7 @@ These notes act as progress report (research diary) throughout the thesis work. 
     - update control table to use ui buttons instead of grab buttons - done
     - move seperating wall closer to diorama to not get ppl stuck in it -done
     - select buttons in view-panel should show if cam is selected or not! -> should be done now, needs testing -> done
-    - fix hoverCam top orientation thingy
+    - fix hoverCam top orientation thingy -> done
     - add a highlight border to hoverCams object -> added logic for it, needs testing -> done
     - add a sound feedback for when a poi is found the first time -> done
 ## 04.10.2024

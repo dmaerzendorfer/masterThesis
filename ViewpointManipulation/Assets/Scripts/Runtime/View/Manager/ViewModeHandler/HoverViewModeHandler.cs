@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using Runtime.View.ViewPair;
-using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Runtime.View.Manager.ViewModeHandler
@@ -10,13 +9,11 @@ namespace Runtime.View.Manager.ViewModeHandler
         public HoverCamSpawner hoverCamSpawner;
         public InputActionReference hoverCamUnselectAction;
 
-        private Camera _mainCam;
         private ViewManager _viewManager;
         private bool _isActivated = false;
 
         private void Start()
         {
-            _mainCam = Camera.main;
             _viewManager = ViewManager.Instance;
             hoverCamUnselectAction.action.performed += OnHoverCamUnselect;
         }

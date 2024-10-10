@@ -171,7 +171,6 @@ namespace Runtime.View.Manager
             LogManager.Log(gameObject, _studyDataRecord.Tasks[_currentTask].GetHeader());
             LogManager.Log(gameObject, _studyDataRecord.Tasks[_currentTask].ToString());
 
-
             _isStudyRunning = false;
             controlManager.canSwapMode = true;
 
