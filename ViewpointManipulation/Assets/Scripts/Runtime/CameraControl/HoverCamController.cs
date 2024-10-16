@@ -260,11 +260,14 @@ namespace Runtime.CameraControl
             _recentClosestPoint = closestPoint;
 
             //make camera look at closest point
-            if (upMode == UpMode.Global || upMode == UpMode.RestrictedGlobal || !_temporarilyLocalUp)
+            if (upMode == UpMode.Global || upMode == UpMode.RestrictedGlobal ||
+                (upMode == UpMode.SelectiveLocal && !_temporarilyLocalUp))
             {
                 transform.LookAt(closestPoint);
             }
-            else if (upMode == UpMode.Local || upMode == UpMode.RectifyingLocal || _temporarilyLocalUp)
+
+            if (upMode == UpMode.Local || upMode == UpMode.RectifyingLocal ||
+                (upMode == UpMode.SelectiveLocal && _temporarilyLocalUp))
             {
                 transform.LookAt(closestPoint,
                     transform.up); //this uses the local up so the camera can smoothly transition over the "north-pole" of the lookAtTarget

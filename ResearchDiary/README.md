@@ -1,6 +1,21 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 16.10.2024
+- still waiting for markus' feedback
+- looked over doc to maybe find spots where i can ellaborate for some more words
+    - what i found:
+        - 
+- did user study prep
+    - revamped the tracking excel sheet
+    - put every tutorial stuff on my tablet
+- got some feedback on the best hoverCam modi
+    - tested with one person(dodo), feedback was:
+        - restricted global is best, the others upside down are bad, and rectifying jump is dissorienting
+- did a pilot user study again
+    - gave dodo the user study, feedback was:
+        - 
+
 ## 10.10.2024
 - continue with worky work
 - read over full doc again > done
