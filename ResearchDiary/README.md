@@ -1,6 +1,65 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 05.11.2024
+- compiled and ordered the tracked data from user study
+    - made sheets with the poi data
+    - compiled the verbal feedback i collected
+    - compiled the demographic data
+    - compiled the sus questionnaire
+    - fixed my excel sheet for the VRSQ (only had one for the SSQ prepared and its formulas are incorrect)
+
+
+## 04.11.2024
+- got my last two ppl, have 12 now!
+- can start with analyse and more writing now!
+
+## 31.10.2024
+- try about with my tracked data to make some graphs etc.
+    - found out some things, such as vba is a bitch, excel box polts dont like dots as decimal points and that i should work till my data is complete
+
+## 29.10.2024
+- worked on markus feedback (the study stuff)
+    - finished with feedback
+- future outline, get two more ppl for study, already start to analyse the study tracked data
+    - will try to start with the analyse part tomorrow
+    - will have my two last ppl for the user study on monday!
+
+- want to be as close to finish with study ppl in octoberas possible
+
+## 28.10.2024
+- did study with one more person (at 10 now!)
+
+## 27.10.2024
+- did study with four more ppl!
+
+## 26.10.2024
+- more work on feedback
+    - did related work and system design
+    - leaving the study stuff for later, im tired
+- and did study with finlay (flatmate)!
+
+## 25.10.2024
+- further work on markus' feedback
+
+## 23.10.2024
+- added the decision of hoverMode cam to the overleaf
+- worked on some of markus' feedback
+
+
+## 21.10.2024
+- look through markus' feedback
+    - added his notes into my overleaf doc
+    - wrote down the result of the pilot study on the prefered hoverCam mode
+
+## 18.10.2024
+- tested hoverCam modes with siblings and concluded that restricted global is best
+- did user study with 3 ppl
+
+## 17.10.2024
+- tested hoverCam mode with my room-mates
+
+
 ## 16.10.2024
 - still waiting for markus' feedback
 - looked over doc to maybe find spots where i can ellaborate for some more words
@@ -12,9 +71,9 @@ These notes act as progress report (research diary) throughout the thesis work. 
 - got some feedback on the best hoverCam modi
     - tested with one person(dodo), feedback was:
         - restricted global is best, the others upside down are bad, and rectifying jump is dissorienting
-- did a pilot user study again
-    - gave dodo the user study, feedback was:
-        - 
+        - but also likes local -> since she wants to fly over
+- will test mode with my room-mates tomorrow to find best hoverCam mode (n=3)
+
 
 ## 10.10.2024
 - continue with worky work
