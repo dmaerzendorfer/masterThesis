@@ -1,6 +1,93 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 13.11.2024
+- read over doc
+- identified stuff i need like sources
+    - add some more embodiment stuff to the intro
+    - in the system design i can add the requirements to both hover and drone to review how they are implemented here
+    - the whole implementation in chatgpt schmeissen und vll a bissl wördier machen lassen
+        - und besser wording^^
+        - did
+    - write abstract
+- updated markus
+    - abgage termin 2. dezember
+    - von 30.11. - 2. 12. is aber der MMArmalade gamejame, wanna join so will try to finish till 28.11.
+    - got stuff done did your feedback. finished study, analysed wrote discussion and conclusion
+        - need to iterate over it tho, missing some sources there!
+    - currently at 13k out of 16k
+    - also got question about abgabe: leitfaden sagt einmale beim abgabe termin (2.dez) brauchts 3x einfach gebunden versionen?
+    - weiter unten steht aber kommt auf betreuer drauf an kann auch elektronisch sein? und erst bei prüfung 2x gebunden version ans office?
+    
+## 12.11.2024
+- continue with writing
+- did the user feedback stuff
+- and conclusion
+- but needs more iteration and some more sources
+- also need to find words (currently at 13k; 3k missing...)
+- and iterate over introduction and actually everything
+- and fix grammar^^'
+
+- also made latex compile locally since overleaf gave up on me...
+    - looking into texmaker with mikTex
+    - https://educ.jmu.edu/~arnoldea/latex_setup_and_tutorial.htm
+    - did somewhat work, texcount dindt however. couldnt to spend hours fixing it so I just got the premium version of overleaf (8€ a month + 7 days free...)
+
+- will start word search tomorrow and text markus
+
+
+## 11.11.2024
+- lets go again (btw 13y ago today skyrim was released)
+- continued writing the discussion chapter.
+    - answered researhc questions (badly tho)
+    - talked about the skewed pois (badly)
+- ok here me out. writing is hard. i did stuff today. wont get into the flow for the rest.
+    - i suggest i leave it at this today.
+    - tomorrow i will finish the participant feedback part
+    - will also try to write the conclusion
+    - see how many words i have, reveiw again and then send markus an update
+    - will do that till 14.11.2024
+    - will most likely need more words in the end, while i wait for markus feedback I will extend stuff to get more words
+    - 
+
+- note here: also ask markus bezüglich abgabe 2. dezember ob gebunden abgabe auch schon gebraucht wird.
+    - laut timeline table im leitfaden 3 exemplare mit "einfacher" bindung an betruer, zweitgutachter und office
+    - in chapter 3.7 abgabe steht aber zum agabetermin entweder gebunden oder digital na betreuer (was der eben preferiert) und erst nach masterprüfung an office etc.
+
+## 10.11.2024
+- seems like early is 11h...
+- made boxplots for sus and vrsq, will put a table in for nasa tlx
+- wrote down the findings showing all the diagrams and data from the user study
+- prepped the discussion chapter and conclusion/future work
+- will do the discussion chapter tomorrow + the conclussion and text markus an update
+
+## 09.11.2024
+- also dont feel that motivated right now
+- got 2h max, will most likey just do some minor stuff
+    - only did some rough planing of structure and made a new diagram
+- buuuut will start real early tomorrow!
+
+
+## 08.11.2024
+- taking a break today. will continue tomorrow!
+
+## 07.11.2024
+- analysed data
+- made some plots and graphs
+- started writing (just the participant stuff)
+- made embodiment graph and correlation of drone mode and its control schemes
+- tomorrow, analyse the quesitonnaire results and write stuff
+- also need to review the correlation stuff for control-schemes in more detail
+
+## 06.11.2024
+- continued compiling my user study data
+    - compiled the embodiment 
+    - compiled the VRSQ
+    - compiled the nasa tlx
+        - noticed i was only using the raw tlx
+            - there would have been a part of users comparing two categories about their importance to the workload
+            - my bad, should have researched better. just found the diagram for the raw part
+            - hart 2006 paper says raw tlx is quite useful as well tho
 ## 05.11.2024
 - compiled and ordered the tracked data from user study
     - made sheets with the poi data
