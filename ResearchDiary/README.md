@@ -1,6 +1,57 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 20.11.2024
+- continue with writing
+- worked over the findings chapter
+- updated all raycast to ray cast
+- add the the vr musuem paper i found to references (note that i only prototype in vr and the learning they found is that others need to see what vr ppl do right now (so they are not that isolated) can talk how that applies to me an possible ar/mr)
+
+- missing words: ~~600~~ 400
+
+- will find the last 400 words tomorrow! also will go shopping, cook with room-mates and write an abstract and run the whole thing through grammarly.
+    - this leads me to doubt that i will get all that done tomorrow
+    - but am confident that I will be done with the work till friday; worst case (and more likely case) sunday!
+
+## 19.11.2024
+- continuing with work; besenstrich für besenstrich, attemzug für atemzug
+- added some missing parts to the user feedback section
+
+- will update findings tomorrow, add some words, structure and add sources :)
+- feeling happier today. think beppos lesson helped.
+
+- missing words: 700
+
+## 18.11.2024
+- continuing after a little break...
+- want to hand in on 28th. so only 10 days left!
+- todos:
+    - update intro (more embodiment?)
+    - iterate over conclusion and discussion (add sources!)
+    - find rest of the words (maybe in system design add requiremetns for hover and drone)
+        - can also add more related work
+    - write abstract
+    - read over everything again and improve
+    - let grammarly run over it
+    - let dodo proof-read
+    - add latex code to repo
+    - review sources and their formating in the references
+    - abgeben
+
+- today:
+    - iterate over intro (looks fine to me)
+    - find the rest of the words
+        - so i dont have to worry about it anymore
+        - and i can continue with conclusion/discussion tomorrow
+        - added some more related works
+        - revamped the user feedback, better structure etc (lost words through that...)
+
+- words left: ~~1.3k~~ ~~700~~ ~~600~~ 1.2k
+    - rest of the words could come from reworking the user feedback
+    - or from even more useless implementation details, maybe some mistakes i ran into etc.
+
+- im so tired of this... will continue word search tomorrow...
+
 ## 13.11.2024
 - read over doc
 - identified stuff i need like sources
