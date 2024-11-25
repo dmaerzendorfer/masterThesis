@@ -1,6 +1,35 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 25.11.2024
+- created pdf, signed it, double checked when hand-in deadline is
+- sent to markus and dodo for possible feedback
+- added latex code to repo
+
+## 24.11.2024
+- writing the abstract
+    - its semi good id say
+- looked into grammarly
+    - went over the doc
+
+- will make pdf, sign and send it out tomorrow (also put the latex code on git)
+
+## 22.11.2024
+- lets finish this!
+- completed writing
+- tomorrow: will do abstract, run through grammarly, make pdf and sign, send out to markus and dodo for review
+- when hand in: read over whole thing again, add latex code to repo, double check dates, sign etc and hand in.
+
+- missing words 0!!!!1!!!
+    - am now at 16060 
+
+## 21.11.2024
+- continue with word search
+    - adding some more related work i guess
+        - maybe on distant interaction (some wim or voodoo doll?)
+
+- missing words: 200
+
 ## 20.11.2024
 - continue with writing
 - worked over the findings chapter
