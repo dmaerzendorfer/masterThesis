@@ -1,6 +1,23 @@
 # Notes for Thesis Work
 These notes act as progress report (research diary) throughout the thesis work. The note taking starts when the accompanying course starts (Begleitseminar), and ends when the thesis has been completed successfully. The notes should be visible for the course lectureres and the supervisor of the thesis.
 
+## 01.12.2024
+- time to submit!
+- didnt have time to integrate markus' feedback, jam was taking all my time^^
+
+## 28.11.2024
+- working on markus' feedback
+- not sure if i will include everything, will be at the game jam starting tomorrow
+    - did the easier stuff eG updated graphics, addes some standard deviations etc.
+    - not sure if i will have time to do everything, its really draining to work on it again...
+        - also got the jam coming up, and dont want to do too much
+    - main points i will try to do in the upcoming evenings if i have time:
+        - intro order ändern damit museum am anfang ist
+        - forschungsfragen klarer einleiten bzw herleiten
+        - move the historic objects paragraph to system desgin and refactor system design a bit
+    - am a bit confused by the ableitende statik (wilcoxon signed rank test)
+        - not sure how to apply it to my data
+- i am tired of this work, there is a good chance i wont do anymore on it since markus said its done (i understand the his remarks are just details)
 ## 25.11.2024
 - created pdf, signed it, double checked when hand-in deadline is
 - sent to markus and dodo for possible feedback
